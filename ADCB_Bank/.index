@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Artifact:ArtifactIndexes xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Artifact="http://com.emc.xcp.builder/artifactmodel" urn="indexfile">
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.endpoint:Artifacts/Endpoints/doc_repo.endpoint" categoryId="com.emc.xcp.artifact.endpoint" path="Artifacts/Endpoints/doc_repo.endpoint" label="Doc Repo" name="doc_repo"/>
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.folder:Artifacts/Folders/case_.folder" categoryId="com.emc.xcp.artifact.folder" path="Artifacts/Folders/case_.folder" label="Case" name="case_"/>
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.page:Artifacts/Pages/adcb_cases.page" categoryId="com.emc.xcp.artifact.page" path="Artifacts/Pages/adcb_cases.page" label="ADCB Cases" name="adcb_cases"/>
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.page:Artifacts/Pages/adcb_view_page.page" categoryId="com.emc.xcp.artifact.page" path="Artifacts/Pages/adcb_view_page.page" label="ADCB View Page" name="adcb_view_page"/>
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.page:Artifacts/Pages/application_master.page" categoryId="com.emc.xcp.artifact.page" path="Artifacts/Pages/application_master.page" label="Master" name="application_master"/>
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.page:Artifacts/Pages/application_parameter.page" categoryId="com.emc.xcp.artifact.page" path="Artifacts/Pages/application_parameter.page" label="Manage Application Parameters" name="application_parameter"/>
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.page:Artifacts/Pages/appmaster_defpage.page" categoryId="com.emc.xcp.artifact.page" path="Artifacts/Pages/appmaster_defpage.page" label="appmaster_defpage" name="appmaster_defpage"/>
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.page:Artifacts/Pages/manage_app_role.page" categoryId="com.emc.xcp.artifact.page" path="Artifacts/Pages/manage_app_role.page" label="Manage Application Roles" name="manage_app_role"/>
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.page:Artifacts/Pages/page_not_found.page" categoryId="com.emc.xcp.artifact.page" path="Artifacts/Pages/page_not_found.page" label="System 404 Page" name="page_not_found"/>
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.page:Artifacts/Pages/role_member.page" categoryId="com.emc.xcp.artifact.page" path="Artifacts/Pages/role_member.page" label="View Role Member" name="role_member"/>
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.appparameter:Artifacts/Parameters/bankpath.parameter" categoryId="com.emc.xcp.artifact.appparameter" path="Artifacts/Parameters/bankpath.parameter" label="BankPath" name="bankpath"/>
+  <indexes urn="urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/create_case.process" categoryId="com.emc.ide.artifact.process" path="Artifacts/Processes/create_case.process" label="Create Case" name="create_case"/>
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.search.realtime:Artifacts/Real-time Queries/search_case.realtime" categoryId="com.emc.xcp.artifact.search.realtime" path="Artifacts/Real-time Queries/search_case.realtime" label="Search Case" name="search_case"/>
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.rtappconfig:Artifacts/Runtime App Configurations/runtimeappconfig.rtappconfig" categoryId="com.emc.xcp.artifact.rtappconfig" path="Artifacts/Runtime App Configurations/runtimeappconfig.rtappconfig" label="runtimeappconfig" name="runtimeappconfig"/>
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.viewermapping:Artifacts/Viewer Formats/viewerformatmapping.viewerformat" categoryId="com.emc.xcp.artifact.viewermapping" path="Artifacts/Viewer Formats/viewerformatmapping.viewerformat" label="Viewers and Formats" name="viewerformatmapping"/>
+</Artifact:ArtifactIndexes>

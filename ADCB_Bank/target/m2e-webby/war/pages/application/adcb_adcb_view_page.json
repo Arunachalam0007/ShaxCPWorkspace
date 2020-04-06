@@ -1,0 +1,10 @@
+{
+  "cls" : "adcb_adcb_view_page",
+  "padding" : 0,
+  "border" : false,
+  "namespace" : "adcb",
+  "categoryID" : "com_emc_xcp_artifact_page",
+  "artifactName" : "adcb_view_page",
+  "pageTitle" : "${_UI_Page_adcb_adcb_view_page_title}",
+  "xtype" : "xcp_form"
+}

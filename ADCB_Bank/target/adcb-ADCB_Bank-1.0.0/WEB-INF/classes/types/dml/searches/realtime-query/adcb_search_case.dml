@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<realtime-query-type data-type="${contextPath}types/folders/adcb_case_" label="Search Case" namespace="adcb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="adcb_search_case" xmlns="http://identifiers.emc.com/vocab/xcp">
+  <description/>
+  <properties>
+    <property mapping="case_id" name="case_id" output-name="case_id" sortable="false" type="${contextPath}types/folders/adcb_case_"/>
+    <property mapping="case_name" name="case_name" output-name="case_name" sortable="false" type="${contextPath}types/folders/adcb_case_"/>
+    <property mapping="mobile_number" name="mobile_number" output-name="mobile_number" sortable="false" type="${contextPath}types/folders/adcb_case_"/>
+    <property mapping="new_string" name="new_string" output-name="new_string" sortable="false" type="${contextPath}types/folders/adcb_case_"/>
+    <property mapping="country" name="country" output-name="country" sortable="false" type="${contextPath}types/folders/adcb_case_"/>
+    <property mapping="new_string_1" name="new_string_1" output-name="new_string_1" sortable="false" type="${contextPath}types/folders/adcb_case_"/>
+    <property label="" mandatory="true" mapping="r_object_id" name="r_object_id" output-name="id" sortable="false" type="${contextPath}types/folders/adcb_case_"/>
+    <property label="" mandatory="true" mapping="r_object_type" name="r_object_type" output-name="r_object_type" sortable="false" type="${contextPath}types/folders/adcb_case_"/>
+    <property label="ACL Name" mandatory="true" mapping="acl_name" name="acl_name" output-name="acl_name" sortable="false" type="${contextPath}types/folders/adcb_case_"/>
+    <property label="ACL Domain" mandatory="true" mapping="acl_domain" name="acl_domain" output-name="acl_domain" sortable="false" type="${contextPath}types/folders/adcb_case_"/>
+    <property label="Owner Permit" mandatory="true" mapping="owner_permit" name="owner_permit" output-name="owner_permit" sortable="false" type="${contextPath}types/folders/adcb_case_"/>
+    <property label="Owner Name" mandatory="true" mapping="owner_name" name="owner_name" output-name="owner_name" sortable="false" type="${contextPath}types/folders/adcb_case_"/>
+    <property label="Lock Owner" mandatory="true" mapping="r_lock_owner" name="r_lock_owner" output-name="r_lock_owner" sortable="false" type="${contextPath}types/folders/adcb_case_"/>
+  </properties>
+  <expression-set operator="AND"/>
+  <links>
+    <link href="${contextPath}types/realtime-queries/adcb_search_case" rel="self"/>
+    <link href="${contextPath}realtime-queries/adcb_search_case" rel="http://identifiers.emc.com/linkrel/instances"/>
+  </links>
+  <options>
+    <option resultLimit="-1" returnCount="false" versions="LATEST"/>
+  </options>
+</realtime-query-type>

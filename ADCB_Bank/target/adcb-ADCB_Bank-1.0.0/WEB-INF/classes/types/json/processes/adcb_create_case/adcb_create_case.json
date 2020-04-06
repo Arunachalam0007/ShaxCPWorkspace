@@ -1,0 +1,165 @@
+{
+  "name" : "process-type",
+  "type" : "adcb_create_case",
+  "label" : "Create Case",
+  "runnable-stateless" : true,
+  "urn" : "urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/create_case.process",
+  "properties" : [ {
+    "name" : "process_id",
+    "label" : "process_id",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "status",
+    "label" : "status",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "id",
+    "label" : "id",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "r_runtime_state",
+    "label" : "r_runtime_state",
+    "type" : "integer"
+  }, {
+    "name" : "correlation_identifier",
+    "label" : "correlation_identifier",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "object_name",
+    "label" : "object_name",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "r_creator_name",
+    "label" : "r_creator_name",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "r_start_date",
+    "label" : "r_start_date",
+    "type" : "datetime"
+  }, {
+    "name" : "supervisor_name",
+    "label" : "supervisor_name",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "supervisor_address",
+    "label" : "supervisor_address",
+    "type" : "string",
+    "length" : 64
+  } ],
+  "tasks" : [ {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_create"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_read_from_repositor"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_initiate"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_set_process_data"
+  } ],
+  "flows" : [ {
+    "source" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_initiate",
+    "target" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_read_from_repositor",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_read_from_repositor",
+    "target" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_set_process_data",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_set_process_data",
+    "target" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_create",
+    "flow-type" : "regular"
+  } ],
+  "data" : {
+    "variables" : [ {
+      "name" : "case_no",
+      "label" : "case_no",
+      "type" : "integer",
+      "repeating" : false,
+      "default-value" : "",
+      "mandatory" : false,
+      "input" : true,
+      "output" : false
+    }, {
+      "name" : "case_name",
+      "label" : "case_name",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : "",
+      "mandatory" : false,
+      "input" : true,
+      "output" : false
+    }, {
+      "name" : "phone_no",
+      "label" : "phone_no",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : "",
+      "mandatory" : false,
+      "input" : true,
+      "output" : false
+    }, {
+      "name" : "country",
+      "label" : "country",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : null,
+      "mandatory" : false,
+      "input" : true,
+      "output" : false
+    }, {
+      "name" : "State",
+      "label" : "State",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : null,
+      "mandatory" : false,
+      "input" : true,
+      "output" : false
+    }, {
+      "name" : "Purpose",
+      "label" : "Purpose",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : null,
+      "mandatory" : false,
+      "input" : true,
+      "output" : false
+    }, {
+      "name" : "case_count",
+      "label" : "case_count",
+      "type" : "integer",
+      "repeating" : false,
+      "default-value" : "",
+      "mandatory" : false,
+      "input" : false,
+      "output" : false
+    } ]
+  },
+  "links" : [ {
+    "rel" : "self",
+    "href" : "${contextPath}types/processes/adcb_create_case"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/instances",
+    "href" : "${contextPath}processes/adcb_create_case"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/halt"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/resume"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/terminate"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/tasks"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/attachments"
+  } ]
+}

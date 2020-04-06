@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<folder-type commentable="true" label="Case" parent="${contextPath}types/folders/dm_folder" type="adcb_case_" xmlns="http://identifiers.emc.com/vocab/xcp">
+  <properties>
+    <property label="Case Name" length="64" name="case_name" type="string"/>
+    <property label="Country" length="64" name="country" type="string"/>
+    <property label="Mobile Number" length="64" name="mobile_number" type="string"/>
+    <property label="State" length="64" name="new_string" type="string"/>
+    <property label="Comments" length="64" name="new_string_1" type="string"/>
+    <property label="Case ID" name="case_id" type="integer"/>
+  </properties>
+  <links>
+    <link href="${contextPath}types/folders/adcb_case_" rel="self"/>
+    <link href="${contextPath}folders/adcb_case_" rel="http://identifiers.emc.com/linkrel/instances"/>
+    <link href="${contextPath}types/folders/adcb_case_/defaults" rel="http://identifiers.emc.com/linkrel/defaults"/>
+    <link rel="type"/>
+    <link rel="edit"/>
+    <link rel="canonical"/>
+    <link rel="http://identifiers.emc.com/linkrel/delete"/>
+    <link rel="http://identifiers.emc.com/linkrel/comments"/>
+    <link rel="http://identifiers.emc.com/linkrel/markread"/>
+    <link rel="http://identifiers.emc.com/linkrel/objects"/>
+  </links>
+</folder-type>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsEndpoint:RepositoryEndpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:nsEndpoint="http://xcp.emc.com/endpoint" urn="urn:adcb:com.emc.xcp.artifact.endpoint:Artifacts/Endpoints/doc_repo.endpoint" categoryId="com.emc.xcp.artifact.endpoint" name="doc_repo" label="Doc Repo" docbrokerHostName="xCP" repositoryName="DocRepo" username="dmadmin" password="DM_ENCR_TEXT_V2=AAAAEKT+BtD+aLQnN8lmDYRBJDWhj9PZ1neNu1sVvaqlfAloDWaVwuTT3BuLBTrQW3/ZaP6qBJ9puxB6qHYNrfNXvXrFlOZB+a3BVnwWRd6Osset"/>

@@ -1,0 +1,199 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] Using the builder org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder with a thread count of 1
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building ADCB Bank 1.0.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ ADCB_Bank ---
+[INFO] Deleting F:\Sha\xCP Workspace\ADCB_Bank\target
+[INFO] 
+[INFO] --- xcp-validate:1.0.12:run (xcp-validate) @ ADCB_Bank ---
+[INFO] Finished validating Artifact data models in project 'ADCB_Bank' in....1350ms
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.7:add-source (add-source) @ ADCB_Bank ---
+[INFO] Source directory: F:\Sha\xCP Workspace\ADCB_Bank\gen\main\java added.
+[INFO] 
+[INFO] --- xcp-generate-sources:1.0.10:run (xcp-generate-sources) @ ADCB_Bank ---
+[INFO] Generating DML artifacts for Application Project, type=IXCPApplicationProject
+[INFO] Finished executing project generators in....53ms
+[INFO] Ignoring json for page : appmaster_defpage
+[INFO] Finished generating models.js in time  660 ms
+[INFO] Finished executing artifact generators in....5364ms
+[INFO] Finished generating code for project 'ADCB_Bank' in 5419ms
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.7:add-resource (add-resource) @ ADCB_Bank ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ADCB_Bank ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 9 resources
+[INFO] Copying 13 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ ADCB_Bank ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ ADCB_Bank ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory F:\Sha\xCP Workspace\ADCB_Bank\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ ADCB_Bank ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ ADCB_Bank ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- xcp-dar:1.0.12:run (xcp-dar) @ ADCB_Bank ---
+[INFO] 
+[INFO] Started packaging artifact bundle jar for application project '[XCPProject: ADCB_Bank]'
+[INFO] Finished packaging artifact bundle jar for application project '[XCPProject: ADCB_Bank]' in 555 ms
+[INFO] 
+[INFO] 
+[INFO] Started packaging local library dependencies for application project '[XCPProject: ADCB_Bank]'
+[INFO] Packaged local library dependencies for project 'ADCB_Bank' in 4ms
+[INFO] 
+[INFO] --- maven-war-plugin:2.3:war (default-war) @ ADCB_Bank ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [ADCB_Bank] in [F:\Sha\xCP Workspace\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0]
+[INFO] Processing war project
+[INFO] Copying webapp webResources [F:\Sha\xCP Workspace\ADCB_Bank\Artifacts] to [F:\Sha\xCP Workspace\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0]
+[INFO] Copying webapp webResources [F:\Sha\xCP Workspace\ADCB_Bank\lib] to [F:\Sha\xCP Workspace\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0]
+[INFO] Copying webapp webResources [F:\Sha\xCP Workspace\ADCB_Bank\gen/main/webapp] to [F:\Sha\xCP Workspace\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0]
+[INFO] Copying webapp resources [F:\Sha\xCP Workspace\ADCB_Bank\src\main\webapp]
+[INFO] Webapp assembled in [2309 msecs]
+[INFO] Building war: F:\Sha\xCP Workspace\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0.war
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ ADCB_Bank ---
+[INFO] Installing F:\Sha\xCP Workspace\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0.war to C:\Users\dmadmin\.m2\repository\adcb\ADCB_Bank\1.0.0\ADCB_Bank-1.0.0.war
+[INFO] Installing F:\Sha\xCP Workspace\ADCB_Bank\pom.xml to C:\Users\dmadmin\.m2\repository\adcb\ADCB_Bank\1.0.0\ADCB_Bank-1.0.0.pom
+[INFO] 
+[INFO] --- maven-deploy-plugin:2.5:deploy (default-deploy) @ ADCB_Bank ---
+[INFO] Skipping artifact deployment
+[INFO] 
+[INFO] --- xcp-deploy:1.0.14:run (xcp-deploy) @ ADCB_Bank ---
+[INFO] Setting xda server protocol to HTTP
+[INFO] Setting xda server host to xCP
+[INFO] Setting xda server port to 7000
+[INFO] Setting xda server username to admin
+[INFO] Setting xda server password to a non-null value
+[INFO] Invoked xda client to deploy app
+[INFO] Deploying application - app deploy command start
+[INFO] List of services: 
+[INFO] AppHostService(AppServer) = 8.0.0.0
+[INFO] AppHostService(JDK) = 8.0.0.0
+[INFO] AppHostService(ManagerWar) = 7.0.0.0
+[INFO] BpsService(AppServer) = 8.0.32
+[INFO] BpsService(BpsConfig) = 16.4.0.0
+[INFO] BpsService(BpsServer) = 16.4.0070
+[INFO] BpsService(JDK) = 8.0.152.0
+[INFO] CustomApplicationService(adcb.ADCB_Bank) = 1.0.0
+[INFO] CustomApplicationService(bpss.BPS) = 1.0.0
+[INFO] CustomApplicationService(cfk.Custom_function_kalai) = 1.0.0
+[INFO] CustomApplicationService(cfwk.Custom_func_and_widgets_kalai) = 1.0.0
+[INFO] CustomApplicationService(cmt.Creating_Manual_Task) = 1.0.0
+[INFO] CustomApplicationService(cust.Create_Custom_functions) = 1.0.0
+[INFO] CustomApplicationService(cxfk.custom_xcp_fun_kalai) = 1.0.0
+[INFO] CustomApplicationService(inv.InvoiceDemo) = 1.0.0
+[INFO] CustomApplicationService(newapp.Testing_new_app) = 1.0.0
+[INFO] CustomApplicationService(sam.Sample) = 1.0.0
+[INFO] CustomApplicationService(wmk.Workflow_Management_kalai) = 1.0.0
+[INFO] CustomApplicationService(xpl.Xplore) = 1.0.0
+[INFO] DaService(AppServer) = 8.0.32
+[INFO] DaService(DaServer) = 16.4.0.0
+[INFO] DaService(JDK) = 8.0.152.0
+[INFO] RepositoryService(CisArtifacts.dar) = 16.4.0000.0099
+[INFO] RepositoryService(ContentServer) = 16.4.0140.0202
+[INFO] RepositoryService(CtsBundled.dar) = 16.4.0000.0088
+[INFO] RepositoryService(Dis.dar) = 16.4.0.0
+[INFO] RepositoryService(JDK) = 8.0.152.0
+[INFO] RepositoryService(ProcessEngine) = 16.4.0000.0037
+[INFO] RepositoryService(SqlClient) = 2008R2
+[INFO] RepositoryService(ThumbnailServer) = 16.4.0000.0088
+[INFO] RepositoryService(XcpViewer.dar) = 16.4.0000.0081
+[INFO] SearchService(JDK) = 8.0.152.0
+[INFO] SearchService(Xplore) = 16.4.0000.0197
+[INFO] Xda version = 16.4.0000.0072
+[INFO] Application Name = ADCB_Bank
+[INFO] Deploy Method = INCREMENTAL
+[INFO] Data Policy = MINIMAL
+[INFO] Deploy Env = DEV
+[INFO] Environment = xCP Dev
+[INFO] Repository Services Only = false
+[INFO] ValidateOnly = false
+[INFO] Validate only  = false
+[INFO] Xplore Indexing  = true
+[INFO] Deployment to the BAM endpoint is NOT enabled. Artifacts will not be deployed to the BAM Server.
+[INFO] Started executing Repository deployment validation
+[INFO] Started SearchDeployer 'Validate'
+[INFO] Starting preinstall validation for artifacts in :xcpcore
+[INFO] Starting preinstall validation for artifacts in :ADCB_Bank
+[INFO] Starting preinstall validation for artifacts in :xcpcommons
+[INFO] Starting preinstall validation for artifacts in :xcpui
+[INFO] Finished preinstall validation for artifacts in :xcpcore
+[INFO] Preinstall validation forxcpcore completed in 0 secs
+[INFO] Validate instance 1 [xPlore_host:xCP,xPlore_port:9300;IndexAgent_host:xCP,IndexAgent_PortP:9200]
+[INFO] xPlore connection details: host = 'xCP' port = '9300' password = '*****' domain = 'DocRepo' protocol = 'http'
+[INFO] Finished preinstall validation for artifacts in :xcpcommons
+[INFO] Preinstall validation forxcpcommons completed in 0 secs
+[INFO] Finished preinstall validation for artifacts in :ADCB_Bank
+[INFO] Preinstall validation forADCB_Bank completed in 1 secs
+[INFO] Finished preinstall validation for artifacts in :xcpui
+[INFO] Preinstall validation forxcpui completed in 2 secs
+[INFO] Finished executing Repository deployment validation
+[INFO] Repository deployer validation time = 2 secs
+[INFO] Index Agent connection details: host = 'xCP' port = '9200' user = 'dmadmin' password = '*****' server name = 'IndexAgent' docbase = 'DocRepo' instance Name = 'xcp_9200_IndexAgent'' protocol = 'http '
+[INFO] No index definition is required for this application.
+[INFO] No need to update the index definition on xPlore (all subpaths are already defined)
+[INFO] No actions are required on xPlore for the application.
+[INFO] Finished executing SearchDeployer 'Validate' (Execution time = 23 secs)
+[INFO] Running pre deploy phase
+[INFO] Connecting to:http://xCP:7070/ADCB_Bank/servlet/InvalidateCache
+[INFO] Started SearchDeployer 'PreDeploy'
+[INFO] No actions needed during xPlore PreDeploy on instance [xPlore_host:xCP,xPlore_port:9300;IndexAgent_host:xCP,IndexAgent_PortP:9200]
+[INFO] Finished executing SearchDeployer 'PreDeploy' (Execution time = 0 secs)
+[INFO] Unable to deploy, http response code:500
+[INFO] Connection to:http://xCP:7070/ADCB_Bank/servlet/InvalidateCache was false
+[WARNING] Failed to clear App Server Cache. Please restart the app server manually : http://xCP:7070/ADCB_Bank/servlet/InvalidateCache
+[INFO] Finished Running pre deploy phase in....52secs
+[INFO] Deploying through WAR deployer factory
+[INFO] Started executing Repository deployment
+[INFO] The tcserver manager URL is http://xCP:7070/manager/text
+[INFO] The adcb-ADCB_Bank-1.0.0.war is deploying.
+[INFO] Connecting to:http://xCP:7070/manager/text/deploy
+[INFO] Deploy, http response code:200
+[INFO] Connection to:http://xCP:7070/manager/text/deploy was true
+[INFO] Notifying Method Server to Invalidate cache
+[INFO] Executing request http://xcp:9080/bpm/servlet/InvalidateCache
+[INFO] Response status code: 200
+[INFO] Response reason: OK
+[INFO] Method Server successfully invalidated cache on http://xcp:9080/bpm/servlet/InvalidateCache
+[INFO] Finished executing Repository deployment
+[INFO] Repository recipe execution time = '5 secs
+[INFO] Started SearchDeployer 'Deploy'
+[INFO] Deploy on instance 1 [xPlore_host:xCP,xPlore_port:9300;IndexAgent_host:xCP,IndexAgent_PortP:9200]
+[INFO] No index definition update is needed on xPlore
+[INFO] xPlore Async Indexing: true
+[INFO] No index rebuild required.
+[INFO] No refeed is required.
+[INFO] Finished executing SearchDeployer 'Deploy' (Execution time = 5 secs)
+[INFO] The adcb-ADCB_Bank-1.0.0.war has deployed.
+[INFO] WAR deployer execution time = 40 secs
+[INFO] No actions needed during xPlore upgradeData
+[INFO] Application URL: http://xCP:7070/ADCB_Bank
+[INFO] Started SearchDeployer 'PostDeploy'
+[INFO] No actions needed during xPlore PostDeploy on instance [xPlore_host:xCP,xPlore_port:9300;IndexAgent_host:xCP,IndexAgent_PortP:9200]
+[INFO] Finished executing SearchDeployer 'PostDeploy' (Execution time = 0 secs)
+[INFO] AppDeploymentManager deployedin....125secs
+[INFO] Registering deployed application into catalog: environment: xCP Dev, name = ADCB_Bank, namespace = adcb, version = 1.0.0
+[INFO] Deploying application was successful
+[INFO] CommandRequest ID is com.emc.xms.execution.CommandRequest@266f74df
+[INFO] Command execution process has finished.
+[INFO] xda client finished running app deployment
+[INFO] Project 'ADCB_Bank' deployed
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 03:19 min
+[INFO] Finished at: 2020-04-05T20:58:30+05:30
+[INFO] Final Memory: 26M/363M
+[INFO] ------------------------------------------------------------------------
