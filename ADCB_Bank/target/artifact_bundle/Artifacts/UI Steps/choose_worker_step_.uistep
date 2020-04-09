@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionflow:UIStep xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionflow="http://www.emc.com/xcp2/2010/actionflow" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:uitemplate="http://www.emc.com/xcp2/2010/uitemplate" urn="urn:adcb:com.emc.xcp.artifact.uistep:Artifacts/UI Steps/choose_worker_step_.uistep" categoryId="com.emc.xcp.artifact.uistep" name="choose_worker_step_" label="Step 1" templateType="uistep">
+  <dataSources categoryId="com.emc.xcp.artifact.dataservice.datasource" name="userorgroup_selecti_staless_ds" label="User Or Group Selection">
+    <inputMappings name="processVariables.starts_with_filter">
+      <expression/>
+    </inputMappings>
+    <contract xsi:type="nsDataserviceContract:DataSourceContract" href="urn:xcp:com.emc.ide.artifact.process:Artifacts/Processes/userorgroup_selecti.process#//@activities[name='Initiate']/@taskContract/@dataServiceContracts[name='userorgroup_selecti_staless_ds']"/>
+  </dataSources>
+  <actionInstanceProperty actionInstance="//@dataSources[name='userorgroup_selecti_staless_ds']"/>
+  <rootContainer>
+    <properties name="xcpId" value="root"/>
+    <children componentDefinitionId="xcp_dropdown_list" dataService="//@dataSources[name='userorgroup_selecti_staless_ds']">
+      <properties name="fieldLabel" value="Choose Worker"/>
+      <properties name="emptyText" value=""/>
+      <properties name="disabled" value=""/>
+      <properties name="hidden" value=""/>
+      <properties name="valueField" value="user_group_name"/>
+      <properties name="displayField" value="user_group_name"/>
+      <properties name="modelStore" value="dataservices.userorgroup_selecti_staless_ds"/>
+      <properties name="valueType" value="STRING"/>
+      <properties name="name" value=""/>
+      <properties name="fieldWidth" value="" type="INTEGER"/>
+      <properties name="cls"/>
+      <properties name="tooltip" value=""/>
+      <properties name="mandatory" value=""/>
+      <properties name="hideErrorInToolTip" value="false" type="BOOLEAN"/>
+      <properties name="stopOnValidationFail" value="true" type="BOOLEAN"/>
+      <properties name="anyMatch" value="false" type="BOOLEAN"/>
+      <properties xsi:type="uitemplate:DataboundProperty" name="value" value=""/>
+      <properties name="valid" value=""/>
+      <properties name="xcpId" value="choose_worker"/>
+    </children>
+  </rootContainer>
+  <primaryModel href="urn:adcb:com.emc.xcp.artifact.folder:Artifacts/Folders/case_.folder#/"/>
+</actionflow:UIStep>

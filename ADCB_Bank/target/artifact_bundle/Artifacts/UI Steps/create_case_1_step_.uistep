@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionflow:UIStep xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionflow="http://www.emc.com/xcp2/2010/actionflow" xmlns:uitemplate="http://www.emc.com/xcp2/2010/uitemplate" urn="urn:adcb:com.emc.xcp.artifact.uistep:Artifacts/UI Steps/create_case_1_step_.uistep" categoryId="com.emc.xcp.artifact.uistep" name="create_case_1_step_" label="Step 1" templateType="uistep">
+  <rootContainer>
+    <properties name="xcpId" value="root"/>
+    <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_column_box">
+      <properties name="title"/>
+      <properties name="collapsible" value="false" type="BOOLEAN"/>
+      <properties name="collapsed" value=""/>
+      <properties name="collapseFirst" value="true" type="BOOLEAN"/>
+      <properties name="border" value="false" type="BOOLEAN"/>
+      <properties name="defaultMargins" value="5"/>
+      <properties name="margins" value=""/>
+      <properties name="layout" value="xcp_columnbox"/>
+      <properties name="hidden" value=""/>
+      <properties name="cls" value=""/>
+      <properties name="xcpId" value="create_case_column_box"/>
+      <properties name="items"/>
+      <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_columnvbox">
+        <properties name="orientation" value="Vertical"/>
+        <properties name="width" value=""/>
+        <properties name="minWidth" value="" type="INTEGER"/>
+        <properties name="split" value="" type="BOOLEAN"/>
+        <properties name="overflow_x" value="hidden"/>
+        <properties name="labelWidth" value="150" type="INTEGER"/>
+        <properties name="labelAlign" value="left"/>
+        <properties name="halign" value="left"/>
+        <properties name="valign" value="top"/>
+        <properties name="defaultMargins" value="5"/>
+        <properties name="margins" value=""/>
+        <properties name="tooltip" value=""/>
+        <properties name="cls" value=""/>
+        <properties name="xcpId" value="columnvbox"/>
+        <children componentDefinitionId="xcp_text_input">
+          <properties name="fieldLabel" value="Case Name"/>
+          <properties name="emptyText" value=""/>
+          <properties name="name" value=""/>
+          <properties name="hstretch" value="true" type="BOOLEAN"/>
+          <properties name="fieldWidth" value="" type="INTEGER"/>
+          <properties name="readOnly" value=""/>
+          <properties name="hidden" value=""/>
+          <properties name="valueType" value="STRING"/>
+          <properties name="inputType" value=""/>
+          <properties name="cls" value=""/>
+          <properties name="mandatory" value="true"/>
+          <properties name="hideErrorInToolTip" value="false" type="BOOLEAN"/>
+          <properties name="stopOnValidationFail" value="true" type="BOOLEAN"/>
+          <properties name="tooltip" value=""/>
+          <properties xsi:type="uitemplate:DataboundProperty" name="value" value=""/>
+          <properties name="valid" value=""/>
+          <properties name="xcpId" value="case_name"/>
+        </children>
+        <children componentDefinitionId="xcp_text_input">
+          <properties name="fieldLabel" value="Mobile Number"/>
+          <properties name="emptyText" value=""/>
+          <properties name="name" value=""/>
+          <properties name="hstretch" value="true" type="BOOLEAN"/>
+          <properties name="fieldWidth" value="" type="INTEGER"/>
+          <properties name="readOnly" value=""/>
+          <properties name="hidden" value=""/>
+          <properties name="valueType" value="STRING"/>
+          <properties name="inputType" value=""/>
+          <properties name="cls" value=""/>
+          <properties name="mandatory" value="true"/>
+          <properties name="hideErrorInToolTip" value="false" type="BOOLEAN"/>
+          <properties name="stopOnValidationFail" value="true" type="BOOLEAN"/>
+          <properties name="tooltip" value=""/>
+          <properties xsi:type="uitemplate:DataboundProperty" name="value" value=""/>
+          <properties name="valid" value=""/>
+          <properties name="xcpId" value="mobile_number"/>
+        </children>
+        <children componentDefinitionId="xcp_text_input">
+          <properties name="fieldLabel" value="Country"/>
+          <properties name="emptyText" value=""/>
+          <properties name="name" value=""/>
+          <properties name="hstretch" value="true" type="BOOLEAN"/>
+          <properties name="fieldWidth" value="" type="INTEGER"/>
+          <properties name="readOnly" value=""/>
+          <properties name="hidden" value=""/>
+          <properties name="valueType" value="STRING"/>
+          <properties name="inputType" value=""/>
+          <properties name="cls" value=""/>
+          <properties name="mandatory" value="true"/>
+          <properties name="hideErrorInToolTip" value="false" type="BOOLEAN"/>
+          <properties name="stopOnValidationFail" value="true" type="BOOLEAN"/>
+          <properties name="tooltip" value=""/>
+          <properties xsi:type="uitemplate:DataboundProperty" name="value" value=""/>
+          <properties name="valid" value=""/>
+          <properties name="xcpId" value="country"/>
+        </children>
+        <children componentDefinitionId="xcp_text_input">
+          <properties name="fieldLabel" value="State"/>
+          <properties name="emptyText" value=""/>
+          <properties name="name" value=""/>
+          <properties name="hstretch" value="true" type="BOOLEAN"/>
+          <properties name="fieldWidth" value="" type="INTEGER"/>
+          <properties name="readOnly" value=""/>
+          <properties name="hidden" value=""/>
+          <properties name="valueType" value="STRING"/>
+          <properties name="inputType" value=""/>
+          <properties name="cls" value=""/>
+          <properties name="mandatory" value="true"/>
+          <properties name="hideErrorInToolTip" value="false" type="BOOLEAN"/>
+          <properties name="stopOnValidationFail" value="true" type="BOOLEAN"/>
+          <properties name="tooltip" value=""/>
+          <properties xsi:type="uitemplate:DataboundProperty" name="value" value=""/>
+          <properties name="valid" value=""/>
+          <properties name="xcpId" value="state"/>
+        </children>
+      </children>
+      <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_columnvbox">
+        <properties name="orientation" value="Vertical"/>
+        <properties name="width" value=""/>
+        <properties name="minWidth" value="" type="INTEGER"/>
+        <properties name="split" value="" type="BOOLEAN"/>
+        <properties name="overflow_x" value="hidden"/>
+        <properties name="labelWidth" value="150" type="INTEGER"/>
+        <properties name="labelAlign" value="left"/>
+        <properties name="halign" value="left"/>
+        <properties name="valign" value="top"/>
+        <properties name="defaultMargins" value="5"/>
+        <properties name="margins" value=""/>
+        <properties name="tooltip" value=""/>
+        <properties name="cls" value=""/>
+        <properties name="xcpId" value="columnvbox1"/>
+      </children>
+    </children>
+  </rootContainer>
+  <primaryModel href="urn:adcb:com.emc.xcp.artifact.folder:Artifacts/Folders/case_.folder#/"/>
+</actionflow:UIStep>

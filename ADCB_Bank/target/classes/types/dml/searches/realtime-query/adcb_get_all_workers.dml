@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<realtime-query-type data-type="${contextPath}types/business-objects/adcb_case_workers" label="Get All Workers" namespace="adcb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="adcb_get_all_workers" xmlns="http://identifiers.emc.com/vocab/xcp">
+  <description/>
+  <properties>
+    <property mapping="adcb_case_workers_case.case.adcb_case_.adcb_case_workers_case.case_workers.adcb_case_workers.workers_name" name="workers_name" output-name="casechild_case_case_workerschild_case_workersworkers_name" sortable="false" type="${contextPath}types/business-objects/adcb_case_workers"/>
+    <property mapping="adcb_case_workers_case.case.adcb_case_.adcb_case_workers_case.case_workers.adcb_case_workers.s_no" name="s_no" output-name="casechild_case_case_workerschild_case_workerss_no" sortable="false" type="${contextPath}types/business-objects/adcb_case_workers"/>
+    <property mapping="adcb_case_workers_case.case.adcb_case_.adcb_case_workers_case.case_workers.adcb_case_workers.adcb_case_workers_case.case.adcb_case_.case_name" name="case_name" output-name="casechild_case_case_workerschild_case_workerscasechild_case_case_name" sortable="false" type="${contextPath}types/folders/adcb_case_"/>
+    <property label="" mandatory="true" mapping="r_object_id" name="r_object_id" output-name="id" sortable="false" type="${contextPath}types/business-objects/adcb_case_workers"/>
+    <property label="" mandatory="true" mapping="r_object_type" name="r_object_type" output-name="r_object_type" sortable="false" type="${contextPath}types/business-objects/adcb_case_workers"/>
+    <property label="ACL Name" mandatory="true" mapping="acl_name" name="acl_name" output-name="acl_name" sortable="false" type="${contextPath}types/business-objects/adcb_case_workers"/>
+    <property label="ACL Domain" mandatory="true" mapping="acl_domain" name="acl_domain" output-name="acl_domain" sortable="false" type="${contextPath}types/business-objects/adcb_case_workers"/>
+    <property label="Owner Permit" mandatory="true" mapping="owner_permit" name="owner_permit" output-name="owner_permit" sortable="false" type="${contextPath}types/business-objects/adcb_case_workers"/>
+    <property label="Owner Name" mandatory="true" mapping="owner_name" name="owner_name" output-name="owner_name" sortable="false" type="${contextPath}types/business-objects/adcb_case_workers"/>
+    <property label="Lock Owner" mandatory="true" mapping="r_lock_owner" name="r_lock_owner" output-name="r_lock_owner" sortable="false" type="${contextPath}types/business-objects/adcb_case_workers"/>
+  </properties>
+  <expression-set operator="AND"/>
+  <links>
+    <link href="${contextPath}types/realtime-queries/adcb_get_all_workers" rel="self"/>
+    <link href="${contextPath}realtime-queries/adcb_get_all_workers" rel="http://identifiers.emc.com/linkrel/instances"/>
+  </links>
+  <options>
+    <option resultLimit="-1" returnCount="false" versions="LATEST"/>
+  </options>
+</realtime-query-type>

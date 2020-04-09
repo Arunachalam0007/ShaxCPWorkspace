@@ -1,0 +1,232 @@
+{
+  "cls" : "adcb_adcb_case",
+  "padding" : 0,
+  "border" : false,
+  "namespace" : "adcb",
+  "categoryID" : "com_emc_xcp_artifact_page",
+  "artifactName" : "adcb_case",
+  "pageTitle" : "${_UI_Page_adcb_adcb_case_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "get_all_cases",
+      "actionModel" : "adcb_get_all_cases_outputs",
+      "inputModelName" : "adcb_get_all_cases_inputs",
+      "actionType" : "datasource",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ],
+      "autoLoad" : true,
+      "invokerEvents" : [ {
+        "events" : ["create_case_1_1.success" ]
+      } ],
+      "pageSize" : 10
+    }, {
+      "xcpId" : "create_case_1_1",
+      "actionType" : "xcp_action_flow_launcher",
+      "actionFlowId" : "adcb_create_case_1",
+      "objectType" : "adcb_case_",
+      "wizardConfig" : {
+        "height" : 450,
+        "width" : 640,
+        "modal" : true,
+        "autoScroll" : false,
+        "title" : "${_UI_Create_Case_Create_Case_label}"
+      },
+      "actionModel" : "xcp_process_adcb_create_case",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ]
+    } ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "create_case_col",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5"
+    }, {
+      "xcpId" : "columnvbox1",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "button",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_adcb_adcb_case_button_text}",
+        "scale" : "small",
+        "badgeAlign" : "top-right",
+        "iconAlign" : "left",
+        "actionInstanceId" : "create_case_1_1",
+        "redirectStyle" : "current",
+        "showSuccessNotification" : true,
+        "showConfirmation" : false,
+        "navType" : "none"
+      } ]
+    } ]
+  }, {
+    "xcpId" : "all_case",
+    "xtype" : "xcp_results_list",
+    "title" : "${_UI_Page_adcb_adcb_case_all_case_title}",
+    "pageSize" : 10,
+    "selectionModel" : false,
+    "enableDragDrop" : true,
+    "disableNavigationOnFirstColumn" : false,
+    "allowDeselect" : false,
+    "displayTotalRowCount" : false,
+    "autoTotalCount" : true,
+    "autoSelection" : false,
+    "pageSizeList" : "10,25,50,100",
+    "stateful" : false,
+    "allowInLineEdit" : false,
+    "modelStore" : "dataservices.get_all_cases",
+    "columns" : [ {
+      "xcpId" : "col_case_id",
+      "xtype" : "xcp_results_list_page_link_column",
+      "text" : "${_UI_Page_adcb_adcb_case_col_case_id_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "case_id",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "all_case",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "col_case_name",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_adcb_adcb_case_col_case_name_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "case_name",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "all_case",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "col_mobile_number",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_adcb_adcb_case_col_mobile_number_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "mobile_number",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "all_case",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "col_new_string_1",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_adcb_adcb_case_col_new_string_1_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "new_string_1",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "all_case",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "col_country",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_adcb_adcb_case_col_country_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "country",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "all_case",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "col_new_string",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_adcb_adcb_case_col_new_string_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "new_string",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "all_case",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "col_id",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_adcb_adcb_case_col_id_text}",
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "id",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "all_case",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    } ]
+  } ]
+}

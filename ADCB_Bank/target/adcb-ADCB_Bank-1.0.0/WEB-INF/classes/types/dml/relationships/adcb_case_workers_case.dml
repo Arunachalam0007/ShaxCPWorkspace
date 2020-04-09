@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<relationship-type label="Case Workers-Case" type="adcb_case_workers_case" xmlns="http://identifiers.emc.com/vocab/xcp">
+  <properties>
+    <property label="source" length="16" name="source" readOnly="true" type="string">
+      <description>This is a relationship source</description>
+    </property>
+    <property label="target" length="16" name="target" readOnly="true" type="string">
+      <description>This is a relationship target</description>
+    </property>
+    <property label="Object ID" length="16" name="r_object_id" readOnly="true" type="string">
+      <description>This is system generated unique id for the object. This is set by the system</description>
+    </property>
+  </properties>
+  <source href="${contextPath}types/business-objects/adcb_case_workers" maxOccurs="unbounded" minOccurs="1" name="adcb_case_workers" role-label="Case Workers" role-name="case_workers"/>
+  <target href="${contextPath}types/folders/adcb_case_" maxOccurs="1" minOccurs="1" name="adcb_case_" role-label="Case" role-name="case"/>
+  <links>
+    <link href="${contextPath}types/relationships/adcb_case_workers_case" rel="self"/>
+    <link href="${contextPath}relationships/adcb_case_workers_case" rel="http://identifiers.emc.com/linkrel/instances"/>
+    <link href="${contextPath}types/relationships/adcb_case_workers_case/defaults" rel="http://identifiers.emc.com/linkrel/defaults"/>
+    <link rel="type"/>
+    <link rel="edit"/>
+    <link rel="http://identifiers.emc.com/linkrel/delete"/>
+    <link rel="http://identifiers.emc.com/linkrel/source"/>
+    <link rel="http://identifiers.emc.com/linkrel/target"/>
+  </links>
+</relationship-type>

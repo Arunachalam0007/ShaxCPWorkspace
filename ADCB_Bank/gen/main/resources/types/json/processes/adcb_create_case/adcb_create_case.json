@@ -55,28 +55,28 @@
   } ],
   "tasks" : [ {
     "rel" : "http://identifiers.emc.com/linkrel/task",
-    "href" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_create"
+    "href" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_create_case"
   }, {
     "rel" : "http://identifiers.emc.com/linkrel/task",
-    "href" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_read_from_repositor"
+    "href" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_get_case_count_from"
   }, {
     "rel" : "http://identifiers.emc.com/linkrel/task",
     "href" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_initiate"
   }, {
     "rel" : "http://identifiers.emc.com/linkrel/task",
-    "href" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_set_process_data"
+    "href" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_case_concat"
   } ],
   "flows" : [ {
     "source" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_initiate",
-    "target" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_read_from_repositor",
+    "target" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_get_case_count_from",
     "flow-type" : "regular"
   }, {
-    "source" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_read_from_repositor",
-    "target" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_set_process_data",
+    "source" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_get_case_count_from",
+    "target" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_case_concat",
     "flow-type" : "regular"
   }, {
-    "source" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_set_process_data",
-    "target" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_create",
+    "source" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_case_concat",
+    "target" : "${contextPath}types/processes/adcb_create_case/tasks/adcb_create_case",
     "flow-type" : "regular"
   } ],
   "data" : {
@@ -85,7 +85,7 @@
       "label" : "case_no",
       "type" : "integer",
       "repeating" : false,
-      "default-value" : "",
+      "default-value" : null,
       "mandatory" : false,
       "input" : true,
       "output" : false
@@ -94,7 +94,7 @@
       "label" : "case_name",
       "type" : "string",
       "repeating" : false,
-      "default-value" : "",
+      "default-value" : null,
       "mandatory" : false,
       "input" : true,
       "output" : false
@@ -103,7 +103,7 @@
       "label" : "phone_no",
       "type" : "string",
       "repeating" : false,
-      "default-value" : "",
+      "default-value" : null,
       "mandatory" : false,
       "input" : true,
       "output" : false
@@ -138,6 +138,69 @@
       "name" : "case_count",
       "label" : "case_count",
       "type" : "integer",
+      "repeating" : false,
+      "default-value" : null,
+      "mandatory" : false,
+      "input" : false,
+      "output" : false
+    }, {
+      "name" : "case_def",
+      "label" : "case_def",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : "CASE",
+      "mandatory" : false,
+      "input" : false,
+      "output" : false
+    }, {
+      "name" : "case_month",
+      "label" : "case_month",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : null,
+      "mandatory" : false,
+      "input" : false,
+      "output" : false
+    }, {
+      "name" : "case_year",
+      "label" : "case_year",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : null,
+      "mandatory" : false,
+      "input" : false,
+      "output" : false
+    }, {
+      "name" : "case_dmy",
+      "label" : "case_dmy",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : null,
+      "mandatory" : false,
+      "input" : false,
+      "output" : false
+    }, {
+      "name" : "case_def_id",
+      "label" : "case_def_id",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : "00",
+      "mandatory" : false,
+      "input" : false,
+      "output" : false
+    }, {
+      "name" : "case_id",
+      "label" : "case_id",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : null,
+      "mandatory" : false,
+      "input" : false,
+      "output" : false
+    }, {
+      "name" : "case_day",
+      "label" : "case_day",
+      "type" : "string",
       "repeating" : false,
       "default-value" : "",
       "mandatory" : false,

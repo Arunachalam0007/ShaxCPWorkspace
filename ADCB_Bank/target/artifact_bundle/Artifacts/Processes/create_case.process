@@ -1,25 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nsProcess:Process xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsActivity="http://documentum.com/bpm/activity" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsCommon="http://documentum.com/common" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsProcess="http://documentum.com/bpm/process" urn="urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/create_case.process" categoryId="com.emc.ide.artifact.process" name="create_case" label="Create Case" description="" webServiceTargetNamespace="" workflowInstructions="" synchronous="true">
-  <activities name="Create" activityType="END" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L3']">
+  <activities name="Create Case" activityType="END" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L3']">
     <trigger numOfInputFlows="1" expectedEventName="" canRunMultipleTimes="true"/>
     <transition xsi:type="nsActivity:AllFlowsTransition"/>
     <uiinfo imageScale="100" image="activity_autoint_48x32_proc.png">
-      <topLeftPoint x="344" y="171"/>
+      <topLeftPoint x="407" y="170"/>
       <textStyle fontName="Dialog" fontSize="10">
         <bgColor/>
         <fgColor/>
       </textStyle>
     </uiinfo>
-    <performerConfig xsi:type="nsActivity:SvcDefBasedOutboundPerformerConfiguration" timeout="60" serviceDefinition="&lt;?xml version=&quot;1.0&quot;?>&#xA;&lt;ServiceDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;activity.xsd&quot;>&#xA;    &lt;Name>Create&lt;/Name>&#xA;    &lt;RuntimeModuleName>CreateRuntimeModule&lt;/RuntimeModuleName>&#xA;    &lt;DesignModuleName>CreateDesigntimeModule&lt;/DesignModuleName>&#xA;    &lt;Configuration>&#xA;        &lt;Parameter>&#xA;            &lt;Name>CREATE_FROM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[CREATE_FROM_MODEL]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>MODEL_URN&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[urn:adcb:com.emc.xcp.artifact.folder:Artifacts/Folders/case_.folder]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>MODEL_LABEL&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[Case]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>MODEL_TYPE_NAME&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[adcb_case_]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>DESTINATION&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[DESTINATION_FOLDER_PATH]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;    &lt;/Configuration>&#xA;    &lt;InputMsgCopyRules>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>89&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/case_no&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/{case_}case_id&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>105&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/case_name&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/{case_}case_name&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>121&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/country&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/{case_}country&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>137&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/phone_no&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/{case_}mobile_number&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>153&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/State&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/{case_}new_string&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>169&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/Purpose&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/{case_}new_string_1&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>25&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/case_name&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/name&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>41&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Parameters/adcb/bankpath&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/dest_folder_path[0]&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;    &lt;/InputMsgCopyRules>&#xA;    &lt;OutputMsgCopyRules/>&#xA;    &lt;CorrelationMsgCopyRules/>&#xA;    &lt;UserDefinedInputTreeNodes/>&#xA;    &lt;UserDefinedOutputTreeNodes/>&#xA;    &lt;InputSchemaConfigs/>&#xA;    &lt;OutputSchemaConfigs/>&#xA;&lt;/ServiceDefinition>&#xA;">
+    <performerConfig xsi:type="nsActivity:SvcDefBasedOutboundPerformerConfiguration" timeout="60" serviceDefinition="&lt;?xml version=&quot;1.0&quot;?>&#xA;&lt;ServiceDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;activity.xsd&quot;>&#xA;    &lt;Name>Create&lt;/Name>&#xA;    &lt;RuntimeModuleName>CreateRuntimeModule&lt;/RuntimeModuleName>&#xA;    &lt;DesignModuleName>CreateDesigntimeModule&lt;/DesignModuleName>&#xA;    &lt;Configuration>&#xA;        &lt;Parameter>&#xA;            &lt;Name>CREATE_FROM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[CREATE_FROM_MODEL]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>MODEL_URN&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[urn:adcb:com.emc.xcp.artifact.folder:Artifacts/Folders/case_.folder]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>MODEL_LABEL&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[Case]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>MODEL_TYPE_NAME&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[adcb_case_]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>DESTINATION&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[DESTINATION_FOLDER_PATH]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;    &lt;/Configuration>&#xA;    &lt;InputMsgCopyRules>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>105&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/case_name&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/{case_}case_name&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>121&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/country&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/{case_}country&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>137&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/phone_no&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/{case_}mobile_number&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>153&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/State&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/{case_}new_string&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>169&lt;/XPosition>&#xA;                &lt;YPosition>169&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/Purpose&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/{case_}new_string_1&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>25&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/case_name&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/name&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>41&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Parameters/adcb/bankpath&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/dest_folder_path[0]&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Concat&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>185&lt;/XPosition>&#xA;                &lt;YPosition>217&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/case_def&lt;/Value>&#xA;                &lt;Value>/Process Data/Variables/case_day&lt;/Value>&#xA;                &lt;Value>/Process Data/Variables/case_month&lt;/Value>&#xA;                &lt;Value>/Process Data/Variables/case_year&lt;/Value>&#xA;                &lt;Value>/Process Data/Variables/case_def_id&lt;/Value>&#xA;                &lt;Value>/Process Data/Variables/case_count&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/create/{case_}case_id&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;    &lt;/InputMsgCopyRules>&#xA;    &lt;OutputMsgCopyRules/>&#xA;    &lt;CorrelationMsgCopyRules/>&#xA;    &lt;UserDefinedInputTreeNodes/>&#xA;    &lt;UserDefinedOutputTreeNodes/>&#xA;    &lt;InputSchemaConfigs/>&#xA;    &lt;OutputSchemaConfigs/>&#xA;&lt;/ServiceDefinition>&#xA;">
       <performer>
         <dataResolutionConfig xsi:type="nsCommon:PredefinedResolutionConfig" valueArity="Single"/>
       </performer>
       <methodFailure/>
     </performerConfig>
-    <variableCharacteristics key="//@processData/@variables[name='Purpose']">
+    <variableCharacteristics key="//@processData/@variables[name='phone_no']">
       <value visible="true"/>
     </variableCharacteristics>
-    <variableCharacteristics key="//@processData/@variables[name='State']">
+    <variableCharacteristics key="//@processData/@variables[name='country']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_def_id']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_dmy']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_year']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_day']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_count']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_month']">
       <value visible="true"/>
     </variableCharacteristics>
     <variableCharacteristics key="//@processData/@variables[name='case_name']">
@@ -28,20 +46,23 @@
     <variableCharacteristics key="//@processData/@variables[name='case_no']">
       <value visible="true"/>
     </variableCharacteristics>
-    <variableCharacteristics key="//@processData/@variables[name='case_count']">
+    <variableCharacteristics key="//@processData/@variables[name='State']">
       <value visible="true"/>
     </variableCharacteristics>
-    <variableCharacteristics key="//@processData/@variables[name='phone_no']">
+    <variableCharacteristics key="//@processData/@variables[name='case_def']">
       <value visible="true"/>
     </variableCharacteristics>
-    <variableCharacteristics key="//@processData/@variables[name='country']">
+    <variableCharacteristics key="//@processData/@variables[name='Purpose']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_id']">
       <value visible="true"/>
     </variableCharacteristics>
     <eventConfigs label="Activity Completed">
       <triggerType type="PROCESS_ACTIVITY_COMPLETED"/>
     </eventConfigs>
   </activities>
-  <activities name="Read from Repository" activityType="BEGIN" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L1']" destFlows="//@flows[name='L2']">
+  <activities name="Get Case Count from Repository" activityType="BEGIN" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L1']" destFlows="//@flows[name='L2']">
     <trigger numOfInputFlows="1" expectedEventName="" canRunMultipleTimes="true"/>
     <transition xsi:type="nsActivity:AllFlowsTransition"/>
     <uiinfo imageScale="100" image="activity_autoext_48x32_proc.png">
@@ -57,10 +78,28 @@
       </performer>
       <methodFailure/>
     </performerConfig>
-    <variableCharacteristics key="//@processData/@variables[name='Purpose']">
+    <variableCharacteristics key="//@processData/@variables[name='phone_no']">
       <value visible="true"/>
     </variableCharacteristics>
-    <variableCharacteristics key="//@processData/@variables[name='State']">
+    <variableCharacteristics key="//@processData/@variables[name='country']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_def_id']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_dmy']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_year']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_day']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_count']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_month']">
       <value visible="true"/>
     </variableCharacteristics>
     <variableCharacteristics key="//@processData/@variables[name='case_name']">
@@ -69,13 +108,16 @@
     <variableCharacteristics key="//@processData/@variables[name='case_no']">
       <value visible="true"/>
     </variableCharacteristics>
-    <variableCharacteristics key="//@processData/@variables[name='case_count']">
+    <variableCharacteristics key="//@processData/@variables[name='State']">
       <value visible="true"/>
     </variableCharacteristics>
-    <variableCharacteristics key="//@processData/@variables[name='phone_no']">
+    <variableCharacteristics key="//@processData/@variables[name='case_def']">
       <value visible="true"/>
     </variableCharacteristics>
-    <variableCharacteristics key="//@processData/@variables[name='country']">
+    <variableCharacteristics key="//@processData/@variables[name='Purpose']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_id']">
       <value visible="true"/>
     </variableCharacteristics>
     <eventConfigs label="Activity Completed">
@@ -93,10 +135,28 @@
       </textStyle>
     </uiinfo>
     <performerConfig xsi:type="nsActivity:DefaultInitiatePerformerConfiguration"/>
-    <variableCharacteristics key="//@processData/@variables[name='Purpose']">
+    <variableCharacteristics key="//@processData/@variables[name='phone_no']">
       <value visible="true"/>
     </variableCharacteristics>
-    <variableCharacteristics key="//@processData/@variables[name='State']">
+    <variableCharacteristics key="//@processData/@variables[name='country']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_def_id']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_dmy']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_year']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_day']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_count']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_month']">
       <value visible="true"/>
     </variableCharacteristics>
     <variableCharacteristics key="//@processData/@variables[name='case_name']">
@@ -105,13 +165,16 @@
     <variableCharacteristics key="//@processData/@variables[name='case_no']">
       <value visible="true"/>
     </variableCharacteristics>
-    <variableCharacteristics key="//@processData/@variables[name='case_count']">
+    <variableCharacteristics key="//@processData/@variables[name='State']">
       <value visible="true"/>
     </variableCharacteristics>
-    <variableCharacteristics key="//@processData/@variables[name='phone_no']">
+    <variableCharacteristics key="//@processData/@variables[name='case_def']">
       <value visible="true"/>
     </variableCharacteristics>
-    <variableCharacteristics key="//@processData/@variables[name='country']">
+    <variableCharacteristics key="//@processData/@variables[name='Purpose']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_id']">
       <value visible="true"/>
     </variableCharacteristics>
     <taskContract categoryId="com.emc.ide.artifact.process.activity.taskcontract" name="create_case_initiate" label="Initiate">
@@ -150,11 +213,32 @@
           <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_count" label="case_count">
             <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
           </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_day" label="case_day">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_def" label="case_def">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_def_id" label="case_def_id">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_dmy" label="case_dmy">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_id" label="case_id">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_month" label="case_month">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
           <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_name" label="case_name">
             <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
           </elements>
           <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_no" label="case_no">
             <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_year" label="case_year">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
           </elements>
           <elements xsi:type="nsDataserviceContract:AttributeElement" name="country" label="country">
             <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
@@ -171,41 +255,62 @@
       </dataServiceContracts>
     </taskContract>
   </activities>
-  <activities name="Set Process Data" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L2']" destFlows="//@flows[name='L3']">
+  <activities name="Case Concat" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L2']" destFlows="//@flows[name='L3']">
     <trigger expectedEventName="" canRunMultipleTimes="true"/>
     <transition xsi:type="nsActivity:AllFlowsTransition"/>
     <uiinfo imageScale="100" image="activity_autoint_48x32_proc.png">
-      <topLeftPoint x="251" y="175"/>
+      <topLeftPoint x="278" y="166"/>
       <textStyle fontName="Dialog" fontSize="10">
         <bgColor/>
         <fgColor/>
       </textStyle>
     </uiinfo>
-    <performerConfig xsi:type="nsActivity:SvcDefBasedOutboundPerformerConfiguration" timeout="60" serviceDefinition="&lt;?xml version=&quot;1.0&quot;?>&#xA;&lt;ServiceDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;activity.xsd&quot;>&#xA;    &lt;Name>Process Data Mapping&lt;/Name>&#xA;    &lt;RuntimeModuleName>PackageCopyRuntimeModule&lt;/RuntimeModuleName>&#xA;    &lt;DesignModuleName>PackageCopyDesignModule&lt;/DesignModuleName>&#xA;    &lt;Configuration/>&#xA;    &lt;InputMsgCopyRules>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Add&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>121&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/case_count&lt;/Value>&#xA;                &lt;Value>&quot;1&quot;&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Process Data/Variables/case_no&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;    &lt;/InputMsgCopyRules>&#xA;    &lt;OutputMsgCopyRules/>&#xA;    &lt;CorrelationMsgCopyRules/>&#xA;    &lt;UserDefinedInputTreeNodes/>&#xA;    &lt;UserDefinedOutputTreeNodes/>&#xA;    &lt;InputSchemaConfigs/>&#xA;    &lt;OutputSchemaConfigs/>&#xA;&lt;/ServiceDefinition>&#xA;">
+    <performerConfig xsi:type="nsActivity:SvcDefBasedOutboundPerformerConfiguration" timeout="60" serviceDefinition="&lt;?xml version=&quot;1.0&quot;?>&#xA;&lt;ServiceDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;activity.xsd&quot;>&#xA;    &lt;Name>Process Data Mapping&lt;/Name>&#xA;    &lt;RuntimeModuleName>PackageCopyRuntimeModule&lt;/RuntimeModuleName>&#xA;    &lt;DesignModuleName>PackageCopyDesignModule&lt;/DesignModuleName>&#xA;    &lt;Configuration/>&#xA;    &lt;InputMsgCopyRules>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Get Day&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>174&lt;/XPosition>&#xA;                &lt;YPosition>104&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Execution Data/workflow/start_date&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Process Data/Variables/case_day&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Get Month&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>174&lt;/XPosition>&#xA;                &lt;YPosition>184&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Execution Data/workflow/start_date&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Process Data/Variables/case_month&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Get Year&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>174&lt;/XPosition>&#xA;                &lt;YPosition>232&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Execution Data/workflow/start_date&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Process Data/Variables/case_year&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Add&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>217&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/case_count&lt;/Value>&#xA;                &lt;Value>&quot;1&quot;&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Process Data/Variables/case_no&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;    &lt;/InputMsgCopyRules>&#xA;    &lt;OutputMsgCopyRules/>&#xA;    &lt;CorrelationMsgCopyRules/>&#xA;    &lt;UserDefinedInputTreeNodes/>&#xA;    &lt;UserDefinedOutputTreeNodes/>&#xA;    &lt;InputSchemaConfigs/>&#xA;    &lt;OutputSchemaConfigs/>&#xA;&lt;/ServiceDefinition>&#xA;">
       <performer>
         <dataResolutionConfig xsi:type="nsCommon:PredefinedResolutionConfig" valueArity="Single"/>
       </performer>
       <methodFailure/>
     </performerConfig>
-    <variableCharacteristics key="//@processData/@variables[name='case_no']">
-      <value visible="true"/>
-    </variableCharacteristics>
-    <variableCharacteristics key="//@processData/@variables[name='case_name']">
-      <value visible="true"/>
-    </variableCharacteristics>
     <variableCharacteristics key="//@processData/@variables[name='phone_no']">
       <value visible="true"/>
     </variableCharacteristics>
     <variableCharacteristics key="//@processData/@variables[name='country']">
       <value visible="true"/>
     </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_def_id']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_dmy']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_year']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_day']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_count']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_month']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_no']">
+      <value visible="true"/>
+    </variableCharacteristics>
     <variableCharacteristics key="//@processData/@variables[name='State']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_def']">
       <value visible="true"/>
     </variableCharacteristics>
     <variableCharacteristics key="//@processData/@variables[name='Purpose']">
       <value visible="true"/>
     </variableCharacteristics>
-    <variableCharacteristics key="//@processData/@variables[name='case_count']">
+    <variableCharacteristics key="//@processData/@variables[name='case_id']">
       <value visible="true"/>
     </variableCharacteristics>
     <eventConfigs label="Activity Completed">
@@ -216,19 +321,19 @@
     <variables xsi:type="nsProcess:SimpleVariable" input="true">
       <attribute name="case_no" label="case_no">
         <type xsi:type="nsAttributeDatatypes:IntegerType"/>
-        <defaultValue exprStr=""/>
+        <defaultValue/>
       </attribute>
     </variables>
     <variables xsi:type="nsProcess:SimpleVariable" input="true">
       <attribute name="case_name" label="case_name">
         <type xsi:type="nsAttributeDatatypes:StringType"/>
-        <defaultValue exprStr=""/>
+        <defaultValue/>
       </attribute>
     </variables>
     <variables xsi:type="nsProcess:SimpleVariable" input="true">
       <attribute name="phone_no" label="phone_no">
         <type xsi:type="nsAttributeDatatypes:StringType"/>
-        <defaultValue exprStr=""/>
+        <defaultValue/>
       </attribute>
     </variables>
     <variables xsi:type="nsProcess:SimpleVariable" input="true">
@@ -252,23 +357,65 @@
     <variables xsi:type="nsProcess:SimpleVariable">
       <attribute name="case_count" label="case_count">
         <type xsi:type="nsAttributeDatatypes:IntegerType"/>
+        <defaultValue/>
+      </attribute>
+    </variables>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="case_def" label="case_def">
+        <type xsi:type="nsAttributeDatatypes:StringType"/>
+        <defaultValue exprStr="CASE"/>
+      </attribute>
+    </variables>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="case_month" label="case_month">
+        <type xsi:type="nsAttributeDatatypes:StringType"/>
+        <defaultValue/>
+      </attribute>
+    </variables>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="case_year" label="case_year">
+        <type xsi:type="nsAttributeDatatypes:StringType"/>
+        <defaultValue/>
+      </attribute>
+    </variables>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="case_dmy" label="case_dmy">
+        <type xsi:type="nsAttributeDatatypes:StringType"/>
+        <defaultValue/>
+      </attribute>
+    </variables>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="case_def_id" label="case_def_id">
+        <type xsi:type="nsAttributeDatatypes:StringType"/>
+        <defaultValue exprStr="00"/>
+      </attribute>
+    </variables>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="case_id" label="case_id">
+        <type xsi:type="nsAttributeDatatypes:StringType"/>
+        <defaultValue/>
+      </attribute>
+    </variables>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="case_day" label="case_day">
+        <type xsi:type="nsAttributeDatatypes:StringType"/>
         <defaultValue exprStr=""/>
       </attribute>
     </variables>
   </processData>
-  <flows name="L1" from="//@activities[name='Initiate']" to="//@activities[name='Read%20from%20Repository']">
-    <uiinfo labelText="" destActivityLocIndex="4">
+  <flows name="L1" from="//@activities[name='Initiate']" to="//@activities[name='Get%20Case%20Count%20from%20Repository']">
+    <uiinfo destActivityLocIndex="4">
       <line/>
       <labelStyle fontName="Helvetica" fontSize="10"/>
     </uiinfo>
   </flows>
-  <flows name="L2" from="//@activities[name='Read%20from%20Repository']" to="//@activities[name='Set%20Process%20Data']">
-    <uiinfo labelText="" destActivityLocIndex="4">
+  <flows name="L2" from="//@activities[name='Get%20Case%20Count%20from%20Repository']" to="//@activities[name='Case%20Concat']">
+    <uiinfo labelText="" destActivityLocIndex="1">
       <line/>
       <labelStyle fontName="Helvetica" fontSize="10"/>
     </uiinfo>
   </flows>
-  <flows name="L3" from="//@activities[name='Set%20Process%20Data']" to="//@activities[name='Create']">
+  <flows name="L3" from="//@activities[name='Case%20Concat']" to="//@activities[name='Create%20Case']">
     <uiinfo labelText="" destActivityLocIndex="4">
       <line/>
       <labelStyle fontName="Helvetica" fontSize="10"/>
@@ -284,7 +431,7 @@
       </textStyle>
     </startActivityUIInfo>
     <endActivityUIInfo imageScale="100" image="palette/event_end_32_proc.png">
-      <topLeftPoint x="448" y="168"/>
+      <topLeftPoint x="541" y="171"/>
       <textStyle fontName="Dialog" fontSize="10">
         <bgColor/>
         <fgColor/>

@@ -44,35 +44,18 @@
           <properties name="cls" value=""/>
           <properties name="xcpId" value="navigation_menu"/>
           <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_nav_button">
-            <properties name="text" value="ADCB Case"/>
+            <properties name="text" value="ADCB Cases"/>
             <properties name="iconCls" value=""/>
             <properties name="hidden" value=""/>
             <properties name="disabled" value=""/>
             <properties name="cls" value=""/>
             <properties name="tooltip" value=""/>
             <properties name="navType" value="page_static"/>
-            <properties xsi:type="uitemplate:DataboundProperty" name="navPageId" value="adcb_adcb_cases">
-              <data selectionName="adcb_cases" selectionLabel="ADCB Cases">
-                <dataRef href="urn:adcb:com.emc.xcp.artifact.page:Artifacts/Pages/adcb_cases.page#/"/>
+            <properties xsi:type="uitemplate:DataboundProperty" name="navPageId" value="adcb_adcb_case">
+              <data selectionName="adcb_case" selectionLabel="ADCB Case">
+                <dataRef href="urn:adcb:com.emc.xcp.artifact.page:Artifacts/Pages/adcb_case.page#/"/>
               </data>
             </properties>
-            <properties name="navPageIdExpr" value=""/>
-            <properties name="navUrlExpr" value=""/>
-            <properties name="navObjectId" value="''"/>
-            <properties name="navToNewTab" value="" type="BOOLEAN"/>
-            <properties name="navNewTabTarget" value=""/>
-            <properties name="navUrlParams" value=""/>
-            <properties name="xcpId" value="nav_button"/>
-          </children>
-          <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_nav_button">
-            <properties name="text" value="Menu Item 2"/>
-            <properties name="iconCls" value=""/>
-            <properties name="hidden" value=""/>
-            <properties name="disabled" value=""/>
-            <properties name="cls" value=""/>
-            <properties name="tooltip" value=""/>
-            <properties name="navType" value="none"/>
-            <properties xsi:type="uitemplate:DataboundProperty" name="navPageId" value=""/>
             <properties name="navPageIdExpr" value=""/>
             <properties name="navUrlExpr" value=""/>
             <properties name="navObjectId" value=""/>

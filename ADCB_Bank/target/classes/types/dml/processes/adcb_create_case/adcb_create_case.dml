@@ -14,15 +14,15 @@
     <property label="supervisor_address" length="64" name="supervisor_address" type="string"/>
   </properties>
   <tasks>
-    <task href="${contextPath}types/processes/adcb_create_case/tasks/adcb_create" rel="http://identifiers.emc.com/linkrel/task"/>
-    <task href="${contextPath}types/processes/adcb_create_case/tasks/adcb_read_from_repositor" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_create_case/tasks/adcb_create_case" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_create_case/tasks/adcb_get_case_count_from" rel="http://identifiers.emc.com/linkrel/task"/>
     <task href="${contextPath}types/processes/adcb_create_case/tasks/adcb_initiate" rel="http://identifiers.emc.com/linkrel/task"/>
-    <task href="${contextPath}types/processes/adcb_create_case/tasks/adcb_set_process_data" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_create_case/tasks/adcb_case_concat" rel="http://identifiers.emc.com/linkrel/task"/>
   </tasks>
   <flows>
-    <flow flow-type="regular" source="${contextPath}types/processes/adcb_create_case/tasks/adcb_initiate" target="${contextPath}types/processes/adcb_create_case/tasks/adcb_read_from_repositor"/>
-    <flow flow-type="regular" source="${contextPath}types/processes/adcb_create_case/tasks/adcb_read_from_repositor" target="${contextPath}types/processes/adcb_create_case/tasks/adcb_set_process_data"/>
-    <flow flow-type="regular" source="${contextPath}types/processes/adcb_create_case/tasks/adcb_set_process_data" target="${contextPath}types/processes/adcb_create_case/tasks/adcb_create"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_create_case/tasks/adcb_initiate" target="${contextPath}types/processes/adcb_create_case/tasks/adcb_get_case_count_from"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_create_case/tasks/adcb_get_case_count_from" target="${contextPath}types/processes/adcb_create_case/tasks/adcb_case_concat"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_create_case/tasks/adcb_case_concat" target="${contextPath}types/processes/adcb_create_case/tasks/adcb_create_case"/>
   </flows>
   <data>
     <variables>
@@ -33,6 +33,13 @@
       <variable default-value="" input="true" label="State" mandatory="false" name="State" output="false" repeating="false" type="string"/>
       <variable default-value="" input="true" label="Purpose" mandatory="false" name="Purpose" output="false" repeating="false" type="string"/>
       <variable default-value="" input="false" label="case_count" mandatory="false" name="case_count" output="false" repeating="false" type="integer"/>
+      <variable default-value="CASE" input="false" label="case_def" mandatory="false" name="case_def" output="false" repeating="false" type="string"/>
+      <variable default-value="" input="false" label="case_month" mandatory="false" name="case_month" output="false" repeating="false" type="string"/>
+      <variable default-value="" input="false" label="case_year" mandatory="false" name="case_year" output="false" repeating="false" type="string"/>
+      <variable default-value="" input="false" label="case_dmy" mandatory="false" name="case_dmy" output="false" repeating="false" type="string"/>
+      <variable default-value="00" input="false" label="case_def_id" mandatory="false" name="case_def_id" output="false" repeating="false" type="string"/>
+      <variable default-value="" input="false" label="case_id" mandatory="false" name="case_id" output="false" repeating="false" type="string"/>
+      <variable default-value="" input="false" label="case_day" mandatory="false" name="case_day" output="false" repeating="false" type="string"/>
     </variables>
   </data>
   <links>

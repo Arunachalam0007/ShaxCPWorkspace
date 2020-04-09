@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ApplicationConfiguration application-name="ADCB_Bank" namespace="adcb" version="1.0.0" description="">
+    <configuration type="RepositoryEndpoint" name="doc_repo" namespace="adcb" id="com.emc.xcp.artifact.endpoint">
+        <property name="description"></property>
+        <property name="docbrokerHostName">xCP</property>
+        <property name="docbrokerPort">1489</property>
+        <property name="repositoryName">DocRepo</property>
+        <property name="username">dmadmin</property>
+        <property name="password">DM_ENCR_TEXT_V2=AAAAEKT+BtD+aLQnN8lmDYRBJDWhj9PZ1neNu1sVvaqlfAloDWaVwuTT3BuLBTrQW3/ZaP6qBJ9puxB6qHYNrfNXvXrFlOZB+a3BVnwWRd6Osset</property>
+        <property name="domain"></property>
+    </configuration>
+    <configuration type="STRING" name="bankpath" namespace="adcb" id="com.emc.xcp.artifact.appparameter">
+        <property name="value">/ShaADCB</property>
+    </configuration>
+</ApplicationConfiguration>

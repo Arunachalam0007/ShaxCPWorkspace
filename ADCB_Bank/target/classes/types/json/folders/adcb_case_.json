@@ -32,8 +32,16 @@
   }, {
     "name" : "case_id",
     "label" : "Case ID",
-    "type" : "integer"
+    "type" : "string",
+    "length" : 64
   } ],
+  "relationships" : {
+    "target" : [ {
+      "rel" : "http://identifiers.emc.com/linkrel/target",
+      "name" : "adcb_case_workers_case",
+      "type" : "${contextPath}types/relationships/adcb_case_workers_case"
+    } ]
+  },
   "links" : [ {
     "rel" : "self",
     "href" : "${contextPath}types/folders/adcb_case_"
@@ -55,6 +63,8 @@
     "rel" : "http://identifiers.emc.com/linkrel/comments"
   }, {
     "rel" : "http://identifiers.emc.com/linkrel/markread"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/relations"
   }, {
     "rel" : "http://identifiers.emc.com/linkrel/objects"
   } ]

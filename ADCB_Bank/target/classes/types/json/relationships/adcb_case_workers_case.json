@@ -1,0 +1,63 @@
+{
+  "name" : "relationship-type",
+  "type" : "adcb_case_workers_case",
+  "label" : "Case Workers-Case",
+  "properties" : [ {
+    "name" : "source",
+    "label" : "source",
+    "length" : 16,
+    "type" : "string",
+    "readOnly" : true,
+    "description" : "This is a relationship source"
+  }, {
+    "name" : "target",
+    "label" : "target",
+    "length" : 16,
+    "type" : "string",
+    "readOnly" : true,
+    "description" : "This is a relationship target"
+  }, {
+    "name" : "r_object_id",
+    "label" : "Object ID",
+    "length" : 16,
+    "type" : "string",
+    "readOnly" : true,
+    "description" : "This is system generated unique id for the object. This is set by the system"
+  } ],
+  "source" : {
+    "name" : "adcb_case_workers",
+    "role-label" : "Case Workers",
+    "role-name" : "case_workers",
+    "minOccurs" : "1",
+    "maxOccurs" : "unbounded",
+    "href" : "${contextPath}types/business-objects/adcb_case_workers"
+  },
+  "target" : {
+    "name" : "adcb_case_",
+    "role-label" : "Case",
+    "role-name" : "case",
+    "minOccurs" : "1",
+    "maxOccurs" : "1",
+    "href" : "${contextPath}types/folders/adcb_case_"
+  },
+  "links" : [ {
+    "rel" : "self",
+    "href" : "${contextPath}types/relationships/adcb_case_workers_case"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/instances",
+    "href" : "${contextPath}relationships/adcb_case_workers_case"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/defaults",
+    "href" : "${contextPath}types/relationships/adcb_case_workers_case/defaults"
+  }, {
+    "rel" : "type"
+  }, {
+    "rel" : "edit"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/delete"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/source"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/target"
+  } ]
+}

@@ -1,0 +1,47 @@
+{
+  "name" : "content-type",
+  "type" : "adcb_supporting_docs",
+  "label" : "Supporting Docs",
+  "commentable" : true,
+  "parent" : "${contextPath}types/contents/dm_document",
+  "links" : [ {
+    "rel" : "self",
+    "href" : "${contextPath}types/contents/adcb_supporting_docs"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/instances",
+    "href" : "${contextPath}contents/adcb_supporting_docs"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/defaults",
+    "href" : "${contextPath}types/contents/adcb_supporting_docs/defaults"
+  }, {
+    "rel" : "type"
+  }, {
+    "rel" : "edit"
+  }, {
+    "rel" : "canonical"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/delete"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/comments"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/markread"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/relations"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/checkin-current-version"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/checkin-next-minor"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/checkin-next-major"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/checkin-branch-version"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/download-media"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/checkout"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/cancel-checkout"
+  }, {
+    "rel" : "version-history"
+  } ]
+}

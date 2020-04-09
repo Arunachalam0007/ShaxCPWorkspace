@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<content-type commentable="true" label="NoteSheets" parent="${contextPath}types/contents/dm_document" type="adcb_notesheets" xmlns="http://identifiers.emc.com/vocab/xcp">
+  <links>
+    <link href="${contextPath}types/contents/adcb_notesheets" rel="self"/>
+    <link href="${contextPath}contents/adcb_notesheets" rel="http://identifiers.emc.com/linkrel/instances"/>
+    <link href="${contextPath}types/contents/adcb_notesheets/defaults" rel="http://identifiers.emc.com/linkrel/defaults"/>
+    <link rel="type"/>
+    <link rel="edit"/>
+    <link rel="canonical"/>
+    <link rel="http://identifiers.emc.com/linkrel/delete"/>
+    <link rel="http://identifiers.emc.com/linkrel/comments"/>
+    <link rel="http://identifiers.emc.com/linkrel/markread"/>
+    <link rel="http://identifiers.emc.com/linkrel/relations"/>
+    <link rel="http://identifiers.emc.com/linkrel/checkin-current-version"/>
+    <link rel="http://identifiers.emc.com/linkrel/checkin-next-minor"/>
+    <link rel="http://identifiers.emc.com/linkrel/checkin-next-major"/>
+    <link rel="http://identifiers.emc.com/linkrel/checkin-branch-version"/>
+    <link rel="http://identifiers.emc.com/linkrel/download-media"/>
+    <link rel="http://identifiers.emc.com/linkrel/checkout"/>
+    <link rel="http://identifiers.emc.com/linkrel/cancel-checkout"/>
+    <link rel="version-history"/>
+  </links>
+</content-type>

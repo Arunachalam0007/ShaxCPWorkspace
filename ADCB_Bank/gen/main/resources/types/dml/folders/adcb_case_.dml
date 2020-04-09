@@ -6,8 +6,11 @@
     <property label="Mobile Number" length="64" name="mobile_number" type="string"/>
     <property label="State" length="64" name="new_string" type="string"/>
     <property label="Comments" length="64" name="new_string_1" type="string"/>
-    <property label="Case ID" name="case_id" type="integer"/>
+    <property label="Case ID" length="64" name="case_id" type="string"/>
   </properties>
+  <relationships>
+    <target name="adcb_case_workers_case" rel="http://identifiers.emc.com/linkrel/target" type="${contextPath}types/relationships/adcb_case_workers_case"/>
+  </relationships>
   <links>
     <link href="${contextPath}types/folders/adcb_case_" rel="self"/>
     <link href="${contextPath}folders/adcb_case_" rel="http://identifiers.emc.com/linkrel/instances"/>
@@ -18,6 +21,7 @@
     <link rel="http://identifiers.emc.com/linkrel/delete"/>
     <link rel="http://identifiers.emc.com/linkrel/comments"/>
     <link rel="http://identifiers.emc.com/linkrel/markread"/>
+    <link rel="http://identifiers.emc.com/linkrel/relations"/>
     <link rel="http://identifiers.emc.com/linkrel/objects"/>
   </links>
 </folder-type>
