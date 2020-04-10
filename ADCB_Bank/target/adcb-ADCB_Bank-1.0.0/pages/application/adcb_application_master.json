@@ -50,10 +50,11 @@
           "navType" : "page_static",
           "navPageId" : "adcb_adcb_case"
         }, {
-          "xcpId" : "nav_button2",
+          "xcpId" : "nav_button",
           "xtype" : "xcp_nav_button",
-          "text" : "${_UI_Page_adcb_application_master_nav_button2_text}",
-          "navType" : "none"
+          "text" : "${_UI_Page_adcb_application_master_nav_button_text}",
+          "navType" : "page_static",
+          "navPageId" : "adcb_case_inbox"
         }, {
           "xcpId" : "user_button",
           "xtype" : "xcp_user_button"

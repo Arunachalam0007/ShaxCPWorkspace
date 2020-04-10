@@ -58,7 +58,7 @@
     "href" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_initiate"
   }, {
     "rel" : "http://identifiers.emc.com/linkrel/task",
-    "href" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_manual_task"
+    "href" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_task_worker"
   }, {
     "rel" : "http://identifiers.emc.com/linkrel/task",
     "href" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_decision_split"
@@ -67,26 +67,26 @@
     "href" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_join"
   }, {
     "rel" : "http://identifiers.emc.com/linkrel/task",
-    "href" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_process_data"
+    "href" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_task_data"
   }, {
     "rel" : "http://identifiers.emc.com/linkrel/task",
-    "href" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_process_data_1"
+    "href" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_task_approved"
   } ],
   "flows" : [ {
-    "source" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_manual_task",
+    "source" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_task_worker",
     "target" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_decision_split",
     "flow-type" : "regular"
   }, {
     "source" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_initiate",
-    "target" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_process_data",
+    "target" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_task_data",
     "flow-type" : "regular"
   }, {
-    "source" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_process_data",
+    "source" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_task_data",
     "target" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_join",
     "flow-type" : "regular"
   }, {
     "source" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_join",
-    "target" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_manual_task",
+    "target" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_task_worker",
     "flow-type" : "regular"
   }, {
     "source" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_decision_split",
@@ -94,7 +94,7 @@
     "flow-type" : "regular"
   }, {
     "source" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_decision_split",
-    "target" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_process_data_1",
+    "target" : "${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_task_approved",
     "flow-type" : "regular"
   } ],
   "data" : {
@@ -129,13 +129,6 @@
     }, {
       "name" : "case_subject",
       "label" : "case_subject",
-      "type" : "string",
-      "repeating" : false,
-      "default-value" : "",
-      "mandatory" : false
-    }, {
-      "name" : "case_title",
-      "label" : "case_title",
       "type" : "string",
       "repeating" : false,
       "default-value" : "",

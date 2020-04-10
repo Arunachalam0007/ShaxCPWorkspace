@@ -10,25 +10,25 @@
 [INFO] Deleting C:\Sha\ADCB_Bank\target
 [INFO] 
 [INFO] --- xcp-validate:1.0.12:run (xcp-validate) @ ADCB_Bank ---
-[INFO] Finished validating Artifact data models in project 'ADCB_Bank' in....416ms
+[INFO] Finished validating Artifact data models in project 'ADCB_Bank' in....840ms
 [INFO] 
 [INFO] --- build-helper-maven-plugin:1.7:add-source (add-source) @ ADCB_Bank ---
 [INFO] Source directory: C:\Sha\ADCB_Bank\gen\main\java added.
 [INFO] 
 [INFO] --- xcp-generate-sources:1.0.10:run (xcp-generate-sources) @ ADCB_Bank ---
 [INFO] Generating DML artifacts for Application Project, type=IXCPApplicationProject
-[INFO] Finished executing project generators in....13ms
+[INFO] Finished executing project generators in....62ms
 [INFO] Ignoring json for page : appmaster_defpage
-[INFO] Finished generating models.js in time  348 ms
-[INFO] Finished executing artifact generators in....2799ms
-[INFO] Finished generating code for project 'ADCB_Bank' in 2814ms
+[INFO] Finished generating models.js in time  440 ms
+[INFO] Finished executing artifact generators in....3687ms
+[INFO] Finished generating code for project 'ADCB_Bank' in 3751ms
 [INFO] 
 [INFO] --- build-helper-maven-plugin:1.7:add-resource (add-resource) @ ADCB_Bank ---
 [INFO] 
 [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ADCB_Bank ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
 [INFO] Copying 9 resources
-[INFO] Copying 27 resources
+[INFO] Copying 29 resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ ADCB_Bank ---
 [INFO] Nothing to compile - all classes are up to date
@@ -45,12 +45,12 @@
 [INFO] 
 [INFO] --- xcp-dar:1.0.12:run (xcp-dar) @ ADCB_Bank ---
 [INFO] 
-[INFO] Started packaging local library dependencies for application project '[XCPProject: ADCB_Bank]'
-[INFO] Packaged local library dependencies for project 'ADCB_Bank' in 5ms
 [INFO] 
 [INFO] Started packaging artifact bundle jar for application project '[XCPProject: ADCB_Bank]'
-[INFO] Finished packaging artifact bundle jar for application project '[XCPProject: ADCB_Bank]' in 372 ms
+[INFO] Finished packaging artifact bundle jar for application project '[XCPProject: ADCB_Bank]' in 324 ms
 [INFO] 
+[INFO] Started packaging local library dependencies for application project '[XCPProject: ADCB_Bank]'
+[INFO] Packaged local library dependencies for project 'ADCB_Bank' in 3ms
 [INFO] 
 [INFO] --- maven-war-plugin:2.3:war (default-war) @ ADCB_Bank ---
 [INFO] Packaging webapp
@@ -60,7 +60,7 @@
 [INFO] Copying webapp webResources [C:\Sha\ADCB_Bank\lib] to [C:\Sha\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0]
 [INFO] Copying webapp webResources [C:\Sha\ADCB_Bank\gen/main/webapp] to [C:\Sha\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0]
 [INFO] Copying webapp resources [C:\Sha\ADCB_Bank\src\main\webapp]
-[INFO] Webapp assembled in [2141 msecs]
+[INFO] Webapp assembled in [1688 msecs]
 [INFO] Building war: C:\Sha\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0.war
 [INFO] 
 [INFO] --- maven-install-plugin:2.4:install (default-install) @ ADCB_Bank ---
@@ -76,21 +76,14 @@
 [INFO] Setting xda server port to 7000
 [INFO] Setting xda server username to admin
 [INFO] Setting xda server password to a non-null value
-[INFO] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@534fcd17: startup date [Thu Apr 09 18:13:50 UTC 2020]; root of context hierarchy
-[INFO] Loading XML bean definitions from URL [bundleresource://239.fwk1492358500/com/documentum/xms/api/client/xms-client-api-context.xml]
-[INFO] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-[INFO] Creating JAXBContext with classes to be bound [class com.emc.xms.resources.dto.Modules,class com.documentum.xms.api.ExecutionCommandInfo,class com.emc.xms.execution.ExecutionExceptionDTO,class com.emc.xms.resources.core.Resource,class com.emc.xms.resources.core.ObjectReference,class com.emc.xms.resources.catalog.SystemAccount,class com.emc.xms.resources.catalog.SystemAccountType,class com.emc.xms.resources.catalog.ApplicationCategory,class com.emc.xms.resources.catalog.Dependency,class com.emc.xms.resources.catalog.Endpoint,class com.emc.xms.resources.catalog.EndpointType,class com.emc.xms.resources.catalog.ModuleFamily,class com.emc.xms.resources.catalog.ModuleTemplate,class com.emc.xms.resources.catalog.Service,class com.emc.xms.resources.catalog.ServiceComponentProvider,class com.emc.xms.resources.catalog.ServiceComponentType,class com.emc.xms.resources.catalog.ServiceProvider,class com.emc.xms.resources.catalog.ServiceType,class com.emc.xms.resources.catalog.VMCluster]
-[INFO] Initializing xCP Deployment Agent application
-[INFO] Initializing xCP Deployment Agent application
 [INFO] Invoked xda client to deploy app
-[WARNING] Failed to clear App Server Cache. Please restart the app server manually : http://xCP:7070/ADCB_Bank/servlet/InvalidateCache
 [INFO] Command execution process has finished.
 [INFO] xda client finished running app deployment
 [INFO] Project 'ADCB_Bank' deployed
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 01:37 min
-[INFO] Finished at: 2020-04-09T18:15:04+00:00
-[INFO] Final Memory: 25M/325M
+[INFO] Total time: 01:14 min
+[INFO] Finished at: 2020-04-10T12:22:49+00:00
+[INFO] Final Memory: 25M/329M
 [INFO] ------------------------------------------------------------------------

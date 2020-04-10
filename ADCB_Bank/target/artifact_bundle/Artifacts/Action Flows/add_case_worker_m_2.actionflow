@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<actionflow:ActionFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionflow="http://www.emc.com/xcp2/2010/actionflow" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" urn="urn:adcb:com.emc.xcp.artifact.actionFlow:Artifacts/Action Flows/add_case_worker_m_2.actionflow" categoryId="com.emc.xcp.artifact.actionFlow" name="add_case_worker_m_2" label="Repeat task Manual task (Add Case Worker)" initialState="//@states[id='viewState_usergroup_selection_multi']">
+<actionflow:ActionFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionflow="http://www.emc.com/xcp2/2010/actionflow" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" urn="urn:adcb:com.emc.xcp.artifact.actionFlow:Artifacts/Action Flows/add_case_worker_m_2.actionflow" categoryId="com.emc.xcp.artifact.actionFlow" name="add_case_worker_m_2" label="Repeat task Task Worker (Add Case Worker)" initialState="//@states[id='viewState_usergroup_selection_multi']">
   <inputs xsi:type="nsDataserviceContract:StructureElement" name="processVariables" label="Variables">
     <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_id" label="case_id">
       <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
     </elements>
     <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_subject" label="case_subject">
-      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
-    </elements>
-    <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_title" label="case_title">
       <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
     </elements>
     <elements xsi:type="nsDataserviceContract:AttributeElement" name="is_approve" label="is_approve">
@@ -27,7 +24,7 @@
     <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
   </inputs>
   <primaryElement>
-    <dataModel href="urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/add_case_worker.process#//@activities[name='Manual%20task']/@taskContract"/>
+    <dataModel href="urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/add_case_worker.process#//@activities[name='Task%20Worker']/@taskContract"/>
   </primaryElement>
   <dataActions categoryId="com.emc.xcp.artifact.dataservice.dataaction" name="da_actionflow_add_case_worker_m_2" label="da_actionflow_add_case_worker_m_2">
     <inputMappings name="processVariables">
@@ -38,9 +35,6 @@
     </inputMappings>
     <inputMappings name="processVariables.case_subject">
       <expression exprStr="actionflow.Inputs.processVariables.case_subject"/>
-    </inputMappings>
-    <inputMappings name="processVariables.case_title">
-      <expression exprStr="actionflow.Inputs.processVariables.case_title"/>
     </inputMappings>
     <inputMappings name="processVariables.is_approve">
       <expression exprStr="actionflow.Inputs.processVariables.is_approve"/>
@@ -60,7 +54,7 @@
     <inputMappings name="userName">
       <expression exprStr="actionflow.steps.usergroup_selection_multi.widgets.username_dropdown_list.value"/>
     </inputMappings>
-    <contract xsi:type="nsDataserviceContract:DataActionContract" href="urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/add_case_worker.process#//@activities[name='Manual%20task']/@taskContract/@dataServiceContracts[name='da_def_repeat_add_case_worker_manual_task']"/>
+    <contract xsi:type="nsDataserviceContract:DataActionContract" href="urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/add_case_worker.process#//@activities[name='Task%20Worker']/@taskContract/@dataServiceContracts[name='da_def_repeat_add_case_worker_manual_task']"/>
   </dataActions>
   <actionInstanceProperty actionInstance="//@dataActions[name='da_actionflow_add_case_worker_m_2']"/>
   <states xsi:type="actionflow:EndState" id="success"/>

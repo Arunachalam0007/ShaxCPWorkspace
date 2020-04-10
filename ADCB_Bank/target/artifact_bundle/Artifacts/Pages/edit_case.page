@@ -33,6 +33,27 @@
     </inputMappings>
     <contract xsi:type="nsDataserviceContract:DataActionContract" href="urn:adcb:com.emc.xcp.artifact.folder:Artifacts/Folders/case_.folder#//@dataActionContracts[name='da_def_update_case_']"/>
   </dataActions>
+  <dataActions categoryId="com.emc.xcp.artifact.dataservice.dataaction" name="da_def_create_add_case_worker_initiate" label="Initiate Process Add Case Worker">
+    <inputMappings name="processVariables.case_id">
+      <expression exprStr="case_.id"/>
+    </inputMappings>
+    <inputMappings name="processVariables.case_subject">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="processVariables.is_approve">
+      <expression exprStr="false"/>
+    </inputMappings>
+    <inputMappings name="processVariables.is_complete">
+      <expression exprStr="true"/>
+    </inputMappings>
+    <inputMappings name="processVariables.worker_name">
+      <expression exprStr="dataservices.choose_worker_1.outputs.worker_name"/>
+    </inputMappings>
+    <inputMappings name="attachments">
+      <expression/>
+    </inputMappings>
+    <contract xsi:type="nsDataserviceContract:DataActionContract" href="urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/add_case_worker.process#//@activities[name='Initiate']/@taskContract/@dataServiceContracts[name='da_def_create_add_case_worker_initiate']"/>
+  </dataActions>
   <actions categoryId="com.emc.xcp.artifact.dataservice.actioninstance" name="def_imp_af_1" label="Default Import Action Flow-1">
     <inputMappings name="content_types">
       <expression/>
@@ -58,6 +79,12 @@
   <actionInstanceProperty actionInstance="//@dataSources[name='folderQuery']" invokeOnPageLoad="false"/>
   <actionInstanceProperty actionInstance="//@actions[name='def_imp_af_1']"/>
   <actionInstanceProperty actionInstance="//@actions[name='choose_worker_1']"/>
+  <actionInstanceProperty actionInstance="//@dataActions[name='da_def_create_add_case_worker_initiate']">
+    <eventBasedInvocations>
+      <widgetEvent widgetId="dataservices.choose_worker_1" eventName="success"/>
+      <conditionTrigger exprStr=""/>
+    </eventBasedInvocations>
+  </actionInstanceProperty>
   <title/>
   <rootContainer>
     <properties name="xcpId" value="root"/>
@@ -167,11 +194,16 @@
               <properties name="tooltip" value=""/>
               <properties xsi:type="uitemplate:ObjectProperty" name="action">
                 <action>
-                  <properties name="redirectStyle" value="current"/>
+                  <properties name="redirectStyle" value="specified"/>
                   <properties name="showSuccessNotification" value="false" type="BOOLEAN"/>
                   <properties name="showConfirmation" value="false" type="BOOLEAN"/>
-                  <properties name="navType" value="none"/>
+                  <properties name="navType" value="page_static"/>
                   <properties name="actionType" value="datasource"/>
+                  <properties xsi:type="uitemplate:DataboundProperty" name="navPageId" value="adcb_case_inbox">
+                    <data selectionName="case_inbox" selectionLabel="Case Inbox">
+                      <dataRef href="urn:adcb:com.emc.xcp.artifact.page:Artifacts/Pages/case_inbox.page#/"/>
+                    </data>
+                  </properties>
                 </action>
               </properties>
               <properties name="width" value="" type="INTEGER"/>
@@ -199,61 +231,6 @@
         <properties name="tooltip" value=""/>
         <properties name="cls" value=""/>
         <properties name="xcpId" value="columnvbox5"/>
-        <children componentDefinitionId="xcp_text_input">
-          <properties name="fieldLabel" value="Name Of the Worker has initiate"/>
-          <properties name="emptyText" value=""/>
-          <properties name="name" value=""/>
-          <properties name="hstretch" value="true" type="BOOLEAN"/>
-          <properties name="fieldWidth" value="" type="INTEGER"/>
-          <properties name="readOnly" value=""/>
-          <properties name="hidden" value=""/>
-          <properties name="valueType" value="STRING"/>
-          <properties name="inputType" value=""/>
-          <properties name="cls" value=""/>
-          <properties name="mandatory" value=""/>
-          <properties name="hideErrorInToolTip" value="false" type="BOOLEAN"/>
-          <properties name="stopOnValidationFail" value="true" type="BOOLEAN"/>
-          <properties name="tooltip" value=""/>
-          <properties xsi:type="uitemplate:DataboundProperty" name="value" value="">
-            <eventBasedExpressions>
-              <expression exprStr="dataservices.choose_worker_1.outputs.worker_name"/>
-              <widgetEvent widgetId="dataservices.choose_worker_1" eventName="success"/>
-              <conditionTrigger exprStr=""/>
-            </eventBasedExpressions>
-          </properties>
-          <properties name="valid" value=""/>
-          <properties name="xcpId" value="text_input"/>
-        </children>
-        <children componentDefinitionId="xcp_value_display">
-          <properties name="fieldLabel" value="Label"/>
-          <properties name="valueType" value="STRING"/>
-          <properties name="isRepeating" value="false" type="BOOLEAN"/>
-          <properties name="name" value=""/>
-          <properties name="cls" value=""/>
-          <properties xsi:type="uitemplate:ObjectProperty" name="repeatingAttributeFormat">
-            <formatter componentDefinitionId="xcp_repeating_attribute_formatter">
-              <properties name="xtype" value="xcp_repeating_attribute_formatter"/>
-              <properties name="separatorStyle" value="NEWLINE"/>
-              <properties name="separator" value="COMMA"/>
-            </formatter>
-          </properties>
-          <properties name="hstretch" value="" type="BOOLEAN"/>
-          <properties name="store" value=""/>
-          <properties name="hidden" value=""/>
-          <properties name="tooltip" value=""/>
-          <properties name="disableImgLayout" value="false" type="BOOLEAN"/>
-          <properties xsi:type="uitemplate:DataboundProperty" name="value" value="">
-            <eventBasedExpressions>
-              <expression exprStr="dataservices.choose_worker_1.outputs.worker_name"/>
-              <widgetEvent widgetId="dataservices.choose_worker_1" eventName="success"/>
-              <conditionTrigger exprStr=""/>
-            </eventBasedExpressions>
-          </properties>
-          <properties xsi:type="uitemplate:ObjectProperty" name="format">
-            <formatter/>
-          </properties>
-          <properties name="xcpId" value="value_display"/>
-        </children>
       </children>
     </children>
     <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_column_box">

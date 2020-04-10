@@ -122,12 +122,44 @@
         "autoScroll" : false,
         "title" : "${_UI_Choose_Worker_Choose_Worker_label}"
       },
-      "actionModel" : "xcp_process_adcb_add_case_worker",
       "plugins" : [ {
         "ptype" : "xcp_expression_properties",
         "expression" : [ ],
         "mapping" : {
         }
+      } ]
+    }, {
+      "xcpId" : "da_def_create_add_case_worker_initiate",
+      "actionModel" : "xcp_process_adcb_add_case_worker",
+      "actionType" : "create",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "processVariables.case_id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.case_id",
+          "events" : [ "adcb_case_.change", "adcb_case_.load" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.is_approve",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.is_approve"
+        }, {
+          "propertyId" : "processVariables.is_complete",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.is_complete"
+        }, {
+          "propertyId" : "processVariables.worker_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.worker_name",
+          "events" : [ "choose_worker_1.change" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+        }
+      } ],
+      "invokerEvents" : [ {
+        "events" : ["choose_worker_1.success" ]
       } ]
     } ]
   }, {
@@ -203,10 +235,11 @@
             "badgeAlign" : "top-right",
             "iconAlign" : "left",
             "actionInstanceId" : "choose_worker_1",
-            "redirectStyle" : "current",
+            "redirectStyle" : "specified",
             "showSuccessNotification" : false,
             "showConfirmation" : false,
-            "navType" : "none"
+            "navType" : "page_static",
+            "navPageId" : "adcb_case_inbox"
           } ]
         } ]
       } ]
@@ -219,49 +252,7 @@
       "labelAlign" : "left",
       "halign" : "left",
       "valign" : "top",
-      "defaultMargins" : "5",
-      "items" : [ {
-        "xcpId" : "text_input",
-        "xtype" : "xcp_text_input",
-        "fieldLabel" : "${_UI_Page_adcb_edit_case_text_input_fieldLabel}",
-        "hstretch" : true,
-        "valueType" : "STRING",
-        "hideErrorInToolTip" : false,
-        "stopOnValidationFail" : true,
-        "plugins" : [ {
-          "ptype" : "xcp_expression_properties",
-          "expression" : [ {
-            "propertyId" : "value",
-            "setterFunName" : "setValue",
-            "eventsBasedEtype" : [ {
-              "etype" : "text_input_value_",
-              "events" : [ "choose_worker_1.success" ],
-              "disableInitialEval" : true
-            } ],
-            "disableProcessingOnRender" : false
-          } ]
-        } ]
-      }, {
-        "xcpId" : "value_display",
-        "xtype" : "xcp_value_display",
-        "fieldLabel" : "${_UI_Page_adcb_edit_case_value_display_fieldLabel}",
-        "valueType" : "STRING",
-        "isRepeating" : false,
-        "disableImgLayout" : false,
-        "plugins" : [ {
-          "ptype" : "xcp_expression_properties",
-          "expression" : [ {
-            "propertyId" : "value",
-            "setterFunName" : "setValue",
-            "eventsBasedEtype" : [ {
-              "etype" : "value_display_value_",
-              "events" : [ "choose_worker_1.success" ],
-              "disableInitialEval" : true
-            } ],
-            "disableProcessingOnRender" : false
-          } ]
-        } ]
-      } ]
+      "defaultMargins" : "5"
     } ]
   }, {
     "xcpId" : "case_details",

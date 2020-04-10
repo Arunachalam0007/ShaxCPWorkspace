@@ -15,19 +15,19 @@
   </properties>
   <tasks>
     <task href="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_initiate" rel="http://identifiers.emc.com/linkrel/task"/>
-    <task href="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_manual_task" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_task_worker" rel="http://identifiers.emc.com/linkrel/task"/>
     <task href="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_decision_split" rel="http://identifiers.emc.com/linkrel/task"/>
     <task href="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_join" rel="http://identifiers.emc.com/linkrel/task"/>
-    <task href="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_process_data" rel="http://identifiers.emc.com/linkrel/task"/>
-    <task href="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_process_data_1" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_task_data" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_task_approved" rel="http://identifiers.emc.com/linkrel/task"/>
   </tasks>
   <flows>
-    <flow flow-type="regular" source="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_manual_task" target="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_decision_split"/>
-    <flow flow-type="regular" source="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_initiate" target="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_process_data"/>
-    <flow flow-type="regular" source="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_process_data" target="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_join"/>
-    <flow flow-type="regular" source="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_join" target="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_manual_task"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_task_worker" target="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_decision_split"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_initiate" target="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_task_data"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_task_data" target="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_join"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_join" target="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_task_worker"/>
     <flow flow-type="regular" source="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_decision_split" target="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_join"/>
-    <flow flow-type="regular" source="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_decision_split" target="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_set_process_data_1"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_decision_split" target="${contextPath}types/processes/adcb_add_case_worker/tasks/adcb_task_approved"/>
   </flows>
   <data>
     <variables>
@@ -36,7 +36,6 @@
       <variable default-value="false" label="is_approve" mandatory="false" name="is_approve" repeating="false" type="boolean"/>
       <variable default-value="false" label="is_complete" mandatory="false" name="is_complete" repeating="false" type="boolean"/>
       <variable default-value="" label="case_subject" mandatory="false" name="case_subject" repeating="false" type="string"/>
-      <variable default-value="" label="case_title" mandatory="false" name="case_title" repeating="false" type="string"/>
     </variables>
   </data>
   <links>
