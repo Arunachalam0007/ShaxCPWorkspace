@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nsDatatypes:BusinessObject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" urn="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj" categoryId="com.emc.xcp.artifact.bo" name="case_workers" label="Case Workers">
-  <attributes name="workers_name" label="Workers Name">
+  <attributes name="worker_name" label="Worker Name">
     <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
   </attributes>
   <attributes name="s_no" label="S.NO">
@@ -12,7 +12,7 @@
     <inputs xsi:type="nsDataserviceContract:AttributeElement" name="s_no" label="S.NO">
       <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
     </inputs>
-    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="workers_name" label="Workers Name">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="worker_name" label="Worker Name">
       <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
     </inputs>
     <primaryElement dataModel="/"/>
@@ -22,7 +22,7 @@
     <inputs xsi:type="nsDataserviceContract:AttributeElement" name="s_no" label="S.NO">
       <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
     </inputs>
-    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="workers_name" label="Workers Name">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="worker_name" label="Worker Name">
       <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
     </inputs>
     <primaryElement dataModel="/"/>
@@ -39,7 +39,7 @@
     <outputs xsi:type="nsDataserviceContract:AttributeElement" name="s_no" label="S.NO">
       <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
     </outputs>
-    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="workers_name" label="Workers Name">
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="worker_name" label="Worker Name">
       <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
     </outputs>
     <primaryElement dataModel="/"/>
@@ -49,7 +49,7 @@
     <outputs xsi:type="nsDataserviceContract:AttributeElement" name="s_no" label="S.NO">
       <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
     </outputs>
-    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="workers_name" label="Workers Name">
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="worker_name" label="Worker Name">
       <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
     </outputs>
     <primaryElement dataModel="/"/>

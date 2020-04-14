@@ -323,6 +323,19 @@
         "showConfirmation" : false,
         "navType" : "none"
       }, {
+        "xcpId" : "button1",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_adcb_add_case_worker_tas_button1_text}",
+        "scale" : "small",
+        "badgeAlign" : "top-right",
+        "iconAlign" : "left",
+        "actionInstanceId" : "da_def_update_add_case_worker_manual_task",
+        "defaultConfirmationPrompt" : "${_UI_Page_adcb_add_case_worker_tas_button1_defaultConfirmationPrompt}",
+        "showConfirmation" : false,
+        "redirectStyle" : "current",
+        "showSuccessNotification" : true,
+        "navType" : "none"
+      }, {
         "xcpId" : "button",
         "xtype" : "xcp_button",
         "text" : "${_UI_Page_adcb_add_case_worker_tas_button_text}",
@@ -335,19 +348,6 @@
         "redirectStyle" : "current",
         "showSuccessNotification" : true,
         "actionModel" : "acquire_task_model",
-        "navType" : "none"
-      }, {
-        "xcpId" : "button1",
-        "xtype" : "xcp_button",
-        "text" : "${_UI_Page_adcb_add_case_worker_tas_button1_text}",
-        "scale" : "small",
-        "badgeAlign" : "top-right",
-        "iconAlign" : "left",
-        "actionInstanceId" : "da_def_update_add_case_worker_manual_task",
-        "defaultConfirmationPrompt" : "${_UI_Page_adcb_add_case_worker_tas_button1_defaultConfirmationPrompt}",
-        "showConfirmation" : false,
-        "redirectStyle" : "current",
-        "showSuccessNotification" : true,
         "navType" : "none"
       }, {
         "xcpId" : "approve",

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionflow:ActionFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionflow="http://www.emc.com/xcp2/2010/actionflow" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" urn="urn:adcb:com.emc.xcp.artifact.actionFlow:Artifacts/Action Flows/add_initiate_worker.actionflow" categoryId="com.emc.xcp.artifact.actionFlow" name="add_initiate_worker" label="Add &amp; Initiate Worker" initialState="//@states[id='viewState_add_initiate_worker']">
+  <inputs xsi:type="actionflow:ActionFlowElement" name="case_id">
+    <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    <defaultValue>
+      <expression/>
+    </defaultValue>
+  </inputs>
+  <primaryElement>
+    <dataModel href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj#/"/>
+  </primaryElement>
+  <states xsi:type="actionflow:EndState" id="success"/>
+  <states xsi:type="actionflow:EndState" id="error"/>
+  <states xsi:type="actionflow:ActionState" id="finish">
+    <transitions on="success" to="//@states[id='success']"/>
+    <transitions on="error" to="//@states[id='error']"/>
+  </states>
+  <states xsi:type="actionflow:EndState" id="cancel"/>
+  <states xsi:type="actionflow:ViewState" id="viewState_add_initiate_worker">
+    <transitions on="cancel" to="//@states[id='cancel']"/>
+    <transitions on="finish" to="//@states[id='finish']"/>
+    <stepCondition>
+      <expression exprStr="false"/>
+    </stepCondition>
+    <step href="urn:adcb:com.emc.xcp.artifact.uistep:Artifacts/UI Steps/add_initiate_worker.uistep#/"/>
+  </states>
+  <transitionLabels transition="finish" label="Finish">
+    <labelExpression/>
+  </transitionLabels>
+  <transitionLabels transition="cancel" label="Cancel">
+    <labelExpression/>
+  </transitionLabels>
+</actionflow:ActionFlow>

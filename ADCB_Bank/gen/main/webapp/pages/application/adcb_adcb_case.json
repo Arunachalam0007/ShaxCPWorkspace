@@ -26,6 +26,31 @@
       } ],
       "pageSize" : 10
     }, {
+      "xcpId" : "add_initiate_worker_1",
+      "actionType" : "xcp_action_flow_launcher",
+      "actionFlowId" : "adcb_add_initiate_worker",
+      "objectType" : "adcb_case_workers",
+      "wizardConfig" : {
+        "height" : 450,
+        "width" : 640,
+        "modal" : true,
+        "autoScroll" : false,
+        "title" : "${_UI_Add_&_Initiate_Worker_Add_&_Initiate_Worker_label}"
+      },
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "case_id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "case_id",
+          "events" : [ "all_case.selectionchange", "all_case.rowedited", "all_case.rowadded", "all_case.rowremoved", "all_case.rowmoved" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+          "case_id" : ["all_case" ]
+        }
+      } ]
+    }, {
       "xcpId" : "create_case_1_1",
       "actionType" : "xcp_action_flow_launcher",
       "actionFlowId" : "adcb_create_case_1",
@@ -68,7 +93,131 @@
       "labelAlign" : "left",
       "halign" : "left",
       "valign" : "top",
-      "defaultMargins" : "5"
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "column_box",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "items" : [ {
+          "xcpId" : "columnvbox2",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box1",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "items" : [ {
+              "xcpId" : "columnvbox4",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "button",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_adcb_adcb_case_button_text}",
+                "scale" : "small",
+                "badgeAlign" : "top-right",
+                "iconAlign" : "left",
+                "actionInstanceId" : "create_case_1_1",
+                "redirectStyle" : "current",
+                "showSuccessNotification" : true,
+                "showConfirmation" : false,
+                "navType" : "none"
+              } ]
+            }, {
+              "xcpId" : "columnvbox5",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "case_ini_btn",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_adcb_adcb_case_case_ini_btn_text}",
+                "scale" : "small",
+                "badgeAlign" : "top-right",
+                "iconAlign" : "left"
+              } ]
+            } ]
+          } ]
+        }, {
+          "xcpId" : "columnvbox3",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box2",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "items" : [ {
+              "xcpId" : "columnvbox6",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "ini_ud_btn",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_adcb_adcb_case_ini_ud_btn_text}",
+                "scale" : "small",
+                "badgeAlign" : "top-right",
+                "iconAlign" : "left",
+                "actionInstanceId" : "add_initiate_worker_1",
+                "redirectStyle" : "none",
+                "showSuccessNotification" : true,
+                "showConfirmation" : false,
+                "navType" : "none"
+              } ]
+            }, {
+              "xcpId" : "columnvbox7",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5"
+            } ]
+          } ]
+        } ]
+      } ]
     }, {
       "xcpId" : "columnvbox1",
       "xtype" : "xcp_columnvbox",
@@ -78,20 +227,7 @@
       "labelAlign" : "left",
       "halign" : "left",
       "valign" : "top",
-      "defaultMargins" : "5",
-      "items" : [ {
-        "xcpId" : "button",
-        "xtype" : "xcp_button",
-        "text" : "${_UI_Page_adcb_adcb_case_button_text}",
-        "scale" : "small",
-        "badgeAlign" : "top-right",
-        "iconAlign" : "left",
-        "actionInstanceId" : "create_case_1_1",
-        "redirectStyle" : "current",
-        "showSuccessNotification" : true,
-        "showConfirmation" : false,
-        "navType" : "none"
-      } ]
+      "defaultMargins" : "5"
     } ]
   }, {
     "xcpId" : "all_case",

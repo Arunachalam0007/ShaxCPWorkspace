@@ -4,8 +4,8 @@
   "label" : "Case Workers",
   "parent" : "${contextPath}types/business-objects/xcp_RootBO",
   "properties" : [ {
-    "name" : "workers_name",
-    "label" : "Workers Name",
+    "name" : "worker_name",
+    "label" : "Worker Name",
     "type" : "string",
     "length" : 64
   }, {

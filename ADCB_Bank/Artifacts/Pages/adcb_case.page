@@ -6,6 +6,12 @@
   <actions categoryId="com.emc.xcp.artifact.dataservice.actioninstance" name="create_case_1_1" label="Create Case Action Flow">
     <contract xsi:type="actionflow:ActionFlow" href="urn:adcb:com.emc.xcp.artifact.actionFlow:Artifacts/Action Flows/create_case_1.actionflow#/"/>
   </actions>
+  <actions categoryId="com.emc.xcp.artifact.dataservice.actioninstance" name="add_initiate_worker_1" label="Add &amp; Initiate Worker-1">
+    <inputMappings name="case_id">
+      <expression exprStr="widgets.all_case.selected_row.id"/>
+    </inputMappings>
+    <contract xsi:type="actionflow:ActionFlow" href="urn:adcb:com.emc.xcp.artifact.actionFlow:Artifacts/Action Flows/add_initiate_worker.actionflow#/"/>
+  </actions>
   <actionInstanceProperty actionInstance="//@actions[name='create_case_1_1']"/>
   <actionInstanceProperty actionInstance="//@dataSources[name='get_all_cases']">
     <eventBasedInvocations>
@@ -13,6 +19,7 @@
       <conditionTrigger exprStr=""/>
     </eventBasedInvocations>
   </actionInstanceProperty>
+  <actionInstanceProperty actionInstance="//@actions[name='add_initiate_worker_1']"/>
   <title exprStr="ADCB Case"/>
   <rootContainer>
     <properties name="xcpId" value="root"/>
@@ -43,6 +50,210 @@
         <properties name="tooltip" value=""/>
         <properties name="cls" value=""/>
         <properties name="xcpId" value="columnvbox"/>
+        <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_column_box">
+          <properties name="title"/>
+          <properties name="collapsible" value="false" type="BOOLEAN"/>
+          <properties name="collapsed" value=""/>
+          <properties name="collapseFirst" value="true" type="BOOLEAN"/>
+          <properties name="border" value="false" type="BOOLEAN"/>
+          <properties name="defaultMargins" value="5"/>
+          <properties name="margins" value=""/>
+          <properties name="layout" value="xcp_columnbox"/>
+          <properties name="hidden" value=""/>
+          <properties name="cls" value=""/>
+          <properties name="xcpId" value="column_box"/>
+          <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_columnvbox">
+            <properties name="orientation" value="Vertical"/>
+            <properties name="width" value=""/>
+            <properties name="minWidth" value="" type="INTEGER"/>
+            <properties name="split" value="" type="BOOLEAN"/>
+            <properties name="overflow_x" value="hidden"/>
+            <properties name="labelWidth" value="150" type="INTEGER"/>
+            <properties name="labelAlign" value="left"/>
+            <properties name="halign" value="left"/>
+            <properties name="valign" value="top"/>
+            <properties name="defaultMargins" value="5"/>
+            <properties name="margins" value=""/>
+            <properties name="tooltip" value=""/>
+            <properties name="cls" value=""/>
+            <properties name="xcpId" value="columnvbox2"/>
+            <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_column_box">
+              <properties name="title"/>
+              <properties name="collapsible" value="false" type="BOOLEAN"/>
+              <properties name="collapsed" value=""/>
+              <properties name="collapseFirst" value="true" type="BOOLEAN"/>
+              <properties name="border" value="false" type="BOOLEAN"/>
+              <properties name="defaultMargins" value="5"/>
+              <properties name="margins" value=""/>
+              <properties name="layout" value="xcp_columnbox"/>
+              <properties name="hidden" value=""/>
+              <properties name="cls" value=""/>
+              <properties name="xcpId" value="column_box1"/>
+              <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_columnvbox">
+                <properties name="orientation" value="Vertical"/>
+                <properties name="width" value=""/>
+                <properties name="minWidth" value="" type="INTEGER"/>
+                <properties name="split" value="" type="BOOLEAN"/>
+                <properties name="overflow_x" value="hidden"/>
+                <properties name="labelWidth" value="150" type="INTEGER"/>
+                <properties name="labelAlign" value="left"/>
+                <properties name="halign" value="left"/>
+                <properties name="valign" value="top"/>
+                <properties name="defaultMargins" value="5"/>
+                <properties name="margins" value=""/>
+                <properties name="tooltip" value=""/>
+                <properties name="cls" value=""/>
+                <properties name="xcpId" value="columnvbox4"/>
+                <children componentDefinitionId="xcp_button" action="//@actions[name='create_case_1_1']">
+                  <properties name="text" value="Create Case"/>
+                  <properties name="scale" value="small"/>
+                  <properties name="badgeText" value=""/>
+                  <properties name="badgeAlign" value="top-right"/>
+                  <properties name="imageSource" value=""/>
+                  <properties name="glyph" value=""/>
+                  <properties name="iconAlign" value="left"/>
+                  <properties name="tooltip" value=""/>
+                  <properties xsi:type="uitemplate:ObjectProperty" name="action">
+                    <action>
+                      <properties name="redirectStyle" value="current"/>
+                      <properties name="showSuccessNotification" value="true" type="BOOLEAN"/>
+                      <properties name="showConfirmation" value="false" type="BOOLEAN"/>
+                      <properties name="navType" value="none"/>
+                      <properties name="actionType" value="datasource"/>
+                    </action>
+                  </properties>
+                  <properties name="width" value="" type="INTEGER"/>
+                  <properties name="height" value="" type="INTEGER"/>
+                  <properties name="cls" value=""/>
+                  <properties name="disabled" value=""/>
+                  <properties name="hidden" value=""/>
+                  <properties name="xcpId" value="button"/>
+                </children>
+              </children>
+              <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_columnvbox">
+                <properties name="orientation" value="Vertical"/>
+                <properties name="width" value=""/>
+                <properties name="minWidth" value="" type="INTEGER"/>
+                <properties name="split" value="" type="BOOLEAN"/>
+                <properties name="overflow_x" value="hidden"/>
+                <properties name="labelWidth" value="150" type="INTEGER"/>
+                <properties name="labelAlign" value="left"/>
+                <properties name="halign" value="left"/>
+                <properties name="valign" value="top"/>
+                <properties name="defaultMargins" value="5"/>
+                <properties name="margins" value=""/>
+                <properties name="tooltip" value=""/>
+                <properties name="cls" value=""/>
+                <properties name="xcpId" value="columnvbox5"/>
+                <children componentDefinitionId="xcp_button">
+                  <properties name="text" value="Initiate Case"/>
+                  <properties name="scale" value="small"/>
+                  <properties name="badgeText" value=""/>
+                  <properties name="badgeAlign" value="top-right"/>
+                  <properties name="imageSource" value=""/>
+                  <properties name="glyph" value=""/>
+                  <properties name="iconAlign" value="left"/>
+                  <properties name="tooltip" value=""/>
+                  <properties xsi:type="uitemplate:ObjectProperty" name="action">
+                    <action/>
+                  </properties>
+                  <properties name="width" value="" type="INTEGER"/>
+                  <properties name="height" value="" type="INTEGER"/>
+                  <properties name="cls" value=""/>
+                  <properties name="disabled" value=""/>
+                  <properties name="hidden" value=""/>
+                  <properties name="xcpId" value="case_ini_btn"/>
+                </children>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_columnvbox">
+            <properties name="orientation" value="Vertical"/>
+            <properties name="width" value=""/>
+            <properties name="minWidth" value="" type="INTEGER"/>
+            <properties name="split" value="" type="BOOLEAN"/>
+            <properties name="overflow_x" value="hidden"/>
+            <properties name="labelWidth" value="150" type="INTEGER"/>
+            <properties name="labelAlign" value="left"/>
+            <properties name="halign" value="left"/>
+            <properties name="valign" value="top"/>
+            <properties name="defaultMargins" value="5"/>
+            <properties name="margins" value=""/>
+            <properties name="tooltip" value=""/>
+            <properties name="cls" value=""/>
+            <properties name="xcpId" value="columnvbox3"/>
+            <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_column_box">
+              <properties name="title"/>
+              <properties name="collapsible" value="false" type="BOOLEAN"/>
+              <properties name="collapsed" value=""/>
+              <properties name="collapseFirst" value="true" type="BOOLEAN"/>
+              <properties name="border" value="false" type="BOOLEAN"/>
+              <properties name="defaultMargins" value="5"/>
+              <properties name="margins" value=""/>
+              <properties name="layout" value="xcp_columnbox"/>
+              <properties name="hidden" value=""/>
+              <properties name="cls" value=""/>
+              <properties name="xcpId" value="column_box2"/>
+              <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_columnvbox">
+                <properties name="orientation" value="Vertical"/>
+                <properties name="width" value=""/>
+                <properties name="minWidth" value="" type="INTEGER"/>
+                <properties name="split" value="" type="BOOLEAN"/>
+                <properties name="overflow_x" value="hidden"/>
+                <properties name="labelWidth" value="150" type="INTEGER"/>
+                <properties name="labelAlign" value="left"/>
+                <properties name="halign" value="left"/>
+                <properties name="valign" value="top"/>
+                <properties name="defaultMargins" value="5"/>
+                <properties name="margins" value=""/>
+                <properties name="tooltip" value=""/>
+                <properties name="cls" value=""/>
+                <properties name="xcpId" value="columnvbox6"/>
+                <children componentDefinitionId="xcp_button" action="//@actions[name='add_initiate_worker_1']">
+                  <properties name="text" value="Initiate UD"/>
+                  <properties name="scale" value="small"/>
+                  <properties name="badgeText" value=""/>
+                  <properties name="badgeAlign" value="top-right"/>
+                  <properties name="imageSource" value=""/>
+                  <properties name="glyph" value=""/>
+                  <properties name="iconAlign" value="left"/>
+                  <properties name="tooltip" value=""/>
+                  <properties xsi:type="uitemplate:ObjectProperty" name="action">
+                    <action>
+                      <properties name="redirectStyle" value="none"/>
+                      <properties name="showSuccessNotification" value="true" type="BOOLEAN"/>
+                      <properties name="showConfirmation" value="false" type="BOOLEAN"/>
+                      <properties name="navType" value="none"/>
+                      <properties name="actionType" value="datasource"/>
+                    </action>
+                  </properties>
+                  <properties name="width" value="" type="INTEGER"/>
+                  <properties name="height" value="" type="INTEGER"/>
+                  <properties name="cls" value=""/>
+                  <properties name="disabled" value=""/>
+                  <properties name="hidden" value=""/>
+                  <properties name="xcpId" value="ini_ud_btn"/>
+                </children>
+              </children>
+              <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_columnvbox">
+                <properties name="orientation" value="Vertical"/>
+                <properties name="width" value=""/>
+                <properties name="minWidth" value="" type="INTEGER"/>
+                <properties name="split" value="" type="BOOLEAN"/>
+                <properties name="overflow_x" value="hidden"/>
+                <properties name="labelWidth" value="150" type="INTEGER"/>
+                <properties name="labelAlign" value="left"/>
+                <properties name="halign" value="left"/>
+                <properties name="valign" value="top"/>
+                <properties name="defaultMargins" value="5"/>
+                <properties name="margins" value=""/>
+                <properties name="tooltip" value=""/>
+                <properties name="cls" value=""/>
+                <properties name="xcpId" value="columnvbox7"/>
+              </children>
+            </children>
+          </children>
+        </children>
       </children>
       <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_columnvbox">
         <properties name="orientation" value="Vertical"/>
@@ -59,31 +270,6 @@
         <properties name="tooltip" value=""/>
         <properties name="cls" value=""/>
         <properties name="xcpId" value="columnvbox1"/>
-        <children componentDefinitionId="xcp_button" action="//@actions[name='create_case_1_1']">
-          <properties name="text" value="Create Case"/>
-          <properties name="scale" value="small"/>
-          <properties name="badgeText" value=""/>
-          <properties name="badgeAlign" value="top-right"/>
-          <properties name="imageSource" value=""/>
-          <properties name="glyph" value=""/>
-          <properties name="iconAlign" value="left"/>
-          <properties name="tooltip" value=""/>
-          <properties xsi:type="uitemplate:ObjectProperty" name="action">
-            <action>
-              <properties name="redirectStyle" value="current"/>
-              <properties name="showSuccessNotification" value="true" type="BOOLEAN"/>
-              <properties name="showConfirmation" value="false" type="BOOLEAN"/>
-              <properties name="navType" value="none"/>
-              <properties name="actionType" value="datasource"/>
-            </action>
-          </properties>
-          <properties name="width" value="" type="INTEGER"/>
-          <properties name="height" value="" type="INTEGER"/>
-          <properties name="cls" value=""/>
-          <properties name="disabled" value=""/>
-          <properties name="hidden" value=""/>
-          <properties name="xcpId" value="button"/>
-        </children>
       </children>
     </children>
     <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_results_list" dataService="//@dataSources[name='get_all_cases']">

@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <realtime:RealTimeSearch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" xmlns:realtime="http://xcp.emc.com/search/realtime" urn="urn:adcb:com.emc.xcp.artifact.search.realtime:Artifacts/Real-time Queries/get_all_workers.realtime" categoryId="com.emc.xcp.artifact.search.realtime" name="get_all_workers" label="Get All Workers">
   <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="get_all_workers" label="Get All Workers" implCategoryId="com.emc.xcp.artifact.search.realtime">
+    <inputs xsi:type="nsDataserviceContract:IdElement" name="input_case_object_id" label="Case Object ID">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
     <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
       <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
     </outputs>
     <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
       <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
-        <elements xsi:type="nsDataserviceContract:AttributeElement" name="casechild_case_case_workerschild_case_workersworkers_name" label="Workers Name" repeating="true">
-          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
-        </elements>
-        <elements xsi:type="nsDataserviceContract:AttributeElement" name="casechild_case_case_workerschild_case_workerss_no" label="S.NO" repeating="true">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="s_no" label="S.NO">
           <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
         </elements>
-        <elements xsi:type="nsDataserviceContract:AttributeElement" name="casechild_case_case_workerschild_case_workerscasechild_case_case_name" label="Case Name" repeating="true">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="worker_name" label="Worker Name">
           <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
         </elements>
-        <elements xsi:type="nsDataserviceContract:AttributeElement" name="id" label="Object ID" sortable="true" hidden="true">
+        <elements xsi:type="nsDataserviceContract:IdElement" name="id" label="Object ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="casechild_case_id" label="Case Object ID">
           <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
         </elements>
         <elements xsi:type="nsDataserviceContract:AttributeElement" name="r_object_type" label="Object type" sortable="true" hidden="true">
@@ -27,70 +30,58 @@
       <dataModel href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj#/"/>
     </primaryElement>
   </datasource>
-  <columns label="Workers Name">
-    <contextSelection>
-      <parentRef selectionType="MODEL">
-        <parentRef selectionName="case_workers" selectionLabel="Case Workers" repeating="true" useNamePreferred="true">
-          <parentRef selectionType="MODEL">
-            <parentRef selectionName="case" selectionLabel="Case" useNamePreferred="true">
-              <parentRef selectionType="MODEL">
-                <dataRef href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj#/"/>
-              </parentRef>
-              <dataRef href="urn:adcb:com.emc.xcp.artifact.relation:Artifacts/Relationships/case_workers_case.relationship#/"/>
+  <inputParameters label="Case Object ID" name="case_object_id">
+    <formInputs xsi:type="realtime:RealTimeStringFormInput" operator="com.emc.xcp.model.common.StringOperator:EQUAL">
+      <contextSelection>
+        <parentRef selectionType="MODEL">
+          <parentRef selectionName="case" selectionLabel="Case" useNamePreferred="true">
+            <parentRef selectionType="MODEL">
+              <dataRef href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj#/"/>
             </parentRef>
-            <dataRef href="urn:adcb:com.emc.xcp.artifact.folder:Artifacts/Folders/case_.folder#/"/>
+            <dataRef href="urn:adcb:com.emc.xcp.artifact.relation:Artifacts/Relationships/case_workers_case.relationship#/"/>
           </parentRef>
-          <dataRef href="urn:adcb:com.emc.xcp.artifact.relation:Artifacts/Relationships/case_workers_case.relationship#/"/>
+          <dataRef href="urn:adcb:com.emc.xcp.artifact.folder:Artifacts/Folders/case_.folder#/"/>
         </parentRef>
-        <dataRef href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj#/"/>
-      </parentRef>
-      <dataRef href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj#//@attributes[name='workers_name']"/>
-    </contextSelection>
-  </columns>
+        <dataRef href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_object_id']"/>
+      </contextSelection>
+    </formInputs>
+  </inputParameters>
   <columns label="S.NO">
     <contextSelection selectionType="INTEGER">
       <parentRef selectionType="MODEL">
-        <parentRef selectionName="case_workers" selectionLabel="Case Workers" repeating="true" useNamePreferred="true">
-          <parentRef selectionType="MODEL">
-            <parentRef selectionName="case" selectionLabel="Case" useNamePreferred="true">
-              <parentRef selectionType="MODEL">
-                <dataRef href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj#/"/>
-              </parentRef>
-              <dataRef href="urn:adcb:com.emc.xcp.artifact.relation:Artifacts/Relationships/case_workers_case.relationship#/"/>
-            </parentRef>
-            <dataRef href="urn:adcb:com.emc.xcp.artifact.folder:Artifacts/Folders/case_.folder#/"/>
-          </parentRef>
-          <dataRef href="urn:adcb:com.emc.xcp.artifact.relation:Artifacts/Relationships/case_workers_case.relationship#/"/>
-        </parentRef>
         <dataRef href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj#/"/>
       </parentRef>
       <dataRef href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj#//@attributes[name='s_no']"/>
     </contextSelection>
   </columns>
-  <columns label="Case Name">
+  <columns label="Worker Name">
+    <contextSelection>
+      <parentRef selectionType="MODEL">
+        <dataRef href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj#//@attributes[name='worker_name']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Object ID">
+    <contextSelection>
+      <parentRef selectionType="MODEL">
+        <dataRef href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_object_id']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Case Object ID">
     <contextSelection>
       <parentRef selectionType="MODEL">
         <parentRef selectionName="case" selectionLabel="Case" useNamePreferred="true">
           <parentRef selectionType="MODEL">
-            <parentRef selectionName="case_workers" selectionLabel="Case Workers" repeating="true" useNamePreferred="true">
-              <parentRef selectionType="MODEL">
-                <parentRef selectionName="case" selectionLabel="Case" useNamePreferred="true">
-                  <parentRef selectionType="MODEL">
-                    <dataRef href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj#/"/>
-                  </parentRef>
-                  <dataRef href="urn:adcb:com.emc.xcp.artifact.relation:Artifacts/Relationships/case_workers_case.relationship#/"/>
-                </parentRef>
-                <dataRef href="urn:adcb:com.emc.xcp.artifact.folder:Artifacts/Folders/case_.folder#/"/>
-              </parentRef>
-              <dataRef href="urn:adcb:com.emc.xcp.artifact.relation:Artifacts/Relationships/case_workers_case.relationship#/"/>
-            </parentRef>
             <dataRef href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/case_workers.businessobj#/"/>
           </parentRef>
           <dataRef href="urn:adcb:com.emc.xcp.artifact.relation:Artifacts/Relationships/case_workers_case.relationship#/"/>
         </parentRef>
         <dataRef href="urn:adcb:com.emc.xcp.artifact.folder:Artifacts/Folders/case_.folder#/"/>
       </parentRef>
-      <dataRef href="urn:adcb:com.emc.xcp.artifact.folder:Artifacts/Folders/case_.folder#//@attributes[name='case_name']"/>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_object_id']"/>
     </contextSelection>
   </columns>
   <defaultSort ascending="true"/>

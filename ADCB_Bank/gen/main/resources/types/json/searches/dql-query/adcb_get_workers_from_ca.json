@@ -1,0 +1,44 @@
+{
+  "type" : "adcb_get_workers_from_ca",
+  "label" : "Get Workers From Case",
+  "description" : "",
+  "dql-text" : "select r_object_id, s_no , worker_name  from adcb_case_workers where any  i_folder_id = $case_id$",
+  "properties" : [ {
+    "name" : "r_object_id",
+    "output-name" : "id",
+    "type" : "string",
+    "repeating" : "false",
+    "sortable" : "false"
+  }, {
+    "name" : "s_no",
+    "output-name" : "s_no",
+    "type" : "integer",
+    "repeating" : "false",
+    "sortable" : "false"
+  }, {
+    "name" : "worker_name",
+    "output-name" : "worker_name",
+    "type" : "string",
+    "repeating" : "false",
+    "sortable" : "false"
+  } ],
+  "expression-set" : {
+    "properties" : [ {
+      "input-name" : "input_case_id",
+      "input-type" : "form-input",
+      "name" : "case_id",
+      "type" : "string",
+      "repeating" : "false"
+    } ]
+  },
+  "links" : [ {
+    "rel" : "self",
+    "href" : "${contextPath}types/dql-queries/adcb_get_workers_from_ca"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/instances",
+    "href" : "${contextPath}dql-queries/adcb_get_workers_from_ca"
+  } ],
+  "options" : [ {
+    "resultLimit" : "-1"
+  } ]
+}

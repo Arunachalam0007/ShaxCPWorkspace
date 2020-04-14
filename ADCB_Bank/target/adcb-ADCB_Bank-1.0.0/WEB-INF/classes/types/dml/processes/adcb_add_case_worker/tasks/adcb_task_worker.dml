@@ -23,10 +23,10 @@
   </properties>
   <data>
     <variables>
+      <variable default-value="" label="case_id" mandatory="false" name="case_id" repeating="false" type="string" visible="true"/>
       <variable default-value="" label="worker_name" mandatory="false" name="worker_name" repeating="false" type="string" visible="true"/>
       <variable default-value="false" label="is_complete" mandatory="false" name="is_complete" repeating="false" type="boolean" visible="true"/>
       <variable default-value="false" label="is_approve" mandatory="false" name="is_approve" repeating="false" type="boolean" visible="true"/>
-      <variable default-value="" label="case_id" mandatory="false" name="case_id" repeating="false" type="string" visible="true"/>
       <variable default-value="" label="case_subject" mandatory="false" name="case_subject" repeating="false" type="string" visible="true"/>
     </variables>
   </data>

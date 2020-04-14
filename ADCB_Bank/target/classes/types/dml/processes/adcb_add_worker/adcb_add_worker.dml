@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process-type label="Add Worker" runnable-stateless="true" type="adcb_add_worker" xmlns="http://identifiers.emc.com/vocab/xcp">
+  <urn>urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/add_worker.process</urn>
+  <properties>
+    <property label="process_id" length="64" name="process_id" type="string"/>
+    <property label="status" length="64" name="status" type="string"/>
+    <property label="id" length="64" name="id" type="string"/>
+    <property label="r_runtime_state" name="r_runtime_state" type="integer"/>
+    <property label="correlation_identifier" length="64" name="correlation_identifier" type="string"/>
+    <property label="object_name" length="64" name="object_name" type="string"/>
+    <property label="r_creator_name" length="64" name="r_creator_name" type="string"/>
+    <property label="r_start_date" name="r_start_date" type="datetime"/>
+    <property label="supervisor_name" length="64" name="supervisor_name" type="string"/>
+    <property label="supervisor_address" length="64" name="supervisor_address" type="string"/>
+  </properties>
+  <tasks>
+    <task href="${contextPath}types/processes/adcb_add_worker/tasks/adcb_get_count_of_worker" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_add_worker/tasks/adcb_set_worker_data" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_add_worker/tasks/adcb_create_worker" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_add_worker/tasks/adcb_initiate" rel="http://identifiers.emc.com/linkrel/task"/>
+  </tasks>
+  <flows>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_add_worker/tasks/adcb_initiate" target="${contextPath}types/processes/adcb_add_worker/tasks/adcb_get_count_of_worker"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_add_worker/tasks/adcb_get_count_of_worker" target="${contextPath}types/processes/adcb_add_worker/tasks/adcb_set_worker_data"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_add_worker/tasks/adcb_set_worker_data" target="${contextPath}types/processes/adcb_add_worker/tasks/adcb_create_worker"/>
+  </flows>
+  <data>
+    <packages>
+      <package input="false" label="Case" mandatory="false" name="Case" output="false" type="${contextPath}types/folders/adcb_case_" version-label="CURRENT" visible="true"/>
+    </packages>
+    <variables>
+      <variable default-value="" input="true" label="case_id" mandatory="false" name="case_id" output="false" repeating="false" type="string"/>
+      <variable default-value="" input="false" label="sno_count" mandatory="false" name="sno_count" output="false" repeating="false" type="integer"/>
+      <variable default-value="" input="true" label="worker_name" mandatory="false" name="worker_name" output="false" repeating="false" type="string"/>
+      <variable default-value="" input="false" label="sno" mandatory="false" name="sno" output="false" repeating="false" type="integer"/>
+    </variables>
+  </data>
+  <links>
+    <link href="${contextPath}types/processes/adcb_add_worker" rel="self"/>
+    <link href="${contextPath}processes/adcb_add_worker" rel="http://identifiers.emc.com/linkrel/instances"/>
+    <link rel="http://identifiers.emc.com/linkrel/halt"/>
+    <link rel="http://identifiers.emc.com/linkrel/resume"/>
+    <link rel="http://identifiers.emc.com/linkrel/terminate"/>
+    <link rel="http://identifiers.emc.com/linkrel/tasks"/>
+    <link rel="http://identifiers.emc.com/linkrel/attachments"/>
+  </links>
+</process-type>

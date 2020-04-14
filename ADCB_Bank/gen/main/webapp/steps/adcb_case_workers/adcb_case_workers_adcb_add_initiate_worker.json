@@ -1,0 +1,184 @@
+{
+  "padding" : "10 10 5 10",
+  "border" : false,
+  "xtype" : "xcp_form",
+  "namespace" : "adcb",
+  "categoryID" : "com_emc_xcp_artifact_uistep",
+  "artifactName" : "add_initiate_worker",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "get_workers_from_ca",
+      "actionModel" : "adcb_get_workers_from_ca_outputs",
+      "inputModelName" : "adcb_get_workers_from_ca_inputs",
+      "actionType" : "datasource",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "input_case_id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "input_case_id"
+        } ],
+        "mapping" : {
+        }
+      } ],
+      "autoLoad" : true,
+      "invokerEvents" : [ {
+        "events" : ["da_def_invoke_stateless_processadd_worker_initiate.success" ]
+      } ],
+      "pageSize" : 10
+    }, {
+      "xcpId" : "userorgroup_selecti_staless_ds",
+      "actionModel" : "xcp_userorgroup_selecti_staless_ds_outputs",
+      "inputModelName" : "xcp_userorgroup_selecti_staless_ds_inputs",
+      "actionType" : "datasource",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ],
+      "autoLoad" : true
+    }, {
+      "xcpId" : "da_def_invoke_stateless_processadd_worker_initiate",
+      "actionModel" : "xcp_process_adcb_add_worker",
+      "actionType" : "create",
+      "isStatelessInvocation" : true,
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "processVariables.case_id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.case_id"
+        }, {
+          "propertyId" : "processVariables.worker_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.worker_name",
+          "events" : [ "choose_worker_dd.change" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+          "processVariables.worker_name" : ["choose_worker_dd" ]
+        }
+      } ]
+    } ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "choose_worker_dd",
+        "xtype" : "xcp_dropdown_list",
+        "fieldLabel" : "${_UI_UIStep_adcb_add_initiate_worker_choose_worker_dd_fieldLabel}",
+        "valueField" : "user_group_name",
+        "displayField" : "user_group_name",
+        "modelStore" : "dataservices.userorgroup_selecti_staless_ds",
+        "valueType" : "STRING",
+        "hideErrorInToolTip" : false,
+        "stopOnValidationFail" : true,
+        "anyMatch" : false
+      } ]
+    }, {
+      "xcpId" : "columnvbox1",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "add_worker_btn",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_UIStep_adcb_add_initiate_worker_add_worker_btn_text}",
+        "scale" : "small",
+        "badgeAlign" : "top-right",
+        "iconAlign" : "left",
+        "actionInstanceId" : "da_def_invoke_stateless_processadd_worker_initiate",
+        "redirectStyle" : "none",
+        "showSuccessNotification" : true,
+        "showConfirmation" : false,
+        "navType" : "none",
+        "navPageId" : null
+      } ]
+    } ]
+  }, {
+    "xcpId" : "worker_result_list",
+    "xtype" : "xcp_results_list",
+    "pageSize" : 10,
+    "selectionModel" : false,
+    "enableDragDrop" : true,
+    "disableNavigationOnFirstColumn" : false,
+    "allowDeselect" : false,
+    "displayTotalRowCount" : false,
+    "autoTotalCount" : true,
+    "autoSelection" : false,
+    "pageSizeList" : "10,25,50,100",
+    "stateful" : false,
+    "allowInLineEdit" : false,
+    "modelStore" : "dataservices.get_workers_from_ca",
+    "columns" : [ {
+      "xcpId" : "col_s_no",
+      "xtype" : "xcp_results_list_page_link_column",
+      "text" : "${_UI_UIStep_adcb_add_initiate_worker_col_s_no_text}",
+      "width" : 150,
+      "valueType" : "INTEGER",
+      "isRepeating" : false,
+      "format" : {
+        "xtype" : "xcp_integer_formatter",
+        "decimalPrecision" : 0,
+        "useThousandSeparator" : true,
+        "separatorStyle" : "LOCALE",
+        "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+      },
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "s_no",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "worker_result_list",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "col_worker_name",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_UIStep_adcb_add_initiate_worker_col_worker_name_text}",
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "worker_name",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "worker_result_list",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    } ]
+  } ],
+  "childModelsToLoad" : [ "adcb_actionflow.Inputs" ]
+}

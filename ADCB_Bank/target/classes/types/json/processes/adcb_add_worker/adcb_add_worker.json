@@ -1,0 +1,148 @@
+{
+  "name" : "process-type",
+  "type" : "adcb_add_worker",
+  "label" : "Add Worker",
+  "runnable-stateless" : true,
+  "urn" : "urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/add_worker.process",
+  "properties" : [ {
+    "name" : "process_id",
+    "label" : "process_id",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "status",
+    "label" : "status",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "id",
+    "label" : "id",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "r_runtime_state",
+    "label" : "r_runtime_state",
+    "type" : "integer"
+  }, {
+    "name" : "correlation_identifier",
+    "label" : "correlation_identifier",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "object_name",
+    "label" : "object_name",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "r_creator_name",
+    "label" : "r_creator_name",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "r_start_date",
+    "label" : "r_start_date",
+    "type" : "datetime"
+  }, {
+    "name" : "supervisor_name",
+    "label" : "supervisor_name",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "supervisor_address",
+    "label" : "supervisor_address",
+    "type" : "string",
+    "length" : 64
+  } ],
+  "tasks" : [ {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_add_worker/tasks/adcb_get_count_of_worker"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_add_worker/tasks/adcb_set_worker_data"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_add_worker/tasks/adcb_create_worker"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_add_worker/tasks/adcb_initiate"
+  } ],
+  "flows" : [ {
+    "source" : "${contextPath}types/processes/adcb_add_worker/tasks/adcb_initiate",
+    "target" : "${contextPath}types/processes/adcb_add_worker/tasks/adcb_get_count_of_worker",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_add_worker/tasks/adcb_get_count_of_worker",
+    "target" : "${contextPath}types/processes/adcb_add_worker/tasks/adcb_set_worker_data",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_add_worker/tasks/adcb_set_worker_data",
+    "target" : "${contextPath}types/processes/adcb_add_worker/tasks/adcb_create_worker",
+    "flow-type" : "regular"
+  } ],
+  "data" : {
+    "packages" : [ {
+      "name" : "Case",
+      "label" : "Case",
+      "mandatory" : false,
+      "visible" : true,
+      "version-label" : "CURRENT",
+      "type" : "${contextPath}types/folders/adcb_case_",
+      "input" : false,
+      "output" : false
+    } ],
+    "variables" : [ {
+      "name" : "case_id",
+      "label" : "case_id",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : null,
+      "mandatory" : false,
+      "input" : true,
+      "output" : false
+    }, {
+      "name" : "sno_count",
+      "label" : "sno_count",
+      "type" : "integer",
+      "repeating" : false,
+      "default-value" : null,
+      "mandatory" : false,
+      "input" : false,
+      "output" : false
+    }, {
+      "name" : "worker_name",
+      "label" : "worker_name",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : null,
+      "mandatory" : false,
+      "input" : true,
+      "output" : false
+    }, {
+      "name" : "sno",
+      "label" : "sno",
+      "type" : "integer",
+      "repeating" : false,
+      "default-value" : "",
+      "mandatory" : false,
+      "input" : false,
+      "output" : false
+    } ]
+  },
+  "links" : [ {
+    "rel" : "self",
+    "href" : "${contextPath}types/processes/adcb_add_worker"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/instances",
+    "href" : "${contextPath}processes/adcb_add_worker"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/halt"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/resume"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/terminate"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/tasks"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/attachments"
+  } ]
+}

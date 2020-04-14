@@ -1,0 +1,23 @@
+{
+  "name" : "realtime-query-type",
+  "type" : "adcb_test",
+  "label" : "Test",
+  "data-type" : "${contextPath}types/business-objects/adcb_case_workers",
+  "description" : "",
+  "expression-set" : {
+    "properties" : [ ],
+    "operator" : "AND"
+  },
+  "options" : [ {
+    "versions" : "LATEST",
+    "returnCount" : "false",
+    "resultLimit" : "-1"
+  } ],
+  "links" : [ {
+    "rel" : "self",
+    "href" : "${contextPath}types/realtime-queries/adcb_test"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/instances",
+    "href" : "${contextPath}realtime-queries/adcb_test"
+  } ]
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<realtime-query-type data-type="${contextPath}types/business-objects/adcb_case_workers" label="Test" namespace="adcb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="adcb_test" xmlns="http://identifiers.emc.com/vocab/xcp">
+  <description/>
+  <expression-set operator="AND"/>
+  <links>
+    <link href="${contextPath}types/realtime-queries/adcb_test" rel="self"/>
+    <link href="${contextPath}realtime-queries/adcb_test" rel="http://identifiers.emc.com/linkrel/instances"/>
+  </links>
+  <options>
+    <option resultLimit="-1" returnCount="false" versions="LATEST"/>
+  </options>
+</realtime-query-type>

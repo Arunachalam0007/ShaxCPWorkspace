@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <business-object-type label="Case Workers" parent="${contextPath}types/business-objects/xcp_RootBO" type="adcb_case_workers" xmlns="http://identifiers.emc.com/vocab/xcp">
   <properties>
-    <property label="Workers Name" length="64" name="workers_name" type="string"/>
+    <property label="Worker Name" length="64" name="worker_name" type="string"/>
     <property label="S.NO" name="s_no" type="integer"/>
   </properties>
   <relationships>

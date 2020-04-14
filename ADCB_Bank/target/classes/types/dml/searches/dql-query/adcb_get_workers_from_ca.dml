@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<dql-query-type label="Get Workers From Case" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="adcb_get_workers_from_ca" xmlns="http://identifiers.emc.com/vocab/xcp">
+  <description/>
+  <dql-text>select r_object_id, s_no , worker_name  from adcb_case_workers where any  i_folder_id = $case_id$</dql-text>
+  <properties>
+    <property name="r_object_id" output-name="id" repeating="false" sortable="false" type="string"/>
+    <property name="s_no" output-name="s_no" repeating="false" sortable="false" type="integer"/>
+    <property name="worker_name" output-name="worker_name" repeating="false" sortable="false" type="string"/>
+  </properties>
+  <expression-set>
+    <property input-name="input_case_id" input-type="form-input" name="case_id" repeating="false" type="string"/>
+  </expression-set>
+  <links>
+    <link href="${contextPath}types/dql-queries/adcb_get_workers_from_ca" rel="self"/>
+    <link href="${contextPath}dql-queries/adcb_get_workers_from_ca" rel="http://identifiers.emc.com/linkrel/instances"/>
+  </links>
+  <options>
+    <option resultLimit="-1"/>
+  </options>
+</dql-query-type>
