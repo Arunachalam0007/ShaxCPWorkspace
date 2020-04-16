@@ -56,6 +56,12 @@
           "navType" : "page_static",
           "navPageId" : "adcb_case_inbox"
         }, {
+          "xcpId" : "uci_nav",
+          "xtype" : "xcp_nav_button",
+          "text" : "${_UI_Page_adcb_application_master_uci_nav_text}",
+          "navType" : "page_static",
+          "navPageId" : "adcb_userdefined_case_in"
+        }, {
           "xcpId" : "user_button",
           "xtype" : "xcp_user_button"
         } ]

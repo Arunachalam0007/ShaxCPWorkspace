@@ -1,0 +1,183 @@
+{
+  "name" : "process-type",
+  "type" : "adcb_userdefined_case_workers",
+  "label" : "Userdefined Case Workers",
+  "runnable-stateless" : false,
+  "urn" : "urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/userdefined_case_workers.process",
+  "properties" : [ {
+    "name" : "process_id",
+    "label" : "process_id",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "status",
+    "label" : "status",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "id",
+    "label" : "id",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "r_runtime_state",
+    "label" : "r_runtime_state",
+    "type" : "integer"
+  }, {
+    "name" : "correlation_identifier",
+    "label" : "correlation_identifier",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "object_name",
+    "label" : "object_name",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "r_creator_name",
+    "label" : "r_creator_name",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "r_start_date",
+    "label" : "r_start_date",
+    "type" : "datetime"
+  }, {
+    "name" : "supervisor_name",
+    "label" : "supervisor_name",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "supervisor_address",
+    "label" : "supervisor_address",
+    "type" : "string",
+    "length" : 64
+  } ],
+  "tasks" : [ {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_get_case_workers_in"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_task_worker"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_get_current_task_na"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_initiate"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_join"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_decision_split"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_increment"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_case_completed"
+  } ],
+  "flows" : [ {
+    "source" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_initiate",
+    "target" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_get_case_workers_in",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_get_case_workers_in",
+    "target" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_join",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_join",
+    "target" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_get_current_task_na",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_get_current_task_na",
+    "target" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_task_worker",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_task_worker",
+    "target" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_decision_split",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_decision_split",
+    "target" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_increment",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_increment",
+    "target" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_join",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_decision_split",
+    "target" : "${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_case_completed",
+    "flow-type" : "regular"
+  } ],
+  "data" : {
+    "variables" : [ {
+      "name" : "worker_name",
+      "label" : "worker_name",
+      "type" : "string",
+      "repeating" : true,
+      "default-value" : null,
+      "mandatory" : false
+    }, {
+      "name" : "s_no",
+      "label" : "s_no",
+      "type" : "string",
+      "repeating" : true,
+      "default-value" : null,
+      "mandatory" : false
+    }, {
+      "name" : "sno_count",
+      "label" : "sno_count",
+      "type" : "integer",
+      "repeating" : false,
+      "default-value" : "",
+      "mandatory" : false
+    }, {
+      "name" : "index",
+      "label" : "index",
+      "type" : "integer",
+      "repeating" : false,
+      "default-value" : "0",
+      "mandatory" : false
+    }, {
+      "name" : "current_worker_name",
+      "label" : "current_worker_name",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : "",
+      "mandatory" : false
+    }, {
+      "name" : "case_id",
+      "label" : "case_id",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : "",
+      "mandatory" : false
+    }, {
+      "name" : "worker_status",
+      "label" : "worker_status",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : "",
+      "mandatory" : false
+    } ]
+  },
+  "links" : [ {
+    "rel" : "self",
+    "href" : "${contextPath}types/processes/adcb_userdefined_case_workers"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/instances",
+    "href" : "${contextPath}processes/adcb_userdefined_case_workers"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/halt"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/resume"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/terminate"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/tasks"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/attachments"
+  } ]
+}

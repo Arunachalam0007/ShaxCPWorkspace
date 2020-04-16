@@ -195,7 +195,7 @@
               <properties xsi:type="uitemplate:ObjectProperty" name="action">
                 <action>
                   <properties name="redirectStyle" value="specified"/>
-                  <properties name="showSuccessNotification" value="false" type="BOOLEAN"/>
+                  <properties name="showSuccessNotification" value="true" type="BOOLEAN"/>
                   <properties name="showConfirmation" value="false" type="BOOLEAN"/>
                   <properties name="navType" value="page_static"/>
                   <properties name="actionType" value="datasource"/>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<task-type label="Task Worker" process-type="adcb_userdefined_case_workers" type="adcb_task_worker" xmlns="http://identifiers.emc.com/vocab/xcp">
+  <properties>
+    <property label="id" length="64" name="id" type="string"/>
+    <property label="act_name" length="64" name="act_name" type="string"/>
+    <property label="activity_system_name" length="64" name="activity_system_name" type="string"/>
+    <property label="process_system_name" length="64" name="process_system_name" type="string"/>
+    <property label="qitem_id" length="64" name="qitem_id" type="string"/>
+    <property label="status" length="64" name="status" type="string"/>
+    <property label="creation_date" name="creation_date" type="datetime"/>
+    <property label="performer" length="64" name="performer" type="string"/>
+    <property label="performer_address" length="64" name="performer_address" type="string"/>
+    <property label="state" name="state" type="integer"/>
+    <property label="priority" name="priority" type="integer"/>
+    <property label="task_subject" length="64" name="task_subject" type="string"/>
+    <property label="due_date" name="due_date" type="datetime"/>
+    <property label="instructions" length="64" name="instructions" type="string"/>
+    <property label="received_date" name="received_date" type="datetime"/>
+    <property label="received_from" length="64" name="received_from" type="string"/>
+    <property label="queue_name" length="64" name="queue_name" type="string"/>
+    <property label="isdelegable" name="isdelegable" type="boolean"/>
+    <property label="isrepeatable" name="isrepeatable" type="boolean"/>
+  </properties>
+  <data>
+    <variables>
+      <variable default-value="" label="sno_count" mandatory="false" name="sno_count" repeating="false" type="integer" visible="true"/>
+      <variable default-value="" label="s_no" mandatory="false" name="s_no" repeating="true" type="string" visible="true"/>
+      <variable default-value="" label="current_worker_name" mandatory="false" name="current_worker_name" repeating="false" type="string" visible="true"/>
+      <variable default-value="" label="worker_name" mandatory="false" name="worker_name" repeating="true" type="string" visible="true"/>
+      <variable default-value="" label="worker_status" mandatory="false" name="worker_status" repeating="false" type="string" visible="true"/>
+      <variable default-value="" label="case_id" mandatory="false" name="case_id" repeating="false" type="string" visible="true"/>
+      <variable default-value="0" label="index" mandatory="false" name="index" repeating="false" type="integer" visible="true"/>
+    </variables>
+  </data>
+  <links>
+    <link href="${contextPath}types/processes/adcb_userdefined_case_workers/tasks/adcb_task_worker" rel="self"/>
+    <link href="${contextPath}processes/adcb_userdefined_case_workers/tasks/adcb_task_worker" rel="http://identifiers.emc.com/linkrel/instances"/>
+    <link rel="up"/>
+    <link rel="http://identifiers.emc.com/linkrel/acquire"/>
+    <link rel="http://identifiers.emc.com/linkrel/complete"/>
+    <link rel="http://identifiers.emc.com/linkrel/reject"/>
+    <link rel="http://identifiers.emc.com/linkrel/repeat"/>
+    <link rel="http://identifiers.emc.com/linkrel/delegate"/>
+    <link rel="http://identifiers.emc.com/linkrel/halt"/>
+    <link rel="http://identifiers.emc.com/linkrel/resume"/>
+    <link rel="http://identifiers.emc.com/linkrel/hold"/>
+    <link rel="http://identifiers.emc.com/linkrel/unhold"/>
+    <link rel="edit"/>
+    <link rel="http://identifiers.emc.com/linkrel/attachments"/>
+  </links>
+</task-type>

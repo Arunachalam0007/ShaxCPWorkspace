@@ -1,0 +1,997 @@
+{
+  "cls" : "adcb_userdefined_case_workers_task_worker_userdefined_case_wo",
+  "padding" : 0,
+  "border" : false,
+  "namespace" : "adcb",
+  "categoryID" : "com_emc_xcp_artifact_page",
+  "artifactName" : "userdefined_case_wo",
+  "pageTitle" : "${_UI_Page_adcb_userdefined_case_wo_title}",
+  "xtype" : "xcp_form",
+  "models" : [ "xcp_process_adcb_userdefined_case_workers" ],
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "taskhistory_initiate_staless_ds",
+      "actionModel" : "xcp_taskhistory_initiate_staless_ds_outputs",
+      "inputModelName" : "xcp_taskhistory_initiate_staless_ds_inputs",
+      "actionType" : "datasource",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "processVariables.process_instance_id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.process_instance_id",
+          "events" : [ "xcp_process_adcb_userdefined_case_workers.change", "xcp_process_adcb_userdefined_case_workers.load" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+        }
+      } ],
+      "autoLoad" : false,
+      "invokerEvents" : [ {
+        "events" : ["xcp_process_adcb_userdefined_case_workers.load" ]
+      } ],
+      "pageSize" : 10
+    }, {
+      "xcpId" : "da_def_acquire_currenttask",
+      "actionType" : "xcp_acquire_task",
+      "actionModel" : "acquire_task_model",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "id",
+          "events" : [ "xcp_process_adcb_userdefined_case_workers.change", "xcp_process_adcb_userdefined_case_workers.load" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+        }
+      } ]
+    }, {
+      "xcpId" : "da_def_update_predefined_case_workers_manual_task",
+      "actionModel" : "xcp_process_adcb_userdefined_case_workers",
+      "actionType" : "xcp_update_task",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "processVariables.sno_count",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.sno_count",
+          "events" : [ "sno_count.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "attachments",
+          "setterFunName" : "setInputProperty",
+          "etype" : "attachments",
+          "events" : [ "attachment.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.case_id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.case_id",
+          "events" : [ "case_id.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.worker_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.worker_name",
+          "events" : [ "worker_name.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.index",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.index",
+          "events" : [ "index.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.worker_status",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.worker_status",
+          "events" : [ "worker_status.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.s_no",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.s_no",
+          "events" : [ "s_no.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.current_worker_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.current_worker_name",
+          "events" : [ "current_worker_name.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "id1",
+          "events" : [ "xcp_process_adcb_userdefined_case_workers.change", "xcp_process_adcb_userdefined_case_workers.load" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+          "processVariables.sno_count" : ["sno_count" ],
+          "attachments" : ["attachment" ],
+          "processVariables.case_id" : ["case_id" ],
+          "processVariables.worker_name" : ["worker_name" ],
+          "processVariables.index" : ["index" ],
+          "processVariables.worker_status" : ["worker_status" ],
+          "processVariables.s_no" : ["s_no" ],
+          "processVariables.current_worker_name" : ["current_worker_name" ]
+        }
+      } ]
+    }, {
+      "xcpId" : "da_def_unhold_currenttask",
+      "actionType" : "xcp_unhold_task",
+      "actionModel" : "unhold_task_model",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "id2",
+          "events" : [ "xcp_process_adcb_userdefined_case_workers.change", "xcp_process_adcb_userdefined_case_workers.load" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+        }
+      } ]
+    }, {
+      "xcpId" : "predefined_case_w_1_1",
+      "actionType" : "xcp_action_flow_launcher",
+      "actionFlowId" : "adcb_predefined_case_w_1",
+      "objectType" : "adcb_userdefined_case_workers_task_worker",
+      "wizardConfig" : {
+        "height" : 450,
+        "width" : 640,
+        "modal" : true,
+        "autoScroll" : false,
+        "title" : "${_UI_Repeat_Task_Repeat_Task_label}"
+      },
+      "actionModel" : "xcp_process_adcb_userdefined_case_workers",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "processVariables.case_id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.case_id1",
+          "events" : [ "case_id.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.current_worker_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.current_worker_name1",
+          "events" : [ "current_worker_name.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.index",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.index1",
+          "events" : [ "index.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.s_no",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.s_no1",
+          "events" : [ "s_no.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.sno_count",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.sno_count1",
+          "events" : [ "sno_count.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.worker_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.worker_name1",
+          "events" : [ "worker_name.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.worker_status",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.worker_status1",
+          "events" : [ "worker_status.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "attachments",
+          "setterFunName" : "setInputProperty",
+          "etype" : "attachments1",
+          "events" : [ "attachment.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "id3",
+          "events" : [ "xcp_process_adcb_userdefined_case_workers.change", "xcp_process_adcb_userdefined_case_workers.load" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+          "processVariables.case_id" : ["case_id" ],
+          "processVariables.current_worker_name" : ["current_worker_name" ],
+          "processVariables.index" : ["index" ],
+          "processVariables.s_no" : ["s_no" ],
+          "processVariables.sno_count" : ["sno_count" ],
+          "processVariables.worker_name" : ["worker_name" ],
+          "processVariables.worker_status" : ["worker_status" ],
+          "attachments" : ["attachment" ]
+        }
+      } ]
+    }, {
+      "xcpId" : "hold_task_1",
+      "actionType" : "xcp_action_flow_launcher",
+      "actionFlowId" : "xcp_hold_task",
+      "objectType" : "xcp_currenttask",
+      "wizardConfig" : {
+        "height" : 450,
+        "width" : 640,
+        "modal" : true,
+        "autoScroll" : false,
+        "title" : "${_UI_Hold_Task_Hold_Task_label}"
+      },
+      "actionModel" : "xcp_da_def_hold_currenttask",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "id4",
+          "events" : [ "xcp_process_adcb_userdefined_case_workers.change", "xcp_process_adcb_userdefined_case_workers.load" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+        }
+      } ]
+    }, {
+      "xcpId" : "predefined_case_wor_1",
+      "actionModel" : "xcp_process_adcb_userdefined_case_workers",
+      "actionType" : "xcp_complete_task",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "processVariables.case_id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.case_id2",
+          "events" : [ "case_id.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.current_worker_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.current_worker_name2",
+          "events" : [ "current_worker_name.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.index",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.index2",
+          "events" : [ "index.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.s_no",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.s_no2",
+          "events" : [ "s_no.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.sno_count",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.sno_count2",
+          "events" : [ "sno_count.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.worker_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.worker_name2",
+          "events" : [ "worker_name.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.worker_status",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.worker_status2",
+          "events" : [ "worker_status.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "attachments",
+          "setterFunName" : "setInputProperty",
+          "etype" : "attachments2",
+          "events" : [ "attachment.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "id5",
+          "events" : [ "xcp_process_adcb_userdefined_case_workers.change", "xcp_process_adcb_userdefined_case_workers.load" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+          "processVariables.case_id" : ["case_id" ],
+          "processVariables.current_worker_name" : ["current_worker_name" ],
+          "processVariables.index" : ["index" ],
+          "processVariables.s_no" : ["s_no" ],
+          "processVariables.sno_count" : ["sno_count" ],
+          "processVariables.worker_name" : ["worker_name" ],
+          "processVariables.worker_status" : ["worker_status" ],
+          "attachments" : ["attachment" ]
+        }
+      } ]
+    }, {
+      "xcpId" : "predefined_case_w_2_1",
+      "actionType" : "xcp_action_flow_launcher",
+      "actionFlowId" : "adcb_predefined_case_w_2",
+      "objectType" : "adcb_userdefined_case_workers_task_worker",
+      "wizardConfig" : {
+        "height" : 450,
+        "width" : 640,
+        "modal" : true,
+        "autoScroll" : false,
+        "title" : "${_UI_Delegate_Task_Delegate_Task_label}"
+      },
+      "actionModel" : "xcp_process_adcb_userdefined_case_workers",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "processVariables.case_id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.case_id3",
+          "events" : [ "case_id.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.current_worker_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.current_worker_name3",
+          "events" : [ "current_worker_name.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.index",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.index3",
+          "events" : [ "index.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.s_no",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.s_no3",
+          "events" : [ "s_no.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.sno_count",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.sno_count3",
+          "events" : [ "sno_count.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.worker_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.worker_name3",
+          "events" : [ "worker_name.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "processVariables.worker_status",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.worker_status3",
+          "events" : [ "worker_status.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "attachments",
+          "setterFunName" : "setInputProperty",
+          "etype" : "attachments3",
+          "events" : [ "attachment.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "id6",
+          "events" : [ "xcp_process_adcb_userdefined_case_workers.change", "xcp_process_adcb_userdefined_case_workers.load" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+          "processVariables.case_id" : ["case_id" ],
+          "processVariables.current_worker_name" : ["current_worker_name" ],
+          "processVariables.index" : ["index" ],
+          "processVariables.s_no" : ["s_no" ],
+          "processVariables.sno_count" : ["sno_count" ],
+          "processVariables.worker_name" : ["worker_name" ],
+          "processVariables.worker_status" : ["worker_status" ],
+          "attachments" : ["attachment" ]
+        }
+      } ]
+    }, {
+      "xcpId" : "attachment_viewer_ds",
+      "actionModel" : "xcp_attachment_viewer_ds_outputs",
+      "inputModelName" : "xcp_attachment_viewer_ds_inputs",
+      "actionType" : "datasource",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ],
+      "autoLoad" : false
+    } ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "column_box2",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnhbox",
+      "xtype" : "xcp_columnhbox",
+      "orientation" : "Horizontal",
+      "width" : "30%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 200,
+      "defaultMargins" : "5",
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "items" : [ {
+        "xcpId" : "image",
+        "xtype" : "xcp_image",
+        "imageSource" : "urn:xcpcomm:com.emc.xcp.artifact.resource.image:Artifacts/Resources/task_32.png",
+        "width" : 32,
+        "height" : 32,
+        "navType" : "none"
+      }, {
+        "xcpId" : "task_subject",
+        "xtype" : "xcp_value_display",
+        "fieldLabel" : "",
+        "valueType" : "STRING",
+        "isRepeating" : false,
+        "disableImgLayout" : false,
+        "name" : "xcp_process_adcb_userdefined_case_workers@executionData.currenttask.task_subject"
+      }, {
+        "xcpId" : "image1",
+        "xtype" : "xcp_image",
+        "imageSource" : "urn:xcpcomm:com.emc.xcp.artifact.resource.image:Artifacts/Resources/task_priority_high.png",
+        "width" : 9,
+        "height" : 16,
+        "navType" : "none",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "hidden",
+            "setterFunName" : "setHidden",
+            "etype" : "image1_hidden",
+            "events" : [ "xcp_process_adcb_userdefined_case_workers.change", "xcp_process_adcb_userdefined_case_workers.load" ],
+            "disableInitialEval" : false,
+            "disableProcessingOnRender" : true
+          } ]
+        } ]
+      }, {
+        "xcpId" : "image2",
+        "xtype" : "xcp_image",
+        "imageSource" : "urn:xcpcomm:com.emc.xcp.artifact.resource.image:Artifacts/Resources/task_priority_low.png",
+        "width" : 9,
+        "height" : 16,
+        "navType" : "none",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "hidden",
+            "setterFunName" : "setHidden",
+            "etype" : "image2_hidden",
+            "events" : [ "xcp_process_adcb_userdefined_case_workers.change", "xcp_process_adcb_userdefined_case_workers.load" ],
+            "disableInitialEval" : false,
+            "disableProcessingOnRender" : true
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "columnhbox1",
+      "xtype" : "xcp_columnhbox",
+      "orientation" : "Horizontal",
+      "width" : "70%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 200,
+      "defaultMargins" : "5",
+      "labelAlign" : "left",
+      "halign" : "right",
+      "valign" : "top",
+      "items" : [ {
+        "xcpId" : "button",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_adcb_userdefined_case_wo_button_text}",
+        "scale" : "small",
+        "badgeAlign" : "top-right",
+        "iconAlign" : "left",
+        "actionInstanceId" : "da_def_acquire_currenttask",
+        "defaultConfirmationPrompt" : "${_UI_Page_adcb_userdefined_case_wo_button_defaultConfirmationPrompt}",
+        "showConfirmation" : false,
+        "redirectStyle" : "current",
+        "showSuccessNotification" : true,
+        "actionModel" : "acquire_task_model",
+        "navType" : "none"
+      }, {
+        "xcpId" : "button1",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_adcb_userdefined_case_wo_button1_text}",
+        "scale" : "small",
+        "badgeAlign" : "top-right",
+        "iconAlign" : "left",
+        "actionInstanceId" : "da_def_update_predefined_case_workers_manual_task",
+        "defaultConfirmationPrompt" : "${_UI_Page_adcb_userdefined_case_wo_button1_defaultConfirmationPrompt}",
+        "showConfirmation" : false,
+        "redirectStyle" : "current",
+        "showSuccessNotification" : true,
+        "navType" : "none"
+      }, {
+        "xcpId" : "button2",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_adcb_userdefined_case_wo_button2_text}",
+        "scale" : "small",
+        "badgeAlign" : "top-right",
+        "iconAlign" : "left",
+        "actionInstanceId" : "predefined_case_wor_1",
+        "defaultConfirmationPrompt" : "Are you sure you want to complete this task?",
+        "showConfirmation" : false,
+        "redirectStyle" : "current",
+        "showSuccessNotification" : true,
+        "navType" : "none"
+      }, {
+        "xcpId" : "button3",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_adcb_userdefined_case_wo_button3_text}",
+        "scale" : "small",
+        "badgeAlign" : "top-right",
+        "iconAlign" : "left",
+        "actionInstanceId" : "predefined_case_w_2_1",
+        "defaultConfirmationPrompt" : "Are you sure you want to delegate this task?",
+        "showConfirmation" : false,
+        "redirectStyle" : "current",
+        "showSuccessNotification" : true,
+        "navType" : "none"
+      }, {
+        "xcpId" : "button4",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_adcb_userdefined_case_wo_button4_text}",
+        "scale" : "small",
+        "badgeAlign" : "top-right",
+        "iconAlign" : "left",
+        "actionInstanceId" : "predefined_case_w_1_1",
+        "defaultConfirmationPrompt" : "Are you sure you want to repeat this task?",
+        "showConfirmation" : false,
+        "redirectStyle" : "current",
+        "showSuccessNotification" : true,
+        "navType" : "none"
+      }, {
+        "xcpId" : "button5",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_adcb_userdefined_case_wo_button5_text}",
+        "scale" : "small",
+        "badgeAlign" : "top-right",
+        "iconAlign" : "left",
+        "actionInstanceId" : "hold_task_1",
+        "defaultConfirmationPrompt" : "Are you sure you want to hold this task?",
+        "showConfirmation" : false,
+        "redirectStyle" : "current",
+        "showSuccessNotification" : true,
+        "navType" : "none"
+      }, {
+        "xcpId" : "button6",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_adcb_userdefined_case_wo_button6_text}",
+        "scale" : "small",
+        "badgeAlign" : "top-right",
+        "iconAlign" : "left",
+        "actionInstanceId" : "da_def_unhold_currenttask",
+        "defaultConfirmationPrompt" : "${_UI_Page_adcb_userdefined_case_wo_button6_defaultConfirmationPrompt}",
+        "showConfirmation" : false,
+        "redirectStyle" : "current",
+        "showSuccessNotification" : true,
+        "actionModel" : "unhold_task_model",
+        "navType" : "none"
+      } ]
+    } ]
+  }, {
+    "xcpId" : "column_box3",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox3",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "30%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 100,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "state",
+        "xtype" : "xcp_value_display",
+        "fieldLabel" : "${_UI_Page_adcb_userdefined_case_wo_state_fieldLabel}",
+        "valueType" : "xcp.picklist.xcp_task_state",
+        "isRepeating" : false,
+        "format" : {
+          "xtype" : "xcp_integer_formatter",
+          "decimalPrecision" : 0,
+          "useThousandSeparator" : true,
+          "separatorStyle" : "LOCALE",
+          "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+        },
+        "disableImgLayout" : false,
+        "name" : "xcp_process_adcb_userdefined_case_workers@executionData.currenttask.state"
+      }, {
+        "xcpId" : "received_date",
+        "xtype" : "xcp_value_display",
+        "fieldLabel" : "${_UI_Page_adcb_userdefined_case_wo_received_date_fieldLabel}",
+        "valueType" : "DATETIME",
+        "isRepeating" : false,
+        "format" : {
+          "xtype" : "xcp_datetime_formatter",
+          "dateFormat" : "short",
+          "timeFormat" : "short",
+          "dateStyle" : "datetime"
+        },
+        "disableImgLayout" : false,
+        "name" : "xcp_process_adcb_userdefined_case_workers@executionData.currenttask.received_date"
+      }, {
+        "xcpId" : "performer",
+        "xtype" : "xcp_value_display",
+        "fieldLabel" : "${_UI_Page_adcb_userdefined_case_wo_performer_fieldLabel}",
+        "valueType" : "STRING",
+        "isRepeating" : false,
+        "disableImgLayout" : false,
+        "name" : "xcp_process_adcb_userdefined_case_workers@executionData.currenttask.performer"
+      }, {
+        "xcpId" : "due_date",
+        "xtype" : "xcp_value_display",
+        "fieldLabel" : "${_UI_Page_adcb_userdefined_case_wo_due_date_fieldLabel}",
+        "valueType" : "DATETIME",
+        "isRepeating" : false,
+        "format" : {
+          "xtype" : "xcp_datetime_formatter",
+          "dateFormat" : "short",
+          "timeFormat" : "short",
+          "dateStyle" : "datetime"
+        },
+        "disableImgLayout" : false,
+        "name" : "xcp_process_adcb_userdefined_case_workers@executionData.currenttask.due_date"
+      } ]
+    }, {
+      "xcpId" : "columnhbox2",
+      "xtype" : "xcp_columnhbox",
+      "orientation" : "Horizontal",
+      "width" : "70%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 100,
+      "defaultMargins" : "5",
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "items" : [ {
+        "xcpId" : "instructions",
+        "xtype" : "xcp_value_display",
+        "fieldLabel" : "",
+        "valueType" : "STRING",
+        "isRepeating" : false,
+        "disableImgLayout" : false,
+        "name" : "xcp_process_adcb_userdefined_case_workers@executionData.currenttask.instructions"
+      } ]
+    } ]
+  }, {
+    "xcpId" : "tab_group",
+    "xtype" : "xcp_tab_group",
+    "tabPosition" : "top",
+    "minWidth" : 450,
+    "renderAllTabsOnLoad" : false,
+    "items" : [ {
+      "xcpId" : "tab",
+      "xtype" : "xcp_tab",
+      "title" : "${_UI_Page_adcb_userdefined_case_wo_tab_title}",
+      "items" : [ {
+        "xcpId" : "column_box",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_adcb_userdefined_case_wo_column_box_title}",
+        "collapsible" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "items" : [ {
+          "xcpId" : "columnvbox",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "100%",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "case_id",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_adcb_userdefined_case_wo_case_id_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING",
+            "hideErrorInToolTip" : false,
+            "stopOnValidationFail" : true,
+            "name" : "xcp_process_adcb_userdefined_case_workers@processVariables.case_id"
+          }, {
+            "xcpId" : "current_worker_name",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_adcb_userdefined_case_wo_current_worker_name_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING",
+            "hideErrorInToolTip" : false,
+            "stopOnValidationFail" : true,
+            "name" : "xcp_process_adcb_userdefined_case_workers@processVariables.current_worker_name"
+          }, {
+            "xcpId" : "index",
+            "xtype" : "xcp_number_input",
+            "fieldLabel" : "${_UI_Page_adcb_userdefined_case_wo_index_fieldLabel}",
+            "allowDecimals" : false,
+            "hideTrigger" : true,
+            "keyNavEnabled" : false,
+            "mouseWheelEnabled" : false,
+            "autoStripChars" : true,
+            "hstretch" : true,
+            "valueType" : "INTEGER",
+            "hideErrorInToolTip" : false,
+            "stopOnValidationFail" : true,
+            "name" : "xcp_process_adcb_userdefined_case_workers@processVariables.index"
+          }, {
+            "xcpId" : "s_no",
+            "xtype" : "xcp_multivalue_text_input",
+            "fieldLabel" : "${_UI_Page_adcb_userdefined_case_wo_s_no_fieldLabel}",
+            "height" : 150,
+            "valueType" : "STRING",
+            "isRepeating" : true,
+            "hideErrorInToolTip" : false,
+            "stopOnValidationFail" : true,
+            "name" : "xcp_process_adcb_userdefined_case_workers@processVariables.s_no"
+          }, {
+            "xcpId" : "sno_count",
+            "xtype" : "xcp_number_input",
+            "fieldLabel" : "${_UI_Page_adcb_userdefined_case_wo_sno_count_fieldLabel}",
+            "allowDecimals" : false,
+            "hideTrigger" : true,
+            "keyNavEnabled" : false,
+            "mouseWheelEnabled" : false,
+            "autoStripChars" : true,
+            "hstretch" : true,
+            "valueType" : "INTEGER",
+            "hideErrorInToolTip" : false,
+            "stopOnValidationFail" : true,
+            "name" : "xcp_process_adcb_userdefined_case_workers@processVariables.sno_count"
+          }, {
+            "xcpId" : "worker_name",
+            "xtype" : "xcp_multivalue_text_input",
+            "fieldLabel" : "${_UI_Page_adcb_userdefined_case_wo_worker_name_fieldLabel}",
+            "height" : 150,
+            "valueType" : "STRING",
+            "isRepeating" : true,
+            "hideErrorInToolTip" : false,
+            "stopOnValidationFail" : true,
+            "name" : "xcp_process_adcb_userdefined_case_workers@processVariables.worker_name"
+          }, {
+            "xcpId" : "worker_status",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_adcb_userdefined_case_wo_worker_status_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING",
+            "hideErrorInToolTip" : false,
+            "stopOnValidationFail" : true,
+            "name" : "xcp_process_adcb_userdefined_case_workers@processVariables.worker_status"
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "tab1",
+      "xtype" : "xcp_tab",
+      "title" : "${_UI_Page_adcb_userdefined_case_wo_tab1_title}",
+      "items" : [ {
+        "xcpId" : "column_box1",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "items" : [ {
+          "xcpId" : "columnvbox1",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "30%",
+          "minWidth" : 280,
+          "overflow_x" : "hidden",
+          "labelWidth" : 100,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "attachment",
+            "xtype" : "xcp_attachment",
+            "isID" : false,
+            "fromRepo" : true,
+            "fieldLabel" : "",
+            "width" : 300,
+            "height" : 200,
+            "minWidth" : 300,
+            "enableDragDrop" : false,
+            "fromFileSystem" : false,
+            "importAFId" : "xxx",
+            "actionFlowId" : "xcp_attachment_sel",
+            "objectType" : "dm_document",
+            "isRepeating" : true,
+            "width_unit" : "px",
+            "heigth_unit" : "px",
+            "disableNavigationOnFirstColumn" : false,
+            "valueType" : "STRING",
+            "name" : "xcp_process_adcb_userdefined_case_workers@attachments"
+          } ]
+        }, {
+          "xcpId" : "columnvbox2",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "70%",
+          "overflow_x" : "hidden",
+          "labelWidth" : 100,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "viewer",
+            "xtype" : "xcp_viewer",
+            "title" : "${_UI_Page_adcb_userdefined_case_wo_viewer_title}",
+            "docName" : false,
+            "height" : 650,
+            "width" : 650,
+            "prn" : true,
+            "thm" : true,
+            "ann" : true,
+            "man" : true,
+            "mdc" : true,
+            "hstretch" : true,
+            "disableFocusOnLoad" : false,
+            "showCreatorUserName" : false,
+            "initialZoom" : "fitToHeight",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ {
+                "propertyId" : "objectId",
+                "setterFunName" : "setObjectId",
+                "eventsBasedEtype" : [ {
+                  "etype" : "viewer_objectId_",
+                  "events" : [ "attachment.select" ],
+                  "disableInitialEval" : false
+                } ],
+                "disableProcessingOnRender" : false
+              }, {
+                "propertyId" : "contentType",
+                "setterFunName" : "setContentType",
+                "eventsBasedEtype" : [ {
+                  "etype" : "viewer_contentType_",
+                  "events" : [ "attachment.select" ],
+                  "disableInitialEval" : false
+                } ],
+                "disableProcessingOnRender" : false
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "tab2",
+      "xtype" : "xcp_tab",
+      "title" : "${_UI_Page_adcb_userdefined_case_wo_tab2_title}",
+      "items" : [ {
+        "xcpId" : "results_list",
+        "xtype" : "xcp_results_list",
+        "typeName" : "xcp_taskhistory_initiate",
+        "modelName" : "xcp_taskhistory_initiate_staless_ds_outputs",
+        "pageSize" : 10,
+        "selectionModel" : false,
+        "enableDragDrop" : true,
+        "disableNavigationOnFirstColumn" : false,
+        "allowDeselect" : false,
+        "displayTotalRowCount" : false,
+        "autoTotalCount" : false,
+        "autoSelection" : false,
+        "pageSizeList" : "10,25,50,100",
+        "stateful" : false,
+        "allowInLineEdit" : false,
+        "modelStore" : "dataservices.taskhistory_initiate_staless_ds",
+        "columns" : [ {
+          "xcpId" : "col_activity_name",
+          "xtype" : "xcp_results_list_page_link_column",
+          "text" : "${_UI_Page_adcb_userdefined_case_wo_col_activity_name_text}",
+          "width" : 150,
+          "valueType" : "STRING",
+          "isRepeating" : false,
+          "sortable" : true,
+          "menuDisabled" : false,
+          "dataIndex" : "activity_name",
+          "hideable" : true,
+          "resizable" : true,
+          "draggable" : true,
+          "parentxcpId" : "results_list",
+          "stateful" : false,
+          "isExprImageSource" : false,
+          "navType" : "none"
+        }, {
+          "xcpId" : "col_date",
+          "xtype" : "xcp_results_list_column",
+          "text" : "${_UI_Page_adcb_userdefined_case_wo_col_date_text}",
+          "width" : 150,
+          "valueType" : "DATETIME",
+          "isRepeating" : false,
+          "format" : {
+            "xtype" : "xcp_datetime_formatter",
+            "dateFormat" : "short",
+            "timeFormat" : "short",
+            "dateStyle" : "datetime"
+          },
+          "sortable" : true,
+          "menuDisabled" : false,
+          "dataIndex" : "date",
+          "hideable" : true,
+          "resizable" : true,
+          "draggable" : true,
+          "parentxcpId" : "results_list",
+          "stateful" : false,
+          "isExprImageSource" : false,
+          "navType" : "none"
+        }, {
+          "xcpId" : "col_performer",
+          "xtype" : "xcp_results_list_column",
+          "text" : "${_UI_Page_adcb_userdefined_case_wo_col_performer_text}",
+          "width" : 150,
+          "valueType" : "STRING",
+          "isRepeating" : false,
+          "sortable" : true,
+          "menuDisabled" : false,
+          "dataIndex" : "performer",
+          "hideable" : true,
+          "resizable" : true,
+          "draggable" : true,
+          "parentxcpId" : "results_list",
+          "stateful" : false,
+          "isExprImageSource" : false,
+          "navType" : "none"
+        }, {
+          "xcpId" : "col_status",
+          "xtype" : "xcp_results_list_column",
+          "text" : "${_UI_Page_adcb_userdefined_case_wo_col_status_text}",
+          "valueType" : "xcp.picklist.xcp_task_state",
+          "isRepeating" : false,
+          "format" : {
+            "xtype" : "xcp_integer_formatter",
+            "decimalPrecision" : 0,
+            "useThousandSeparator" : true,
+            "separatorStyle" : "LOCALE",
+            "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+          },
+          "sortable" : true,
+          "menuDisabled" : false,
+          "dataIndex" : "status",
+          "hideable" : true,
+          "resizable" : true,
+          "draggable" : true,
+          "parentxcpId" : "results_list",
+          "stateful" : false,
+          "isExprImageSource" : false,
+          "navType" : "none"
+        } ]
+      } ]
+    } ]
+  } ],
+  "childModelsToLoad" : [ "xcp_process_adcb_userdefined_case_workers.executionData.currenttask" ]
+}

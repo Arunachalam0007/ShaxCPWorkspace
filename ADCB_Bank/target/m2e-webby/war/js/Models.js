@@ -507,6 +507,115 @@ Ext.define("adcb_case_",
     }
 );
 
+Ext.define("xcp_rootlightweightcontent",
+    {
+      "extend" : "xcp.data.LWContentModel",
+      "proxy" : {
+        "type" : "xcp_rest",
+        "url" : "application/xcp_rootlightweightcontents"
+      },
+      "idProperty" : "id",
+      "xcpModelType" : "xcp_rootlightweightcontent",
+      "fields" : [ {
+        "name" : "owner_name",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "a_status",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "a_content_type",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "defaultValue" : null,
+        "name" : "authors",
+        "type" : "array"
+      }, {
+        "defaultValue" : null,
+        "name" : "keywords",
+        "type" : "array"
+      }, {
+        "name" : "subject",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "title",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "r_lock_owner",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "r_lock_date",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "r_content_size",
+        "allowNull" : true,
+        "type" : "int"
+      }, {
+        "defaultValue" : null,
+        "name" : "r_version_label",
+        "type" : "array"
+      }, {
+        "name" : "i_chronicle_id",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "i_sharing_parent",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "defaultValue" : null,
+        "name" : "i_folder_id",
+        "type" : "array"
+      }, {
+        "name" : "r_creation_date",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "r_creator_name",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "r_modify_date",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "r_modifier",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "r_object_type",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "object_name",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "a_is_hidden",
+        "allowNull" : true,
+        "type" : "boolean"
+      }, {
+        "name" : "acl_name",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "acl_domain",
+        "allowNull" : true,
+        "type" : "string"
+      }, "links" ]
+    }
+);
+
 Ext.define("adcb_notesheets",
     {
       "extend" : "xcp.data.ContentModel",
@@ -775,115 +884,6 @@ Ext.define("adcb_supporting_docs",
         "type" : "array"
       }, {
         "name" : "i_chronicle_id",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "id",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "defaultValue" : null,
-        "name" : "i_folder_id",
-        "type" : "array"
-      }, {
-        "name" : "r_creation_date",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "r_creator_name",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "r_modify_date",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "r_modifier",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "r_object_type",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "object_name",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "a_is_hidden",
-        "allowNull" : true,
-        "type" : "boolean"
-      }, {
-        "name" : "acl_name",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "acl_domain",
-        "allowNull" : true,
-        "type" : "string"
-      }, "links" ]
-    }
-);
-
-Ext.define("xcp_rootlightweightcontent",
-    {
-      "extend" : "xcp.data.LWContentModel",
-      "proxy" : {
-        "type" : "xcp_rest",
-        "url" : "application/xcp_rootlightweightcontents"
-      },
-      "idProperty" : "id",
-      "xcpModelType" : "xcp_rootlightweightcontent",
-      "fields" : [ {
-        "name" : "owner_name",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "a_status",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "a_content_type",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "defaultValue" : null,
-        "name" : "authors",
-        "type" : "array"
-      }, {
-        "defaultValue" : null,
-        "name" : "keywords",
-        "type" : "array"
-      }, {
-        "name" : "subject",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "title",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "r_lock_owner",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "r_lock_date",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "r_content_size",
-        "allowNull" : true,
-        "type" : "int"
-      }, {
-        "defaultValue" : null,
-        "name" : "r_version_label",
-        "type" : "array"
-      }, {
-        "name" : "i_chronicle_id",
-        "allowNull" : true,
-        "type" : "string"
-      }, {
-        "name" : "i_sharing_parent",
         "allowNull" : true,
         "type" : "string"
       }, {
@@ -1226,514 +1226,50 @@ Ext.define("xcp_process_xcp_fetchcontentformats",
     }
 );
 
-Ext.define("xcp_fetch_userorgroup_contain_filter_processVariables",
+Ext.define("adcb_add_case_worker_processVariables",
     {
       "extend" : "xcp.data.IdLessModel",
       "xcpModelType" : null,
       "fields" : [ {
-        "name" : "user_group_name",
-        "type" : "array"
-      }, {
-        "name" : "contain_filter",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_process_xcp_fetch_userorgroup_contain_filter",
-    {
-      "extend" : "xcp.data.TaskModel",
-      "proxy" : {
-        "data" : {
-          "processVariables" : {
-          }
-        },
-        "extraParams" : {
-          "type" : "fetch_userorgroup_contain_filter"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/tasks"
-      },
-      "idProperty" : "id",
-      "xcpModelType" : "xcp_fetch_userorgroup_contain_filter",
-      "fields" : [ {
-        "name" : "processVariables",
-        "type" : "xcp_fetch_userorgroup_contain_filter_processVariables"
-      }, {
-        "name" : "executionData",
-        "type" : "xcp_ExecutionData"
-      }, {
-        "name" : "attachments",
-        "type" : "array"
-      }, {
-        "name" : "userName",
-        "type" : "array"
-      }, {
-        "name" : "signOffPassword",
-        "type" : "string"
-      }, {
-        "name" : "path",
-        "type" : "array"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("adcb_add_worker_processVariables",
-    {
-      "extend" : "xcp.data.IdLessModel",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "case_id",
-        "type" : "string"
-      }, {
-        "name" : "sno_count",
-        "type" : "int"
-      }, {
         "name" : "worker_name",
         "type" : "string"
       }, {
-        "name" : "sno",
-        "type" : "int"
+        "name" : "case_id",
+        "type" : "string"
+      }, {
+        "name" : "is_approve",
+        "type" : "boolean"
+      }, {
+        "name" : "is_complete",
+        "type" : "boolean"
+      }, {
+        "name" : "case_subject",
+        "type" : "string"
       } ]
     }
 );
 
-Ext.define("adcb_add_worker_processPackages",
-    {
-      "extend" : "xcp.data.IdLessModel",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "Case",
-        "type" : "adcb_case_"
-      } ]
-    }
-);
-
-Ext.define("xcp_process_adcb_add_worker",
+Ext.define("xcp_process_adcb_add_case_worker",
     {
       "extend" : "xcp.data.TaskModel",
       "proxy" : {
         "data" : {
           "processVariables" : {
+            "is_complete" : "false",
+            "is_approve" : "false"
           }
         },
         "extraParams" : {
-          "type" : "add_worker"
+          "type" : "add_case_worker"
         },
         "type" : "xcp_rest",
         "url" : "application/tasks"
       },
       "idProperty" : "id",
-      "xcpModelType" : "adcb_add_worker",
+      "xcpModelType" : "adcb_add_case_worker",
       "fields" : [ {
         "name" : "processVariables",
-        "type" : "adcb_add_worker_processVariables"
-      }, {
-        "name" : "executionData",
-        "type" : "xcp_ExecutionData"
-      }, {
-        "name" : "processPackages",
-        "type" : "adcb_add_worker_processPackages"
-      }, {
-        "name" : "attachments",
-        "type" : "array"
-      }, {
-        "name" : "userName",
-        "type" : "array"
-      }, {
-        "name" : "signOffPassword",
-        "type" : "string"
-      }, {
-        "name" : "path",
-        "type" : "array"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_queue_list_processVariables",
-    {
-      "extend" : "xcp.data.IdLessModel",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "queuelist",
-        "type" : "array"
-      } ]
-    }
-);
-
-Ext.define("xcp_process_xcp_queue_list",
-    {
-      "extend" : "xcp.data.TaskModel",
-      "proxy" : {
-        "data" : {
-          "processVariables" : {
-          }
-        },
-        "extraParams" : {
-          "type" : "queue_list"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/tasks"
-      },
-      "idProperty" : "id",
-      "xcpModelType" : "xcp_queue_list",
-      "fields" : [ {
-        "name" : "processVariables",
-        "type" : "xcp_queue_list_processVariables"
-      }, {
-        "name" : "executionData",
-        "type" : "xcp_ExecutionData"
-      }, {
-        "name" : "attachments",
-        "type" : "array"
-      }, {
-        "name" : "userName",
-        "type" : "array"
-      }, {
-        "name" : "signOffPassword",
-        "type" : "string"
-      }, {
-        "name" : "path",
-        "type" : "array"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_getfolderid_processVariables",
-    {
-      "extend" : "xcp.data.IdLessModel",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "folder_path",
-        "type" : "string"
-      }, {
-        "name" : "folder_id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_process_xcp_getfolderid",
-    {
-      "extend" : "xcp.data.TaskModel",
-      "proxy" : {
-        "data" : {
-          "processVariables" : {
-          }
-        },
-        "extraParams" : {
-          "type" : "getfolderid"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/tasks"
-      },
-      "idProperty" : "id",
-      "xcpModelType" : "xcp_getfolderid",
-      "fields" : [ {
-        "name" : "processVariables",
-        "type" : "xcp_getfolderid_processVariables"
-      }, {
-        "name" : "executionData",
-        "type" : "xcp_ExecutionData"
-      }, {
-        "name" : "attachments",
-        "type" : "array"
-      }, {
-        "name" : "userName",
-        "type" : "array"
-      }, {
-        "name" : "signOffPassword",
-        "type" : "string"
-      }, {
-        "name" : "path",
-        "type" : "array"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_taskhistory_processVariables",
-    {
-      "extend" : "xcp.data.IdLessModel",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "process_instance_id",
-        "type" : "string"
-      }, {
-        "name" : "performer",
-        "type" : "array"
-      }, {
-        "name" : "date",
-        "type" : "array"
-      }, {
-        "name" : "activity_name",
-        "type" : "array"
-      }, {
-        "name" : "status",
-        "type" : "array"
-      } ]
-    }
-);
-
-Ext.define("xcp_process_xcp_taskhistory",
-    {
-      "extend" : "xcp.data.TaskModel",
-      "proxy" : {
-        "data" : {
-          "processVariables" : {
-          }
-        },
-        "extraParams" : {
-          "type" : "taskhistory"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/tasks"
-      },
-      "idProperty" : "id",
-      "xcpModelType" : "xcp_taskhistory",
-      "fields" : [ {
-        "name" : "processVariables",
-        "type" : "xcp_taskhistory_processVariables"
-      }, {
-        "name" : "executionData",
-        "type" : "xcp_ExecutionData"
-      }, {
-        "name" : "attachments",
-        "type" : "array"
-      }, {
-        "name" : "userName",
-        "type" : "array"
-      }, {
-        "name" : "signOffPassword",
-        "type" : "string"
-      }, {
-        "name" : "path",
-        "type" : "array"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_fetchcontenttypes_processVariables",
-    {
-      "extend" : "xcp.data.IdLessModel",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "content_types",
-        "type" : "array"
-      } ]
-    }
-);
-
-Ext.define("xcp_process_xcp_fetchcontenttypes",
-    {
-      "extend" : "xcp.data.TaskModel",
-      "proxy" : {
-        "data" : {
-          "processVariables" : {
-          }
-        },
-        "extraParams" : {
-          "type" : "fetchcontenttypes"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/tasks"
-      },
-      "idProperty" : "id",
-      "xcpModelType" : "xcp_fetchcontenttypes",
-      "fields" : [ {
-        "name" : "processVariables",
-        "type" : "xcp_fetchcontenttypes_processVariables"
-      }, {
-        "name" : "executionData",
-        "type" : "xcp_ExecutionData"
-      }, {
-        "name" : "attachments",
-        "type" : "array"
-      }, {
-        "name" : "userName",
-        "type" : "array"
-      }, {
-        "name" : "signOffPassword",
-        "type" : "string"
-      }, {
-        "name" : "path",
-        "type" : "array"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_userorgroup_selecti_processVariables",
-    {
-      "extend" : "xcp.data.IdLessModel",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "starts_with_filter",
-        "type" : "string"
-      }, {
-        "name" : "user_group_name",
-        "type" : "array"
-      } ]
-    }
-);
-
-Ext.define("xcp_process_xcp_userorgroup_selecti",
-    {
-      "extend" : "xcp.data.TaskModel",
-      "proxy" : {
-        "data" : {
-          "processVariables" : {
-          }
-        },
-        "extraParams" : {
-          "type" : "userorgroup_selecti"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/tasks"
-      },
-      "idProperty" : "id",
-      "xcpModelType" : "xcp_userorgroup_selecti",
-      "fields" : [ {
-        "name" : "processVariables",
-        "type" : "xcp_userorgroup_selecti_processVariables"
-      }, {
-        "name" : "executionData",
-        "type" : "xcp_ExecutionData"
-      }, {
-        "name" : "attachments",
-        "type" : "array"
-      }, {
-        "name" : "userName",
-        "type" : "array"
-      }, {
-        "name" : "signOffPassword",
-        "type" : "string"
-      }, {
-        "name" : "path",
-        "type" : "array"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_activity_list_processVariables",
-    {
-      "extend" : "xcp.data.IdLessModel",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "id",
-        "type" : "string"
-      }, {
-        "name" : "process_id",
-        "type" : "string"
-      }, {
-        "name" : "act_name",
-        "type" : "string"
-      }, {
-        "name" : "port_type",
-        "type" : "string"
-      }, {
-        "name" : "output_activity_names",
-        "type" : "array"
-      } ]
-    }
-);
-
-Ext.define("xcp_process_xcp_activity_list",
-    {
-      "extend" : "xcp.data.TaskModel",
-      "proxy" : {
-        "data" : {
-          "processVariables" : {
-          }
-        },
-        "extraParams" : {
-          "type" : "activity_list"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/tasks"
-      },
-      "idProperty" : "id",
-      "xcpModelType" : "xcp_activity_list",
-      "fields" : [ {
-        "name" : "processVariables",
-        "type" : "xcp_activity_list_processVariables"
-      }, {
-        "name" : "executionData",
-        "type" : "xcp_ExecutionData"
-      }, {
-        "name" : "attachments",
-        "type" : "array"
-      }, {
-        "name" : "userName",
-        "type" : "array"
-      }, {
-        "name" : "signOffPassword",
-        "type" : "string"
-      }, {
-        "name" : "path",
-        "type" : "array"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_user_from_queue_processVariables",
-    {
-      "extend" : "xcp.data.IdLessModel",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "id",
-        "type" : "string"
-      }, {
-        "name" : "user_list",
-        "type" : "array"
-      }, {
-        "name" : "queue_name",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_process_xcp_user_from_queue",
-    {
-      "extend" : "xcp.data.TaskModel",
-      "proxy" : {
-        "data" : {
-          "processVariables" : {
-          }
-        },
-        "extraParams" : {
-          "type" : "user_from_queue"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/tasks"
-      },
-      "idProperty" : "id",
-      "xcpModelType" : "xcp_user_from_queue",
-      "fields" : [ {
-        "name" : "processVariables",
-        "type" : "xcp_user_from_queue_processVariables"
+        "type" : "adcb_add_case_worker_processVariables"
       }, {
         "name" : "executionData",
         "type" : "xcp_ExecutionData"
@@ -1849,110 +1385,6 @@ Ext.define("xcp_process_adcb_create_case",
     }
 );
 
-Ext.define("xcp_process_xcp_OOTBProcess",
-    {
-      "extend" : "xcp.data.TaskModel",
-      "proxy" : {
-        "data" : {
-          "processVariables" : {
-          }
-        },
-        "extraParams" : {
-          "type" : "OOTBProcess"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/tasks"
-      },
-      "idProperty" : "id",
-      "xcpModelType" : "xcp_OOTBProcess",
-      "fields" : [ {
-        "name" : "executionData",
-        "type" : "xcp_ExecutionData"
-      }, {
-        "name" : "attachments",
-        "type" : "array"
-      }, {
-        "name" : "userName",
-        "type" : "array"
-      }, {
-        "name" : "signOffPassword",
-        "type" : "string"
-      }, {
-        "name" : "path",
-        "type" : "array"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("adcb_add_case_worker_processVariables",
-    {
-      "extend" : "xcp.data.IdLessModel",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "worker_name",
-        "type" : "string"
-      }, {
-        "name" : "case_id",
-        "type" : "string"
-      }, {
-        "name" : "is_approve",
-        "type" : "boolean"
-      }, {
-        "name" : "is_complete",
-        "type" : "boolean"
-      }, {
-        "name" : "case_subject",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_process_adcb_add_case_worker",
-    {
-      "extend" : "xcp.data.TaskModel",
-      "proxy" : {
-        "data" : {
-          "processVariables" : {
-            "is_complete" : "false",
-            "is_approve" : "false"
-          }
-        },
-        "extraParams" : {
-          "type" : "add_case_worker"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/tasks"
-      },
-      "idProperty" : "id",
-      "xcpModelType" : "adcb_add_case_worker",
-      "fields" : [ {
-        "name" : "processVariables",
-        "type" : "adcb_add_case_worker_processVariables"
-      }, {
-        "name" : "executionData",
-        "type" : "xcp_ExecutionData"
-      }, {
-        "name" : "attachments",
-        "type" : "array"
-      }, {
-        "name" : "userName",
-        "type" : "array"
-      }, {
-        "name" : "signOffPassword",
-        "type" : "string"
-      }, {
-        "name" : "path",
-        "type" : "array"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
 Ext.define("xcp_fetchtypes_processVariables",
     {
       "extend" : "xcp.data.IdLessModel",
@@ -2014,38 +1446,651 @@ Ext.define("xcp_process_xcp_fetchtypes",
     }
 );
 
-Ext.define("adcb_case_workers_case_dataActionModel",
+Ext.define("xcp_process_xcp_OOTBProcess",
     {
-      "extend" : "xcp.data.BaseRelationModel",
+      "extend" : "xcp.data.TaskModel",
       "proxy" : {
-        "extraParams" : {
-          "type" : "adcb_da_def_relate_case_workers_case_case_workers"
+        "data" : {
+          "processVariables" : {
+          }
         },
-        "writer" : {
-          "type" : "xcpjson"
+        "extraParams" : {
+          "type" : "OOTBProcess"
         },
         "type" : "xcp_rest",
-        "url" : "application/relationships/adcb_case_workers_cases"
+        "url" : "application/tasks"
       },
       "idProperty" : "id",
-      "xcpActionType" : "relate",
-      "xcpModelType" : "adcb_case_workers_case",
+      "xcpModelType" : "xcp_OOTBProcess",
       "fields" : [ {
-        "name" : "id",
+        "name" : "executionData",
+        "type" : "xcp_ExecutionData"
+      }, {
+        "name" : "attachments",
+        "type" : "array"
+      }, {
+        "name" : "userName",
+        "type" : "array"
+      }, {
+        "name" : "signOffPassword",
         "type" : "string"
       }, {
-        "name" : "targetId",
+        "name" : "path",
+        "type" : "array"
+      }, {
+        "name" : "id",
         "type" : "string"
       } ]
     }
 );
 
-Ext.define("xcp_logout",
+Ext.define("adcb_add_worker_processVariables",
+    {
+      "extend" : "xcp.data.IdLessModel",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "case_id",
+        "type" : "string"
+      }, {
+        "name" : "sno_count",
+        "type" : "int"
+      }, {
+        "name" : "worker_name",
+        "type" : "string"
+      }, {
+        "name" : "sno",
+        "type" : "int"
+      } ]
+    }
+);
+
+Ext.define("adcb_add_worker_processPackages",
+    {
+      "extend" : "xcp.data.IdLessModel",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "Case",
+        "type" : "adcb_case_"
+      } ]
+    }
+);
+
+Ext.define("xcp_process_adcb_add_worker",
+    {
+      "extend" : "xcp.data.TaskModel",
+      "proxy" : {
+        "data" : {
+          "processVariables" : {
+          }
+        },
+        "extraParams" : {
+          "type" : "add_worker"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/tasks"
+      },
+      "idProperty" : "id",
+      "xcpModelType" : "adcb_add_worker",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "adcb_add_worker_processVariables"
+      }, {
+        "name" : "executionData",
+        "type" : "xcp_ExecutionData"
+      }, {
+        "name" : "processPackages",
+        "type" : "adcb_add_worker_processPackages"
+      }, {
+        "name" : "attachments",
+        "type" : "array"
+      }, {
+        "name" : "userName",
+        "type" : "array"
+      }, {
+        "name" : "signOffPassword",
+        "type" : "string"
+      }, {
+        "name" : "path",
+        "type" : "array"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_taskhistory_processVariables",
+    {
+      "extend" : "xcp.data.IdLessModel",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "process_instance_id",
+        "type" : "string"
+      }, {
+        "name" : "performer",
+        "type" : "array"
+      }, {
+        "name" : "date",
+        "type" : "array"
+      }, {
+        "name" : "activity_name",
+        "type" : "array"
+      }, {
+        "name" : "status",
+        "type" : "array"
+      } ]
+    }
+);
+
+Ext.define("xcp_process_xcp_taskhistory",
+    {
+      "extend" : "xcp.data.TaskModel",
+      "proxy" : {
+        "data" : {
+          "processVariables" : {
+          }
+        },
+        "extraParams" : {
+          "type" : "taskhistory"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/tasks"
+      },
+      "idProperty" : "id",
+      "xcpModelType" : "xcp_taskhistory",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "xcp_taskhistory_processVariables"
+      }, {
+        "name" : "executionData",
+        "type" : "xcp_ExecutionData"
+      }, {
+        "name" : "attachments",
+        "type" : "array"
+      }, {
+        "name" : "userName",
+        "type" : "array"
+      }, {
+        "name" : "signOffPassword",
+        "type" : "string"
+      }, {
+        "name" : "path",
+        "type" : "array"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_fetch_userorgroup_contain_filter_processVariables",
+    {
+      "extend" : "xcp.data.IdLessModel",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "user_group_name",
+        "type" : "array"
+      }, {
+        "name" : "contain_filter",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_process_xcp_fetch_userorgroup_contain_filter",
+    {
+      "extend" : "xcp.data.TaskModel",
+      "proxy" : {
+        "data" : {
+          "processVariables" : {
+          }
+        },
+        "extraParams" : {
+          "type" : "fetch_userorgroup_contain_filter"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/tasks"
+      },
+      "idProperty" : "id",
+      "xcpModelType" : "xcp_fetch_userorgroup_contain_filter",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "xcp_fetch_userorgroup_contain_filter_processVariables"
+      }, {
+        "name" : "executionData",
+        "type" : "xcp_ExecutionData"
+      }, {
+        "name" : "attachments",
+        "type" : "array"
+      }, {
+        "name" : "userName",
+        "type" : "array"
+      }, {
+        "name" : "signOffPassword",
+        "type" : "string"
+      }, {
+        "name" : "path",
+        "type" : "array"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_getfolderid_processVariables",
+    {
+      "extend" : "xcp.data.IdLessModel",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "folder_path",
+        "type" : "string"
+      }, {
+        "name" : "folder_id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_process_xcp_getfolderid",
+    {
+      "extend" : "xcp.data.TaskModel",
+      "proxy" : {
+        "data" : {
+          "processVariables" : {
+          }
+        },
+        "extraParams" : {
+          "type" : "getfolderid"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/tasks"
+      },
+      "idProperty" : "id",
+      "xcpModelType" : "xcp_getfolderid",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "xcp_getfolderid_processVariables"
+      }, {
+        "name" : "executionData",
+        "type" : "xcp_ExecutionData"
+      }, {
+        "name" : "attachments",
+        "type" : "array"
+      }, {
+        "name" : "userName",
+        "type" : "array"
+      }, {
+        "name" : "signOffPassword",
+        "type" : "string"
+      }, {
+        "name" : "path",
+        "type" : "array"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_user_from_queue_processVariables",
+    {
+      "extend" : "xcp.data.IdLessModel",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "id",
+        "type" : "string"
+      }, {
+        "name" : "user_list",
+        "type" : "array"
+      }, {
+        "name" : "queue_name",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_process_xcp_user_from_queue",
+    {
+      "extend" : "xcp.data.TaskModel",
+      "proxy" : {
+        "data" : {
+          "processVariables" : {
+          }
+        },
+        "extraParams" : {
+          "type" : "user_from_queue"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/tasks"
+      },
+      "idProperty" : "id",
+      "xcpModelType" : "xcp_user_from_queue",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "xcp_user_from_queue_processVariables"
+      }, {
+        "name" : "executionData",
+        "type" : "xcp_ExecutionData"
+      }, {
+        "name" : "attachments",
+        "type" : "array"
+      }, {
+        "name" : "userName",
+        "type" : "array"
+      }, {
+        "name" : "signOffPassword",
+        "type" : "string"
+      }, {
+        "name" : "path",
+        "type" : "array"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_activity_list_processVariables",
+    {
+      "extend" : "xcp.data.IdLessModel",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "id",
+        "type" : "string"
+      }, {
+        "name" : "process_id",
+        "type" : "string"
+      }, {
+        "name" : "act_name",
+        "type" : "string"
+      }, {
+        "name" : "port_type",
+        "type" : "string"
+      }, {
+        "name" : "output_activity_names",
+        "type" : "array"
+      } ]
+    }
+);
+
+Ext.define("xcp_process_xcp_activity_list",
+    {
+      "extend" : "xcp.data.TaskModel",
+      "proxy" : {
+        "data" : {
+          "processVariables" : {
+          }
+        },
+        "extraParams" : {
+          "type" : "activity_list"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/tasks"
+      },
+      "idProperty" : "id",
+      "xcpModelType" : "xcp_activity_list",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "xcp_activity_list_processVariables"
+      }, {
+        "name" : "executionData",
+        "type" : "xcp_ExecutionData"
+      }, {
+        "name" : "attachments",
+        "type" : "array"
+      }, {
+        "name" : "userName",
+        "type" : "array"
+      }, {
+        "name" : "signOffPassword",
+        "type" : "string"
+      }, {
+        "name" : "path",
+        "type" : "array"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("adcb_userdefined_case_workers_processVariables",
+    {
+      "extend" : "xcp.data.IdLessModel",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "worker_name",
+        "type" : "array"
+      }, {
+        "name" : "s_no",
+        "type" : "array"
+      }, {
+        "name" : "sno_count",
+        "type" : "int"
+      }, {
+        "name" : "index",
+        "type" : "int"
+      }, {
+        "name" : "current_worker_name",
+        "type" : "string"
+      }, {
+        "name" : "case_id",
+        "type" : "string"
+      }, {
+        "name" : "worker_status",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_process_adcb_userdefined_case_workers",
+    {
+      "extend" : "xcp.data.TaskModel",
+      "proxy" : {
+        "data" : {
+          "processVariables" : {
+            "index" : "0"
+          }
+        },
+        "extraParams" : {
+          "type" : "userdefined_case_workers"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/tasks"
+      },
+      "idProperty" : "id",
+      "xcpModelType" : "adcb_userdefined_case_workers",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "adcb_userdefined_case_workers_processVariables"
+      }, {
+        "name" : "executionData",
+        "type" : "xcp_ExecutionData"
+      }, {
+        "name" : "attachments",
+        "type" : "array"
+      }, {
+        "name" : "userName",
+        "type" : "array"
+      }, {
+        "name" : "signOffPassword",
+        "type" : "string"
+      }, {
+        "name" : "path",
+        "type" : "array"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_userorgroup_selecti_processVariables",
+    {
+      "extend" : "xcp.data.IdLessModel",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "starts_with_filter",
+        "type" : "string"
+      }, {
+        "name" : "user_group_name",
+        "type" : "array"
+      } ]
+    }
+);
+
+Ext.define("xcp_process_xcp_userorgroup_selecti",
+    {
+      "extend" : "xcp.data.TaskModel",
+      "proxy" : {
+        "data" : {
+          "processVariables" : {
+          }
+        },
+        "extraParams" : {
+          "type" : "userorgroup_selecti"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/tasks"
+      },
+      "idProperty" : "id",
+      "xcpModelType" : "xcp_userorgroup_selecti",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "xcp_userorgroup_selecti_processVariables"
+      }, {
+        "name" : "executionData",
+        "type" : "xcp_ExecutionData"
+      }, {
+        "name" : "attachments",
+        "type" : "array"
+      }, {
+        "name" : "userName",
+        "type" : "array"
+      }, {
+        "name" : "signOffPassword",
+        "type" : "string"
+      }, {
+        "name" : "path",
+        "type" : "array"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_fetchcontenttypes_processVariables",
+    {
+      "extend" : "xcp.data.IdLessModel",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "content_types",
+        "type" : "array"
+      } ]
+    }
+);
+
+Ext.define("xcp_process_xcp_fetchcontenttypes",
+    {
+      "extend" : "xcp.data.TaskModel",
+      "proxy" : {
+        "data" : {
+          "processVariables" : {
+          }
+        },
+        "extraParams" : {
+          "type" : "fetchcontenttypes"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/tasks"
+      },
+      "idProperty" : "id",
+      "xcpModelType" : "xcp_fetchcontenttypes",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "xcp_fetchcontenttypes_processVariables"
+      }, {
+        "name" : "executionData",
+        "type" : "xcp_ExecutionData"
+      }, {
+        "name" : "attachments",
+        "type" : "array"
+      }, {
+        "name" : "userName",
+        "type" : "array"
+      }, {
+        "name" : "signOffPassword",
+        "type" : "string"
+      }, {
+        "name" : "path",
+        "type" : "array"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_queue_list_processVariables",
+    {
+      "extend" : "xcp.data.IdLessModel",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "queuelist",
+        "type" : "array"
+      } ]
+    }
+);
+
+Ext.define("xcp_process_xcp_queue_list",
+    {
+      "extend" : "xcp.data.TaskModel",
+      "proxy" : {
+        "data" : {
+          "processVariables" : {
+          }
+        },
+        "extraParams" : {
+          "type" : "queue_list"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/tasks"
+      },
+      "idProperty" : "id",
+      "xcpModelType" : "xcp_queue_list",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "xcp_queue_list_processVariables"
+      }, {
+        "name" : "executionData",
+        "type" : "xcp_ExecutionData"
+      }, {
+        "name" : "attachments",
+        "type" : "array"
+      }, {
+        "name" : "userName",
+        "type" : "array"
+      }, {
+        "name" : "signOffPassword",
+        "type" : "string"
+      }, {
+        "name" : "path",
+        "type" : "array"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_da_def_reject_currenttask",
     {
       "extend" : "xcp.data.Model",
       "proxy" : {
         "extraParams" : {
-          "type" : "xcp_logout"
+          "type" : "xcp_da_def_reject_currenttask"
         },
         "writer" : {
           "type" : "xcpjson"
@@ -2063,12 +2108,12 @@ Ext.define("xcp_logout",
     }
 );
 
-Ext.define("xcp_da_def_reject_currenttask",
+Ext.define("xcp_logout",
     {
       "extend" : "xcp.data.Model",
       "proxy" : {
         "extraParams" : {
-          "type" : "xcp_da_def_reject_currenttask"
+          "type" : "xcp_logout"
         },
         "writer" : {
           "type" : "xcpjson"
@@ -2121,6 +2166,52 @@ Ext.define("xcp_ExportToCSV",
     }
 );
 
+Ext.define("xcp_da_def_delegate_currenttask",
+    {
+      "extend" : "xcp.data.Model",
+      "proxy" : {
+        "extraParams" : {
+          "type" : "xcp_da_def_delegate_currenttask"
+        },
+        "writer" : {
+          "type" : "xcpjson"
+        },
+        "type" : "xcp_rest",
+        "url" : null
+      },
+      "idProperty" : "id",
+      "xcpActionType" : "custom",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_da_def_complete_currenttask",
+    {
+      "extend" : "xcp.data.Model",
+      "proxy" : {
+        "extraParams" : {
+          "type" : "xcp_da_def_complete_currenttask"
+        },
+        "writer" : {
+          "type" : "xcpjson"
+        },
+        "type" : "xcp_rest",
+        "url" : null
+      },
+      "idProperty" : "id",
+      "xcpActionType" : "custom",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
 Ext.define("xcp_da_def_download_dm_document",
     {
       "extend" : "xcp.data.Model",
@@ -2167,47 +2258,27 @@ Ext.define("xcp_da_def_repeat_currenttask",
     }
 );
 
-Ext.define("xcp_da_def_complete_currenttask",
+Ext.define("adcb_case_workers_case_dataActionModel",
     {
-      "extend" : "xcp.data.Model",
+      "extend" : "xcp.data.BaseRelationModel",
       "proxy" : {
         "extraParams" : {
-          "type" : "xcp_da_def_complete_currenttask"
+          "type" : "adcb_da_def_relate_case_workers_case_case_workers"
         },
         "writer" : {
           "type" : "xcpjson"
         },
         "type" : "xcp_rest",
-        "url" : null
+        "url" : "application/relationships/adcb_case_workers_cases"
       },
       "idProperty" : "id",
-      "xcpActionType" : "custom",
-      "xcpModelType" : null,
+      "xcpActionType" : "relate",
+      "xcpModelType" : "adcb_case_workers_case",
       "fields" : [ {
         "name" : "id",
         "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_da_def_delegate_currenttask",
-    {
-      "extend" : "xcp.data.Model",
-      "proxy" : {
-        "extraParams" : {
-          "type" : "xcp_da_def_delegate_currenttask"
-        },
-        "writer" : {
-          "type" : "xcpjson"
-        },
-        "type" : "xcp_rest",
-        "url" : null
-      },
-      "idProperty" : "id",
-      "xcpActionType" : "custom",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "id",
+      }, {
+        "name" : "targetId",
         "type" : "string"
       } ]
     }
@@ -2273,436 +2344,7 @@ Ext.define("xcp_fetchcontentformats_initiate_staless_ds_inputs",
     }
 );
 
-Ext.define("xcp_fetch_userorgroup_contain_filter_initiate_staless_ds_outputs",
-    {
-      "extend" : "xcp.data.StatelessProcessCollectionModel",
-      "proxy" : {
-        "reader" : {
-          "rootProperty" : "items",
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "xcp_fetch_userorgroup_contain_filter_initiate_staless_ds"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/processes/xcp_fetch_userorgroup_contain_filter_initiate"
-      },
-      "xcpModelType" : "xcp_fetch_userorgroup_contain_filter",
-      "fields" : [ {
-        "name" : "user_group_name",
-        "type" : "string"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_fetch_userorgroup_contain_filter_initiate_staless_ds_inputs_processVariables",
-    {
-      "extend" : "xcp.data.Model",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "contain_filter",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_fetch_userorgroup_contain_filter_initiate_staless_ds_inputs",
-    {
-      "extend" : "xcp.data.StatelessProcessObjectModel",
-      "proxy" : {
-        "extraParams" : {
-          "type" : "stateless"
-        },
-        "writer" : {
-          "type" : "xcpjson"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/xcp_fetch_userorgroup_contain_filter_initiate_staless_dss"
-      },
-      "xcpModelType" : "xcp_fetch_userorgroup_contain_filter",
-      "fields" : [ {
-        "name" : "processVariables",
-        "type" : "xcp_fetch_userorgroup_contain_filter_initiate_staless_ds_inputs_processVariables"
-      } ]
-    }
-);
-
-Ext.define("xcp_queue_list_initiate_staless_ds_outputs",
-    {
-      "extend" : "xcp.data.StatelessProcessCollectionModel",
-      "proxy" : {
-        "reader" : {
-          "rootProperty" : "items",
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "xcp_queue_list_initiate_staless_ds"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/processes/xcp_queue_list_initiate"
-      },
-      "xcpModelType" : "xcp_queue_list",
-      "fields" : [ {
-        "name" : "queuelist",
-        "type" : "string"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_queue_list_initiate_staless_ds_inputs",
-    {
-      "extend" : "xcp.data.StatelessProcessObjectModel",
-      "proxy" : {
-        "extraParams" : {
-          "type" : "stateless"
-        },
-        "writer" : {
-          "type" : "xcpjson"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/xcp_queue_list_initiate_staless_dss"
-      },
-      "xcpModelType" : "xcp_queue_list",
-      "fields" : [ ]
-    }
-);
-
-Ext.define("xcp_folderQuery_outputs",
-    {
-      "extend" : "xcp.data.FolderContentModel",
-      "proxy" : {
-        "reader" : {
-          "rootProperty" : "items",
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "folderQuery"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/sysobject"
-      },
-      "linkrel" : "http://identifiers.emc.com/linkrel/objects",
-      "xcpModelType" : "dm_folder",
-      "fields" : [ {
-        "name" : "r_lock_owner",
-        "type" : "string"
-      }, {
-        "name" : "object_name",
-        "type" : "string"
-      }, {
-        "name" : "r_creator_name",
-        "type" : "string"
-      }, {
-        "name" : "r_creation_date",
-        "type" : "string"
-      }, {
-        "name" : "r_modifier",
-        "type" : "string"
-      }, {
-        "name" : "r_modify_date",
-        "type" : "string"
-      }, {
-        "name" : "r_object_type",
-        "type" : "string"
-      }, {
-        "name" : "icon",
-        "type" : "string"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      }, {
-        "name" : "r_lock_date",
-        "type" : "string"
-      }, {
-        "name" : "r_link_cnt",
-        "type" : "int"
-      }, {
-        "name" : "a_content_type",
-        "type" : "string"
-      }, {
-        "name" : "i_folder_id",
-        "type" : "array"
-      } ]
-    }
-);
-
-Ext.define("xcp_ds_read_dm_folder_outputs",
-    {
-      "extend" : "xcp.data.ReadModel",
-      "proxy" : {
-        "reader" : {
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "xcp_ds_read_dm_folder"
-        },
-        "type" : "xcp_rest",
-        "url" : "pplication/dm_folders"
-      },
-      "xcpModelType" : "dm_folder",
-      "fields" : [ {
-        "name" : "authors",
-        "type" : "array"
-      }, {
-        "name" : "keywords",
-        "type" : "array"
-      }, {
-        "name" : "subject",
-        "type" : "string"
-      }, {
-        "name" : "title",
-        "type" : "string"
-      }, {
-        "name" : "r_version_label",
-        "type" : "array"
-      }, {
-        "name" : "r_lock_owner",
-        "type" : "string"
-      }, {
-        "name" : "r_lock_date",
-        "type" : "string"
-      }, {
-        "name" : "r_folder_path",
-        "type" : "array"
-      }, {
-        "name" : "r_link_cnt",
-        "type" : "int"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      }, {
-        "name" : "i_folder_id",
-        "type" : "array"
-      }, {
-        "name" : "r_creation_date",
-        "type" : "string"
-      }, {
-        "name" : "r_creator_name",
-        "type" : "string"
-      }, {
-        "name" : "r_modify_date",
-        "type" : "string"
-      }, {
-        "name" : "r_modifier",
-        "type" : "string"
-      }, {
-        "name" : "r_object_type",
-        "type" : "string"
-      }, {
-        "name" : "object_name",
-        "type" : "string"
-      }, {
-        "name" : "a_is_hidden",
-        "type" : "boolean"
-      }, {
-        "name" : "acl_name",
-        "type" : "string"
-      }, {
-        "name" : "acl_domain",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_ds_read_dm_folder_defaults_outputs",
-    {
-      "extend" : "xcp.data.ReadDefaultModel",
-      "proxy" : {
-        "reader" : {
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "xcp_ds_read_dm_folder_defaults"
-        },
-        "type" : "xcp_rest",
-        "url" : "pplication/dm_folders"
-      },
-      "xcpModelType" : "dm_folder",
-      "fields" : [ {
-        "name" : "object_name",
-        "type" : "string"
-      }, {
-        "name" : "subject",
-        "type" : "string"
-      }, {
-        "name" : "title",
-        "type" : "string"
-      }, {
-        "name" : "authors",
-        "type" : "array"
-      }, {
-        "name" : "keywords",
-        "type" : "array"
-      }, {
-        "name" : "a_is_hidden",
-        "type" : "boolean"
-      }, {
-        "name" : "acl_name",
-        "type" : "string"
-      }, {
-        "name" : "acl_domain",
-        "type" : "string"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_ds_read_dm_cabinet_outputs",
-    {
-      "extend" : "xcp.data.ReadModel",
-      "proxy" : {
-        "reader" : {
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "xcp_ds_read_dm_cabinet"
-        },
-        "type" : "xcp_rest",
-        "url" : "pplication/dm_cabinets"
-      },
-      "xcpModelType" : "dm_cabinet",
-      "fields" : [ {
-        "name" : "is_private",
-        "type" : "boolean"
-      }, {
-        "name" : "authors",
-        "type" : "array"
-      }, {
-        "name" : "keywords",
-        "type" : "array"
-      }, {
-        "name" : "subject",
-        "type" : "string"
-      }, {
-        "name" : "title",
-        "type" : "string"
-      }, {
-        "name" : "r_version_label",
-        "type" : "array"
-      }, {
-        "name" : "r_lock_owner",
-        "type" : "string"
-      }, {
-        "name" : "r_lock_date",
-        "type" : "string"
-      }, {
-        "name" : "r_folder_path",
-        "type" : "array"
-      }, {
-        "name" : "r_link_cnt",
-        "type" : "int"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      }, {
-        "name" : "i_folder_id",
-        "type" : "array"
-      }, {
-        "name" : "r_creation_date",
-        "type" : "string"
-      }, {
-        "name" : "r_creator_name",
-        "type" : "string"
-      }, {
-        "name" : "r_modify_date",
-        "type" : "string"
-      }, {
-        "name" : "r_modifier",
-        "type" : "string"
-      }, {
-        "name" : "r_object_type",
-        "type" : "string"
-      }, {
-        "name" : "object_name",
-        "type" : "string"
-      }, {
-        "name" : "a_is_hidden",
-        "type" : "boolean"
-      }, {
-        "name" : "acl_name",
-        "type" : "string"
-      }, {
-        "name" : "acl_domain",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_ds_read_dm_cabinet_defaults_outputs",
-    {
-      "extend" : "xcp.data.ReadDefaultModel",
-      "proxy" : {
-        "reader" : {
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "xcp_ds_read_dm_cabinet_defaults"
-        },
-        "type" : "xcp_rest",
-        "url" : "pplication/dm_cabinets"
-      },
-      "xcpModelType" : "dm_cabinet",
-      "fields" : [ {
-        "name" : "object_name",
-        "type" : "string"
-      }, {
-        "name" : "subject",
-        "type" : "string"
-      }, {
-        "name" : "title",
-        "type" : "string"
-      }, {
-        "name" : "authors",
-        "type" : "array"
-      }, {
-        "name" : "keywords",
-        "type" : "array"
-      }, {
-        "name" : "a_is_hidden",
-        "type" : "boolean"
-      }, {
-        "name" : "acl_name",
-        "type" : "string"
-      }, {
-        "name" : "acl_domain",
-        "type" : "string"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("adcb_ds_read_case_workers_case_defaults_outputs",
-    {
-      "extend" : "xcp.data.ReadDefaultModel",
-      "proxy" : {
-        "reader" : {
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "adcb_ds_read_case_workers_case_defaults"
-        },
-        "type" : "xcp_rest",
-        "url" : "pplication/adcb_case_workers_cases"
-      },
-      "xcpModelType" : "adcb_case_workers_case",
-      "fields" : [ {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_folder_rt_query_outputs",
+Ext.define("adcb_get_all_workers_outputs",
     {
       "extend" : "xcp.data.RealTimeDataSourceModel",
       "proxy" : {
@@ -2711,35 +2353,108 @@ Ext.define("xcp_folder_rt_query_outputs",
           "type" : "xcpjson"
         },
         "extraParams" : {
-          "type" : "xcp_folder_rt_query"
+          "type" : "adcb_get_all_workers"
         },
         "type" : "xcp_rest",
-        "url" : "application/dm_folders"
+        "url" : "application/adcb_case_workerss"
       },
-      "xcpModelType" : "xcp_folder_rt_query",
+      "xcpModelType" : "adcb_get_all_workers",
       "fields" : [ {
+        "name" : "s_no",
+        "type" : "int"
+      }, {
+        "name" : "worker_name",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      }, {
+        "name" : "casechild_case_id",
+        "alias" : "case.child.id",
+        "type" : "string"
+      }, {
+        "name" : "r_object_type",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_ds_read_lightweight_content_outputs",
+    {
+      "extend" : "xcp.data.ReadModel",
+      "proxy" : {
+        "reader" : {
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "xcp_ds_read_lightweight_content"
+        },
+        "type" : "xcp_rest",
+        "url" : "pplication/xcp_rootlightweightcontents"
+      },
+      "xcpModelType" : "",
+      "fields" : [ {
+        "name" : "owner_name",
+        "type" : "string"
+      }, {
+        "name" : "a_status",
+        "type" : "string"
+      }, {
+        "name" : "a_content_type",
+        "type" : "string"
+      }, {
+        "name" : "authors",
+        "type" : "array"
+      }, {
+        "name" : "keywords",
+        "type" : "array"
+      }, {
+        "name" : "subject",
+        "type" : "string"
+      }, {
+        "name" : "title",
+        "type" : "string"
+      }, {
         "name" : "r_lock_owner",
         "type" : "string"
       }, {
-        "name" : "object_name",
+        "name" : "r_lock_date",
+        "type" : "string"
+      }, {
+        "name" : "r_content_size",
+        "type" : "int"
+      }, {
+        "name" : "r_version_label",
+        "type" : "array"
+      }, {
+        "name" : "i_chronicle_id",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      }, {
+        "name" : "i_folder_id",
+        "type" : "array"
+      }, {
+        "name" : "r_creation_date",
         "type" : "string"
       }, {
         "name" : "r_creator_name",
         "type" : "string"
       }, {
-        "name" : "r_creation_date",
+        "name" : "r_modify_date",
         "type" : "string"
       }, {
         "name" : "r_modifier",
         "type" : "string"
       }, {
-        "name" : "r_modify_date",
-        "type" : "string"
-      }, {
         "name" : "r_object_type",
         "type" : "string"
       }, {
-        "name" : "id",
+        "name" : "object_name",
+        "type" : "string"
+      }, {
+        "name" : "i_sharing_parent",
         "type" : "string"
       } ]
     }
@@ -3142,6 +2857,245 @@ Ext.define("adcb_ds_read_notesheets_defaults_outputs",
     }
 );
 
+Ext.define("xcp_fetchtypes_initiate_staless_ds_outputs",
+    {
+      "extend" : "xcp.data.StatelessProcessCollectionModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "xcp_fetchtypes_initiate_staless_ds"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/processes/xcp_fetchtypes_initiate"
+      },
+      "xcpModelType" : "xcp_fetchtypes",
+      "fields" : [ {
+        "name" : "outputs_label",
+        "type" : "string"
+      }, {
+        "name" : "outputs",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_fetchtypes_initiate_staless_ds_inputs_processVariables",
+    {
+      "extend" : "xcp.data.Model",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "inputs_label",
+        "type" : "array"
+      }, {
+        "name" : "inputs",
+        "type" : "array"
+      } ]
+    }
+);
+
+Ext.define("xcp_fetchtypes_initiate_staless_ds_inputs",
+    {
+      "extend" : "xcp.data.StatelessProcessObjectModel",
+      "proxy" : {
+        "extraParams" : {
+          "type" : "stateless"
+        },
+        "writer" : {
+          "type" : "xcpjson"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/xcp_fetchtypes_initiate_staless_dss"
+      },
+      "xcpModelType" : "xcp_fetchtypes",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "xcp_fetchtypes_initiate_staless_ds_inputs_processVariables"
+      } ]
+    }
+);
+
+Ext.define("xcp_viewer_profiles_outputs",
+    {
+      "extend" : "xcp.data.ViewerProfileModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "xcp_viewer_profiles"
+        },
+        "type" : "xcp_rest",
+        "url" : ""
+      },
+      "xcpModelType" : "xcp_repository",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "string"
+      }, {
+        "name" : "object_name",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("adcb_get_workers_from_ca_outputs",
+    {
+      "extend" : "xcp.data.DqlDataSourceModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "adcb_get_workers_from_ca"
+        },
+        "type" : "xcp_rest",
+        "url" : ""
+      },
+      "xcpModelType" : "adcb_get_workers_from_ca",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "string"
+      }, {
+        "name" : "s_no",
+        "type" : "int"
+      }, {
+        "name" : "worker_name",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_taskhistory_initiate_staless_ds_outputs",
+    {
+      "extend" : "xcp.data.StatelessProcessCollectionModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "xcp_taskhistory_initiate_staless_ds"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/processes/xcp_taskhistory_initiate"
+      },
+      "xcpModelType" : "xcp_taskhistory",
+      "fields" : [ {
+        "name" : "activity_name",
+        "type" : "string"
+      }, {
+        "name" : "date",
+        "type" : "string"
+      }, {
+        "name" : "performer",
+        "type" : "string"
+      }, {
+        "name" : "status",
+        "type" : "int"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_taskhistory_initiate_staless_ds_inputs_processVariables",
+    {
+      "extend" : "xcp.data.Model",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "process_instance_id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_taskhistory_initiate_staless_ds_inputs",
+    {
+      "extend" : "xcp.data.StatelessProcessObjectModel",
+      "proxy" : {
+        "extraParams" : {
+          "type" : "stateless"
+        },
+        "writer" : {
+          "type" : "xcpjson"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/xcp_taskhistory_initiate_staless_dss"
+      },
+      "xcpModelType" : "xcp_taskhistory",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "xcp_taskhistory_initiate_staless_ds_inputs_processVariables"
+      } ]
+    }
+);
+
+Ext.define("xcp_fetch_userorgroup_contain_filter_initiate_staless_ds_outputs",
+    {
+      "extend" : "xcp.data.StatelessProcessCollectionModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "xcp_fetch_userorgroup_contain_filter_initiate_staless_ds"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/processes/xcp_fetch_userorgroup_contain_filter_initiate"
+      },
+      "xcpModelType" : "xcp_fetch_userorgroup_contain_filter",
+      "fields" : [ {
+        "name" : "user_group_name",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_fetch_userorgroup_contain_filter_initiate_staless_ds_inputs_processVariables",
+    {
+      "extend" : "xcp.data.Model",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "contain_filter",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_fetch_userorgroup_contain_filter_initiate_staless_ds_inputs",
+    {
+      "extend" : "xcp.data.StatelessProcessObjectModel",
+      "proxy" : {
+        "extraParams" : {
+          "type" : "stateless"
+        },
+        "writer" : {
+          "type" : "xcpjson"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/xcp_fetch_userorgroup_contain_filter_initiate_staless_dss"
+      },
+      "xcpModelType" : "xcp_fetch_userorgroup_contain_filter",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "xcp_fetch_userorgroup_contain_filter_initiate_staless_ds_inputs_processVariables"
+      } ]
+    }
+);
+
 Ext.define("xcp_ds_read_rootbo_outputs",
     {
       "extend" : "xcp.data.ReadModel",
@@ -3223,52 +3177,6 @@ Ext.define("xcp_ds_read_rootbo_defaults_outputs",
     }
 );
 
-Ext.define("adcb_get_all_cases_outputs",
-    {
-      "extend" : "xcp.data.RealTimeDataSourceModel",
-      "proxy" : {
-        "reader" : {
-          "rootProperty" : "items",
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "adcb_get_all_cases"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/adcb_case_s"
-      },
-      "xcpModelType" : "adcb_get_all_cases",
-      "fields" : [ {
-        "name" : "case_id",
-        "type" : "string"
-      }, {
-        "name" : "case_name",
-        "type" : "string"
-      }, {
-        "name" : "mobile_number",
-        "type" : "string"
-      }, {
-        "name" : "new_string_1",
-        "type" : "string"
-      }, {
-        "name" : "country",
-        "type" : "string"
-      }, {
-        "name" : "new_string",
-        "type" : "string"
-      }, {
-        "name" : "r_lock_owner",
-        "type" : "string"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      }, {
-        "name" : "r_object_type",
-        "type" : "string"
-      } ]
-    }
-);
-
 Ext.define("xcp_getfolderid_initiate_staless_ds_outputs_processVariables",
     {
       "extend" : "xcp.data.Model",
@@ -3336,132 +3244,27 @@ Ext.define("xcp_getfolderid_initiate_staless_ds_inputs",
     }
 );
 
-Ext.define("adcb_case_task_list_outputs",
+Ext.define("adcb_test_outputs",
     {
-      "extend" : "xcp.data.TaskListDataSourceModel",
+      "extend" : "xcp.data.RealTimeDataSourceModel",
       "proxy" : {
         "reader" : {
           "rootProperty" : "items",
           "type" : "xcpjson"
         },
         "extraParams" : {
-          "type" : "adcb_case_task_list"
+          "type" : "adcb_test"
         },
         "type" : "xcp_rest",
-        "url" : "application/xcp_tasks"
+        "url" : "application/adcb_case_workerss"
       },
-      "xcpModelType" : "adcb_case_task_list",
+      "xcpModelType" : "adcb_test",
       "fields" : [ {
-        "name" : "task_name",
-        "type" : "string"
-      }, {
-        "name" : "task_status",
-        "type" : "string"
-      }, {
-        "name" : "task_state",
-        "type" : "int"
-      }, {
-        "name" : "task_date_sent",
-        "type" : "string"
-      }, {
-        "name" : "process_name",
-        "type" : "string"
-      }, {
-        "name" : "task_performer_name",
-        "type" : "string"
-      }, {
-        "name" : "task_sent_by",
-        "type" : "string"
-      }, {
-        "name" : "task_creation_date",
-        "type" : "string"
-      }, {
-        "name" : "workqueue_name",
-        "type" : "string"
-      }, {
         "name" : "id",
         "type" : "string"
       }, {
-        "name" : "process_system_name",
+        "name" : "r_object_type",
         "type" : "string"
-      }, {
-        "name" : "activity_system_name",
-        "type" : "string"
-      }, {
-        "name" : "is_rejectable",
-        "type" : "boolean"
-      }, {
-        "name" : "is_repeatable",
-        "type" : "boolean"
-      }, {
-        "name" : "is_delegable",
-        "type" : "boolean"
-      } ]
-    }
-);
-
-Ext.define("xcp_taskhistory_initiate_staless_ds_outputs",
-    {
-      "extend" : "xcp.data.StatelessProcessCollectionModel",
-      "proxy" : {
-        "reader" : {
-          "rootProperty" : "items",
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "xcp_taskhistory_initiate_staless_ds"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/processes/xcp_taskhistory_initiate"
-      },
-      "xcpModelType" : "xcp_taskhistory",
-      "fields" : [ {
-        "name" : "activity_name",
-        "type" : "string"
-      }, {
-        "name" : "date",
-        "type" : "string"
-      }, {
-        "name" : "performer",
-        "type" : "string"
-      }, {
-        "name" : "status",
-        "type" : "int"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_taskhistory_initiate_staless_ds_inputs_processVariables",
-    {
-      "extend" : "xcp.data.Model",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "process_instance_id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_taskhistory_initiate_staless_ds_inputs",
-    {
-      "extend" : "xcp.data.StatelessProcessObjectModel",
-      "proxy" : {
-        "extraParams" : {
-          "type" : "stateless"
-        },
-        "writer" : {
-          "type" : "xcpjson"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/xcp_taskhistory_initiate_staless_dss"
-      },
-      "xcpModelType" : "xcp_taskhistory",
-      "fields" : [ {
-        "name" : "processVariables",
-        "type" : "xcp_taskhistory_initiate_staless_ds_inputs_processVariables"
       } ]
     }
 );
@@ -3520,73 +3323,66 @@ Ext.define("adcb_ds_read_case_workers_defaults_outputs",
     }
 );
 
-Ext.define("xcp_ds_read_rootsharedbo_outputs",
+Ext.define("xcp_folderQuery_outputs",
     {
-      "extend" : "xcp_ds_read_rootbo_outputs",
+      "extend" : "xcp.data.FolderContentModel",
       "proxy" : {
         "reader" : {
+          "rootProperty" : "items",
           "type" : "xcpjson"
         },
         "extraParams" : {
-          "type" : "xcp_ds_read_rootsharedbo"
+          "type" : "folderQuery"
         },
         "type" : "xcp_rest",
-        "url" : "pplication/xcp_rootsharedbos"
+        "url" : "application/sysobject"
       },
-      "xcpModelType" : "xcp_rootsharedbo",
+      "linkrel" : "http://identifiers.emc.com/linkrel/objects",
+      "xcpModelType" : "dm_folder",
       "fields" : [ {
-        "name" : "i_sharing_type",
+        "name" : "r_lock_owner",
+        "type" : "string"
+      }, {
+        "name" : "object_name",
+        "type" : "string"
+      }, {
+        "name" : "r_creator_name",
+        "type" : "string"
+      }, {
+        "name" : "r_creation_date",
+        "type" : "string"
+      }, {
+        "name" : "r_modifier",
+        "type" : "string"
+      }, {
+        "name" : "r_modify_date",
+        "type" : "string"
+      }, {
+        "name" : "r_object_type",
+        "type" : "string"
+      }, {
+        "name" : "icon",
         "type" : "string"
       }, {
         "name" : "id",
         "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("adcb_ds_read_supporting_docs_outputs",
-    {
-      "extend" : "xcp_ds_read_dm_document_outputs",
-      "proxy" : {
-        "reader" : {
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "adcb_ds_read_supporting_docs"
-        },
-        "type" : "xcp_rest",
-        "url" : "pplication/adcb_supporting_docss"
-      },
-      "xcpModelType" : "adcb_supporting_docs",
-      "fields" : [ {
-        "name" : "id",
+      }, {
+        "name" : "r_lock_date",
         "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("adcb_ds_read_supporting_docs_defaults_outputs",
-    {
-      "extend" : "xcp_ds_read_dm_document_defaults_outputs",
-      "proxy" : {
-        "reader" : {
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "adcb_ds_read_supporting_docs_defaults"
-        },
-        "type" : "xcp_rest",
-        "url" : "pplication/adcb_supporting_docss"
-      },
-      "xcpModelType" : "adcb_supporting_docs",
-      "fields" : [ {
-        "name" : "id",
+      }, {
+        "name" : "r_link_cnt",
+        "type" : "int"
+      }, {
+        "name" : "a_content_type",
         "type" : "string"
+      }, {
+        "name" : "i_folder_id",
+        "type" : "array"
       } ]
     }
 );
 
-Ext.define("xcp_ds_read_lightweightbo_outputs",
+Ext.define("xcp_ds_read_dm_folder_outputs",
     {
       "extend" : "xcp.data.ReadModel",
       "proxy" : {
@@ -3594,13 +3390,40 @@ Ext.define("xcp_ds_read_lightweightbo_outputs",
           "type" : "xcpjson"
         },
         "extraParams" : {
-          "type" : "xcp_ds_read_lightweightbo"
+          "type" : "xcp_ds_read_dm_folder"
         },
         "type" : "xcp_rest",
-        "url" : "pplication/xcp_rootlightweightbos"
+        "url" : "pplication/dm_folders"
       },
-      "xcpModelType" : "",
+      "xcpModelType" : "dm_folder",
       "fields" : [ {
+        "name" : "authors",
+        "type" : "array"
+      }, {
+        "name" : "keywords",
+        "type" : "array"
+      }, {
+        "name" : "subject",
+        "type" : "string"
+      }, {
+        "name" : "title",
+        "type" : "string"
+      }, {
+        "name" : "r_version_label",
+        "type" : "array"
+      }, {
+        "name" : "r_lock_owner",
+        "type" : "string"
+      }, {
+        "name" : "r_lock_date",
+        "type" : "string"
+      }, {
+        "name" : "r_folder_path",
+        "type" : "array"
+      }, {
+        "name" : "r_link_cnt",
+        "type" : "int"
+      }, {
         "name" : "id",
         "type" : "string"
       }, {
@@ -3625,355 +3448,59 @@ Ext.define("xcp_ds_read_lightweightbo_outputs",
         "name" : "object_name",
         "type" : "string"
       }, {
-        "name" : "i_sharing_parent",
+        "name" : "a_is_hidden",
+        "type" : "boolean"
+      }, {
+        "name" : "acl_name",
+        "type" : "string"
+      }, {
+        "name" : "acl_domain",
         "type" : "string"
       } ]
     }
 );
 
-Ext.define("xcp_fetchcontenttypes_initiate_staless_ds_outputs",
+Ext.define("xcp_ds_read_dm_folder_defaults_outputs",
     {
-      "extend" : "xcp.data.StatelessProcessCollectionModel",
+      "extend" : "xcp.data.ReadDefaultModel",
       "proxy" : {
         "reader" : {
-          "rootProperty" : "items",
           "type" : "xcpjson"
         },
         "extraParams" : {
-          "type" : "xcp_fetchcontenttypes_initiate_staless_ds"
+          "type" : "xcp_ds_read_dm_folder_defaults"
         },
         "type" : "xcp_rest",
-        "url" : "application/processes/xcp_fetchcontenttypes_initiate"
+        "url" : "pplication/dm_folders"
       },
-      "xcpModelType" : "xcp_fetchcontenttypes",
-      "fields" : [ {
-        "name" : "content_types",
-        "type" : "string"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_fetchcontenttypes_initiate_staless_ds_inputs",
-    {
-      "extend" : "xcp.data.StatelessProcessObjectModel",
-      "proxy" : {
-        "extraParams" : {
-          "type" : "stateless"
-        },
-        "writer" : {
-          "type" : "xcpjson"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/xcp_fetchcontenttypes_initiate_staless_dss"
-      },
-      "xcpModelType" : "xcp_fetchcontenttypes",
-      "fields" : [ ]
-    }
-);
-
-Ext.define("adcb_get_all_workers_outputs",
-    {
-      "extend" : "xcp.data.RealTimeDataSourceModel",
-      "proxy" : {
-        "reader" : {
-          "rootProperty" : "items",
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "adcb_get_all_workers"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/adcb_case_workerss"
-      },
-      "xcpModelType" : "adcb_get_all_workers",
-      "fields" : [ {
-        "name" : "s_no",
-        "type" : "int"
-      }, {
-        "name" : "worker_name",
-        "type" : "string"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      }, {
-        "name" : "casechild_case_id",
-        "alias" : "case.child.id",
-        "type" : "string"
-      }, {
-        "name" : "r_object_type",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_userorgroup_selecti_staless_ds_outputs",
-    {
-      "extend" : "xcp.data.StatelessProcessCollectionModel",
-      "proxy" : {
-        "reader" : {
-          "rootProperty" : "items",
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "xcp_userorgroup_selecti_staless_ds"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/processes/xcp_userorgroup_selecti"
-      },
-      "xcpModelType" : "xcp_userorgroup_selecti",
-      "fields" : [ {
-        "name" : "user_group_name",
-        "type" : "string"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_userorgroup_selecti_staless_ds_inputs_processVariables",
-    {
-      "extend" : "xcp.data.Model",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "starts_with_filter",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_userorgroup_selecti_staless_ds_inputs",
-    {
-      "extend" : "xcp.data.StatelessProcessObjectModel",
-      "proxy" : {
-        "extraParams" : {
-          "type" : "stateless"
-        },
-        "writer" : {
-          "type" : "xcpjson"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/xcp_userorgroup_selecti_staless_dss"
-      },
-      "xcpModelType" : "xcp_userorgroup_selecti",
-      "fields" : [ {
-        "name" : "processVariables",
-        "type" : "xcp_userorgroup_selecti_staless_ds_inputs_processVariables"
-      } ]
-    }
-);
-
-Ext.define("xcp_content_rt_query_outputs",
-    {
-      "extend" : "xcp.data.RealTimeDataSourceModel",
-      "proxy" : {
-        "reader" : {
-          "rootProperty" : "items",
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "xcp_content_rt_query"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/dm_documents"
-      },
-      "xcpModelType" : "xcp_content_rt_query",
+      "xcpModelType" : "dm_folder",
       "fields" : [ {
         "name" : "object_name",
         "type" : "string"
       }, {
-        "name" : "a_content_type",
+        "name" : "subject",
         "type" : "string"
       }, {
-        "name" : "r_modify_date",
+        "name" : "title",
         "type" : "string"
       }, {
-        "name" : "r_modifier",
-        "type" : "string"
-      }, {
-        "name" : "r_lock_date",
-        "type" : "string"
-      }, {
-        "name" : "r_lock_owner",
-        "type" : "string"
-      }, {
-        "name" : "r_version_label",
+        "name" : "authors",
         "type" : "array"
       }, {
-        "name" : "id",
+        "name" : "keywords",
+        "type" : "array"
+      }, {
+        "name" : "a_is_hidden",
+        "type" : "boolean"
+      }, {
+        "name" : "acl_name",
         "type" : "string"
       }, {
-        "name" : "r_object_type",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_activity_list_initiate_staless_ds_outputs",
-    {
-      "extend" : "xcp.data.StatelessProcessCollectionModel",
-      "proxy" : {
-        "reader" : {
-          "rootProperty" : "items",
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "xcp_activity_list_initiate_staless_ds"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/processes/xcp_activity_list_initiate"
-      },
-      "xcpModelType" : "xcp_activity_list",
-      "fields" : [ {
-        "name" : "output_activity_names",
+        "name" : "acl_domain",
         "type" : "string"
       }, {
         "name" : "id",
         "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_activity_list_initiate_staless_ds_inputs_processVariables",
-    {
-      "extend" : "xcp.data.Model",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "id",
-        "type" : "string"
-      }, {
-        "name" : "port_type",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_activity_list_initiate_staless_ds_inputs",
-    {
-      "extend" : "xcp.data.StatelessProcessObjectModel",
-      "proxy" : {
-        "extraParams" : {
-          "type" : "stateless"
-        },
-        "writer" : {
-          "type" : "xcpjson"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/xcp_activity_list_initiate_staless_dss"
-      },
-      "xcpModelType" : "xcp_activity_list",
-      "fields" : [ {
-        "name" : "processVariables",
-        "type" : "xcp_activity_list_initiate_staless_ds_inputs_processVariables"
-      } ]
-    }
-);
-
-Ext.define("adcb_test_outputs",
-    {
-      "extend" : "xcp.data.RealTimeDataSourceModel",
-      "proxy" : {
-        "reader" : {
-          "rootProperty" : "items",
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "adcb_test"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/adcb_case_workerss"
-      },
-      "xcpModelType" : "adcb_test",
-      "fields" : [ {
-        "name" : "id",
-        "type" : "string"
-      }, {
-        "name" : "r_object_type",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_ds_read_rootsharedcontent_outputs",
-    {
-      "extend" : "xcp_ds_read_dm_document_outputs",
-      "proxy" : {
-        "reader" : {
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "xcp_ds_read_rootsharedcontent"
-        },
-        "type" : "xcp_rest",
-        "url" : "pplication/xcp_rootsharedcontents"
-      },
-      "xcpModelType" : "xcp_rootsharedcontent",
-      "fields" : [ {
-        "name" : "i_sharing_type",
-        "type" : "string"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_user_from_queue_initiate_staless_ds_outputs",
-    {
-      "extend" : "xcp.data.StatelessProcessCollectionModel",
-      "proxy" : {
-        "reader" : {
-          "rootProperty" : "items",
-          "type" : "xcpjson"
-        },
-        "extraParams" : {
-          "type" : "xcp_user_from_queue_initiate_staless_ds"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/processes/xcp_user_from_queue_initiate"
-      },
-      "xcpModelType" : "xcp_user_from_queue",
-      "fields" : [ {
-        "name" : "user_list",
-        "type" : "string"
-      }, {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_user_from_queue_initiate_staless_ds_inputs_processVariables",
-    {
-      "extend" : "xcp.data.Model",
-      "xcpModelType" : null,
-      "fields" : [ {
-        "name" : "id",
-        "type" : "string"
-      } ]
-    }
-);
-
-Ext.define("xcp_user_from_queue_initiate_staless_ds_inputs",
-    {
-      "extend" : "xcp.data.StatelessProcessObjectModel",
-      "proxy" : {
-        "extraParams" : {
-          "type" : "stateless"
-        },
-        "writer" : {
-          "type" : "xcpjson"
-        },
-        "type" : "xcp_rest",
-        "url" : "application/xcp_user_from_queue_initiate_staless_dss"
-      },
-      "xcpModelType" : "xcp_user_from_queue",
-      "fields" : [ {
-        "name" : "processVariables",
-        "type" : "xcp_user_from_queue_initiate_staless_ds_inputs_processVariables"
       } ]
     }
 );
@@ -4056,60 +3583,64 @@ Ext.define("adcb_ds_read_case__defaults_outputs",
     }
 );
 
-Ext.define("adcb_get_workers_from_ca_outputs",
+Ext.define("xcp_user_from_queue_initiate_staless_ds_outputs",
     {
-      "extend" : "xcp.data.DqlDataSourceModel",
+      "extend" : "xcp.data.StatelessProcessCollectionModel",
       "proxy" : {
         "reader" : {
           "rootProperty" : "items",
           "type" : "xcpjson"
         },
         "extraParams" : {
-          "type" : "adcb_get_workers_from_ca"
+          "type" : "xcp_user_from_queue_initiate_staless_ds"
         },
         "type" : "xcp_rest",
-        "url" : ""
+        "url" : "application/processes/xcp_user_from_queue_initiate"
       },
-      "xcpModelType" : "adcb_get_workers_from_ca",
+      "xcpModelType" : "xcp_user_from_queue",
       "fields" : [ {
-        "name" : "id",
+        "name" : "user_list",
         "type" : "string"
       }, {
-        "name" : "s_no",
-        "type" : "int"
-      }, {
-        "name" : "worker_name",
+        "name" : "id",
         "type" : "string"
       } ]
     }
 );
 
-Ext.define("xcp_viewer_profiles_outputs",
+Ext.define("xcp_user_from_queue_initiate_staless_ds_inputs_processVariables",
     {
-      "extend" : "xcp.data.ViewerProfileModel",
+      "extend" : "xcp.data.Model",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_user_from_queue_initiate_staless_ds_inputs",
+    {
+      "extend" : "xcp.data.StatelessProcessObjectModel",
       "proxy" : {
-        "reader" : {
-          "rootProperty" : "items",
+        "extraParams" : {
+          "type" : "stateless"
+        },
+        "writer" : {
           "type" : "xcpjson"
         },
-        "extraParams" : {
-          "type" : "xcp_viewer_profiles"
-        },
         "type" : "xcp_rest",
-        "url" : ""
+        "url" : "application/xcp_user_from_queue_initiate_staless_dss"
       },
-      "xcpModelType" : "xcp_repository",
+      "xcpModelType" : "xcp_user_from_queue",
       "fields" : [ {
-        "name" : "id",
-        "type" : "string"
-      }, {
-        "name" : "object_name",
-        "type" : "string"
+        "name" : "processVariables",
+        "type" : "xcp_user_from_queue_initiate_staless_ds_inputs_processVariables"
       } ]
     }
 );
 
-Ext.define("xcp_ds_read_lightweight_content_outputs",
+Ext.define("xcp_ds_read_lightweightbo_outputs",
     {
       "extend" : "xcp.data.ReadModel",
       "proxy" : {
@@ -4117,49 +3648,13 @@ Ext.define("xcp_ds_read_lightweight_content_outputs",
           "type" : "xcpjson"
         },
         "extraParams" : {
-          "type" : "xcp_ds_read_lightweight_content"
+          "type" : "xcp_ds_read_lightweightbo"
         },
         "type" : "xcp_rest",
-        "url" : "pplication/xcp_rootlightweightcontents"
+        "url" : "pplication/xcp_rootlightweightbos"
       },
       "xcpModelType" : "",
       "fields" : [ {
-        "name" : "owner_name",
-        "type" : "string"
-      }, {
-        "name" : "a_status",
-        "type" : "string"
-      }, {
-        "name" : "a_content_type",
-        "type" : "string"
-      }, {
-        "name" : "authors",
-        "type" : "array"
-      }, {
-        "name" : "keywords",
-        "type" : "array"
-      }, {
-        "name" : "subject",
-        "type" : "string"
-      }, {
-        "name" : "title",
-        "type" : "string"
-      }, {
-        "name" : "r_lock_owner",
-        "type" : "string"
-      }, {
-        "name" : "r_lock_date",
-        "type" : "string"
-      }, {
-        "name" : "r_content_size",
-        "type" : "int"
-      }, {
-        "name" : "r_version_label",
-        "type" : "array"
-      }, {
-        "name" : "i_chronicle_id",
-        "type" : "string"
-      }, {
         "name" : "id",
         "type" : "string"
       }, {
@@ -4190,7 +3685,53 @@ Ext.define("xcp_ds_read_lightweight_content_outputs",
     }
 );
 
-Ext.define("xcp_fetchtypes_initiate_staless_ds_outputs",
+Ext.define("adcb_get_all_cases_outputs",
+    {
+      "extend" : "xcp.data.RealTimeDataSourceModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "adcb_get_all_cases"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/adcb_case_s"
+      },
+      "xcpModelType" : "adcb_get_all_cases",
+      "fields" : [ {
+        "name" : "case_id",
+        "type" : "string"
+      }, {
+        "name" : "case_name",
+        "type" : "string"
+      }, {
+        "name" : "mobile_number",
+        "type" : "string"
+      }, {
+        "name" : "new_string_1",
+        "type" : "string"
+      }, {
+        "name" : "country",
+        "type" : "string"
+      }, {
+        "name" : "new_string",
+        "type" : "string"
+      }, {
+        "name" : "r_lock_owner",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      }, {
+        "name" : "r_object_type",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_activity_list_initiate_staless_ds_outputs",
     {
       "extend" : "xcp.data.StatelessProcessCollectionModel",
       "proxy" : {
@@ -4199,17 +3740,14 @@ Ext.define("xcp_fetchtypes_initiate_staless_ds_outputs",
           "type" : "xcpjson"
         },
         "extraParams" : {
-          "type" : "xcp_fetchtypes_initiate_staless_ds"
+          "type" : "xcp_activity_list_initiate_staless_ds"
         },
         "type" : "xcp_rest",
-        "url" : "application/processes/xcp_fetchtypes_initiate"
+        "url" : "application/processes/xcp_activity_list_initiate"
       },
-      "xcpModelType" : "xcp_fetchtypes",
+      "xcpModelType" : "xcp_activity_list",
       "fields" : [ {
-        "name" : "outputs_label",
-        "type" : "string"
-      }, {
-        "name" : "outputs",
+        "name" : "output_activity_names",
         "type" : "string"
       }, {
         "name" : "id",
@@ -4218,21 +3756,21 @@ Ext.define("xcp_fetchtypes_initiate_staless_ds_outputs",
     }
 );
 
-Ext.define("xcp_fetchtypes_initiate_staless_ds_inputs_processVariables",
+Ext.define("xcp_activity_list_initiate_staless_ds_inputs_processVariables",
     {
       "extend" : "xcp.data.Model",
       "xcpModelType" : null,
       "fields" : [ {
-        "name" : "inputs_label",
-        "type" : "array"
+        "name" : "id",
+        "type" : "string"
       }, {
-        "name" : "inputs",
-        "type" : "array"
+        "name" : "port_type",
+        "type" : "string"
       } ]
     }
 );
 
-Ext.define("xcp_fetchtypes_initiate_staless_ds_inputs",
+Ext.define("xcp_activity_list_initiate_staless_ds_inputs",
     {
       "extend" : "xcp.data.StatelessProcessObjectModel",
       "proxy" : {
@@ -4243,24 +3781,610 @@ Ext.define("xcp_fetchtypes_initiate_staless_ds_inputs",
           "type" : "xcpjson"
         },
         "type" : "xcp_rest",
-        "url" : "application/xcp_fetchtypes_initiate_staless_dss"
+        "url" : "application/xcp_activity_list_initiate_staless_dss"
       },
-      "xcpModelType" : "xcp_fetchtypes",
+      "xcpModelType" : "xcp_activity_list",
       "fields" : [ {
         "name" : "processVariables",
-        "type" : "xcp_fetchtypes_initiate_staless_ds_inputs_processVariables"
+        "type" : "xcp_activity_list_initiate_staless_ds_inputs_processVariables"
       } ]
     }
 );
 
-Ext.define("adcb_add_initiate_worker",
+Ext.define("adcb_ds_read_supporting_docs_outputs",
+    {
+      "extend" : "xcp_ds_read_dm_document_outputs",
+      "proxy" : {
+        "reader" : {
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "adcb_ds_read_supporting_docs"
+        },
+        "type" : "xcp_rest",
+        "url" : "pplication/adcb_supporting_docss"
+      },
+      "xcpModelType" : "adcb_supporting_docs",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("adcb_ds_read_supporting_docs_defaults_outputs",
+    {
+      "extend" : "xcp_ds_read_dm_document_defaults_outputs",
+      "proxy" : {
+        "reader" : {
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "adcb_ds_read_supporting_docs_defaults"
+        },
+        "type" : "xcp_rest",
+        "url" : "pplication/adcb_supporting_docss"
+      },
+      "xcpModelType" : "adcb_supporting_docs",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_ds_read_dm_cabinet_outputs",
+    {
+      "extend" : "xcp.data.ReadModel",
+      "proxy" : {
+        "reader" : {
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "xcp_ds_read_dm_cabinet"
+        },
+        "type" : "xcp_rest",
+        "url" : "pplication/dm_cabinets"
+      },
+      "xcpModelType" : "dm_cabinet",
+      "fields" : [ {
+        "name" : "is_private",
+        "type" : "boolean"
+      }, {
+        "name" : "authors",
+        "type" : "array"
+      }, {
+        "name" : "keywords",
+        "type" : "array"
+      }, {
+        "name" : "subject",
+        "type" : "string"
+      }, {
+        "name" : "title",
+        "type" : "string"
+      }, {
+        "name" : "r_version_label",
+        "type" : "array"
+      }, {
+        "name" : "r_lock_owner",
+        "type" : "string"
+      }, {
+        "name" : "r_lock_date",
+        "type" : "string"
+      }, {
+        "name" : "r_folder_path",
+        "type" : "array"
+      }, {
+        "name" : "r_link_cnt",
+        "type" : "int"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      }, {
+        "name" : "i_folder_id",
+        "type" : "array"
+      }, {
+        "name" : "r_creation_date",
+        "type" : "string"
+      }, {
+        "name" : "r_creator_name",
+        "type" : "string"
+      }, {
+        "name" : "r_modify_date",
+        "type" : "string"
+      }, {
+        "name" : "r_modifier",
+        "type" : "string"
+      }, {
+        "name" : "r_object_type",
+        "type" : "string"
+      }, {
+        "name" : "object_name",
+        "type" : "string"
+      }, {
+        "name" : "a_is_hidden",
+        "type" : "boolean"
+      }, {
+        "name" : "acl_name",
+        "type" : "string"
+      }, {
+        "name" : "acl_domain",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_ds_read_dm_cabinet_defaults_outputs",
+    {
+      "extend" : "xcp.data.ReadDefaultModel",
+      "proxy" : {
+        "reader" : {
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "xcp_ds_read_dm_cabinet_defaults"
+        },
+        "type" : "xcp_rest",
+        "url" : "pplication/dm_cabinets"
+      },
+      "xcpModelType" : "dm_cabinet",
+      "fields" : [ {
+        "name" : "object_name",
+        "type" : "string"
+      }, {
+        "name" : "subject",
+        "type" : "string"
+      }, {
+        "name" : "title",
+        "type" : "string"
+      }, {
+        "name" : "authors",
+        "type" : "array"
+      }, {
+        "name" : "keywords",
+        "type" : "array"
+      }, {
+        "name" : "a_is_hidden",
+        "type" : "boolean"
+      }, {
+        "name" : "acl_name",
+        "type" : "string"
+      }, {
+        "name" : "acl_domain",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("adcb_case_task_list_outputs",
+    {
+      "extend" : "xcp.data.TaskListDataSourceModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "adcb_case_task_list"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/xcp_tasks"
+      },
+      "xcpModelType" : "adcb_case_task_list",
+      "fields" : [ {
+        "name" : "task_name",
+        "type" : "string"
+      }, {
+        "name" : "task_status",
+        "type" : "string"
+      }, {
+        "name" : "task_state",
+        "type" : "int"
+      }, {
+        "name" : "task_date_sent",
+        "type" : "string"
+      }, {
+        "name" : "process_name",
+        "type" : "string"
+      }, {
+        "name" : "task_performer_name",
+        "type" : "string"
+      }, {
+        "name" : "task_sent_by",
+        "type" : "string"
+      }, {
+        "name" : "task_creation_date",
+        "type" : "string"
+      }, {
+        "name" : "workqueue_name",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      }, {
+        "name" : "process_system_name",
+        "type" : "string"
+      }, {
+        "name" : "activity_system_name",
+        "type" : "string"
+      }, {
+        "name" : "is_rejectable",
+        "type" : "boolean"
+      }, {
+        "name" : "is_repeatable",
+        "type" : "boolean"
+      }, {
+        "name" : "is_delegable",
+        "type" : "boolean"
+      } ]
+    }
+);
+
+Ext.define("xcp_ds_read_rootsharedcontent_outputs",
+    {
+      "extend" : "xcp_ds_read_dm_document_outputs",
+      "proxy" : {
+        "reader" : {
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "xcp_ds_read_rootsharedcontent"
+        },
+        "type" : "xcp_rest",
+        "url" : "pplication/xcp_rootsharedcontents"
+      },
+      "xcpModelType" : "xcp_rootsharedcontent",
+      "fields" : [ {
+        "name" : "i_sharing_type",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_ds_read_rootsharedbo_outputs",
+    {
+      "extend" : "xcp_ds_read_rootbo_outputs",
+      "proxy" : {
+        "reader" : {
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "xcp_ds_read_rootsharedbo"
+        },
+        "type" : "xcp_rest",
+        "url" : "pplication/xcp_rootsharedbos"
+      },
+      "xcpModelType" : "xcp_rootsharedbo",
+      "fields" : [ {
+        "name" : "i_sharing_type",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_userorgroup_selecti_staless_ds_outputs",
+    {
+      "extend" : "xcp.data.StatelessProcessCollectionModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "xcp_userorgroup_selecti_staless_ds"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/processes/xcp_userorgroup_selecti"
+      },
+      "xcpModelType" : "xcp_userorgroup_selecti",
+      "fields" : [ {
+        "name" : "user_group_name",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_userorgroup_selecti_staless_ds_inputs_processVariables",
     {
       "extend" : "xcp.data.Model",
+      "xcpModelType" : null,
       "fields" : [ {
-        "name" : "case_id",
+        "name" : "starts_with_filter",
         "type" : "string"
-      } ],
-      "xcpModelType" : null
+      } ]
+    }
+);
+
+Ext.define("xcp_userorgroup_selecti_staless_ds_inputs",
+    {
+      "extend" : "xcp.data.StatelessProcessObjectModel",
+      "proxy" : {
+        "extraParams" : {
+          "type" : "stateless"
+        },
+        "writer" : {
+          "type" : "xcpjson"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/xcp_userorgroup_selecti_staless_dss"
+      },
+      "xcpModelType" : "xcp_userorgroup_selecti",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "xcp_userorgroup_selecti_staless_ds_inputs_processVariables"
+      } ]
+    }
+);
+
+Ext.define("xcp_fetchcontenttypes_initiate_staless_ds_outputs",
+    {
+      "extend" : "xcp.data.StatelessProcessCollectionModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "xcp_fetchcontenttypes_initiate_staless_ds"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/processes/xcp_fetchcontenttypes_initiate"
+      },
+      "xcpModelType" : "xcp_fetchcontenttypes",
+      "fields" : [ {
+        "name" : "content_types",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_fetchcontenttypes_initiate_staless_ds_inputs",
+    {
+      "extend" : "xcp.data.StatelessProcessObjectModel",
+      "proxy" : {
+        "extraParams" : {
+          "type" : "stateless"
+        },
+        "writer" : {
+          "type" : "xcpjson"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/xcp_fetchcontenttypes_initiate_staless_dss"
+      },
+      "xcpModelType" : "xcp_fetchcontenttypes",
+      "fields" : [ ]
+    }
+);
+
+Ext.define("xcp_content_rt_query_outputs",
+    {
+      "extend" : "xcp.data.RealTimeDataSourceModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "xcp_content_rt_query"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/dm_documents"
+      },
+      "xcpModelType" : "xcp_content_rt_query",
+      "fields" : [ {
+        "name" : "object_name",
+        "type" : "string"
+      }, {
+        "name" : "a_content_type",
+        "type" : "string"
+      }, {
+        "name" : "r_modify_date",
+        "type" : "string"
+      }, {
+        "name" : "r_modifier",
+        "type" : "string"
+      }, {
+        "name" : "r_lock_date",
+        "type" : "string"
+      }, {
+        "name" : "r_lock_owner",
+        "type" : "string"
+      }, {
+        "name" : "r_version_label",
+        "type" : "array"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      }, {
+        "name" : "r_object_type",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_queue_list_initiate_staless_ds_outputs",
+    {
+      "extend" : "xcp.data.StatelessProcessCollectionModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "xcp_queue_list_initiate_staless_ds"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/processes/xcp_queue_list_initiate"
+      },
+      "xcpModelType" : "xcp_queue_list",
+      "fields" : [ {
+        "name" : "queuelist",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_queue_list_initiate_staless_ds_inputs",
+    {
+      "extend" : "xcp.data.StatelessProcessObjectModel",
+      "proxy" : {
+        "extraParams" : {
+          "type" : "stateless"
+        },
+        "writer" : {
+          "type" : "xcpjson"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/xcp_queue_list_initiate_staless_dss"
+      },
+      "xcpModelType" : "xcp_queue_list",
+      "fields" : [ ]
+    }
+);
+
+Ext.define("xcp_folder_rt_query_outputs",
+    {
+      "extend" : "xcp.data.RealTimeDataSourceModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "xcp_folder_rt_query"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/dm_folders"
+      },
+      "xcpModelType" : "xcp_folder_rt_query",
+      "fields" : [ {
+        "name" : "r_lock_owner",
+        "type" : "string"
+      }, {
+        "name" : "object_name",
+        "type" : "string"
+      }, {
+        "name" : "r_creator_name",
+        "type" : "string"
+      }, {
+        "name" : "r_creation_date",
+        "type" : "string"
+      }, {
+        "name" : "r_modifier",
+        "type" : "string"
+      }, {
+        "name" : "r_modify_date",
+        "type" : "string"
+      }, {
+        "name" : "r_object_type",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("adcb_ds_read_case_workers_case_defaults_outputs",
+    {
+      "extend" : "xcp.data.ReadDefaultModel",
+      "proxy" : {
+        "reader" : {
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "adcb_ds_read_case_workers_case_defaults"
+        },
+        "type" : "xcp_rest",
+        "url" : "pplication/adcb_case_workers_cases"
+      },
+      "xcpModelType" : "adcb_case_workers_case",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("adcb_userdefined_task_li_outputs",
+    {
+      "extend" : "xcp.data.TaskListDataSourceModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "adcb_userdefined_task_li"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/xcp_tasks"
+      },
+      "xcpModelType" : "adcb_userdefined_task_li",
+      "fields" : [ {
+        "name" : "task_name",
+        "type" : "string"
+      }, {
+        "name" : "task_subject",
+        "type" : "string"
+      }, {
+        "name" : "task_status",
+        "type" : "string"
+      }, {
+        "name" : "task_state",
+        "type" : "int"
+      }, {
+        "name" : "task_sent_by",
+        "type" : "string"
+      }, {
+        "name" : "process_name",
+        "type" : "string"
+      }, {
+        "name" : "task_performer_name",
+        "type" : "string"
+      }, {
+        "name" : "task_creation_date",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      }, {
+        "name" : "workqueue_name",
+        "type" : "string"
+      }, {
+        "name" : "process_system_name",
+        "type" : "string"
+      }, {
+        "name" : "activity_system_name",
+        "type" : "string"
+      }, {
+        "name" : "is_rejectable",
+        "type" : "boolean"
+      }, {
+        "name" : "is_repeatable",
+        "type" : "boolean"
+      }, {
+        "name" : "is_delegable",
+        "type" : "boolean"
+      } ]
     }
 );
 
@@ -4287,36 +4411,18 @@ Ext.define("xcp_def_lw_imp_af",
     }
 );
 
-Ext.define("xcp_attachment_sel",
+Ext.define("adcb_choose_worker",
     {
       "extend" : "xcp.data.Model",
-      "fields" : [ {
-        "name" : "folderRoot",
-        "type" : "string"
-      } ],
+      "fields" : [ ],
       "xcpModelType" : null
     }
 );
 
-Ext.define("xcp_def_imp_af",
+Ext.define("adcb_create_case_1",
     {
       "extend" : "xcp.data.Model",
-      "fields" : [ {
-        "name" : "content_types",
-        "type" : "array"
-      }, {
-        "name" : "default_content_type",
-        "type" : "string"
-      }, {
-        "name" : "content_formats",
-        "type" : "array"
-      }, {
-        "name" : "default_content_format",
-        "type" : "string"
-      }, {
-        "name" : "folder_id",
-        "type" : "string"
-      } ],
+      "fields" : [ ],
       "xcpModelType" : null
     }
 );
@@ -4352,10 +4458,53 @@ Ext.define("xcp_default_create_docu",
     }
 );
 
-Ext.define("adcb_create_case_1",
+Ext.define("xcp_def_inv_af",
     {
       "extend" : "xcp.data.Model",
-      "fields" : [ ],
+      "fields" : [ {
+        "name" : "r_object_type",
+        "type" : "array"
+      }, {
+        "name" : "r_object_id",
+        "type" : "array"
+      }, {
+        "name" : "object_name",
+        "type" : "array"
+      } ],
+      "xcpModelType" : null
+    }
+);
+
+Ext.define("xcp_def_imp_af",
+    {
+      "extend" : "xcp.data.Model",
+      "fields" : [ {
+        "name" : "content_types",
+        "type" : "array"
+      }, {
+        "name" : "default_content_type",
+        "type" : "string"
+      }, {
+        "name" : "content_formats",
+        "type" : "array"
+      }, {
+        "name" : "default_content_format",
+        "type" : "string"
+      }, {
+        "name" : "folder_id",
+        "type" : "string"
+      } ],
+      "xcpModelType" : null
+    }
+);
+
+Ext.define("xcp_attachment_sel",
+    {
+      "extend" : "xcp.data.Model",
+      "fields" : [ {
+        "name" : "folderRoot",
+        "type" : "string"
+      } ],
       "xcpModelType" : null
     }
 );
@@ -4380,32 +4529,18 @@ Ext.define("xcp_default_create_fold",
     }
 );
 
-Ext.define("xcp_def_inv_af",
+Ext.define("adcb_add_initiate_worker",
     {
       "extend" : "xcp.data.Model",
       "fields" : [ {
-        "name" : "r_object_type",
-        "type" : "array"
-      }, {
-        "name" : "r_object_id",
-        "type" : "array"
-      }, {
-        "name" : "object_name",
-        "type" : "array"
+        "name" : "case_id",
+        "type" : "string"
       } ],
       "xcpModelType" : null
     }
 );
 
 Ext.define("xcp_selector_content",
-    {
-      "extend" : "xcp.data.Model",
-      "fields" : [ ],
-      "xcpModelType" : null
-    }
-);
-
-Ext.define("adcb_choose_worker",
     {
       "extend" : "xcp.data.Model",
       "fields" : [ ],

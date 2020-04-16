@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsProcess:Process xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsActivity="http://documentum.com/bpm/activity" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsCommon="http://documentum.com/common" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsProcess="http://documentum.com/bpm/process" urn="urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/userdefined_case_workers.process" categoryId="com.emc.ide.artifact.process" name="userdefined_case_workers" label="Userdefined Case Workers" description="" webServiceTargetNamespace="" workflowInstructions="">
+  <activities name="Get Case Workers Info" activityType="BEGIN" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L1']" destFlows="//@flows[name='L2']">
+    <trigger numOfInputFlows="1" expectedEventName="" canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <uiinfo imageScale="100" image="activity_autoext_48x32_proc.png">
+      <topLeftPoint x="135" y="154"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:SvcDefBasedOutboundPerformerConfiguration" timeout="60" serviceDefinition="&lt;?xml version=&quot;1.0&quot;?>&#xA;&lt;ServiceDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;activity.xsd&quot;>&#xA;    &lt;Name>DQL Read&lt;/Name>&#xA;    &lt;RuntimeModuleName>DQLOutboundRuntimeModule&lt;/RuntimeModuleName>&#xA;    &lt;DesignModuleName>DQLOutboundDesignModule&lt;/DesignModuleName>&#xA;    &lt;Configuration>&#xA;        &lt;Parameter>&#xA;            &lt;Name>COLUMNALIAS_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[param1=2[S]]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>DOCBASE_CHECK_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[false]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>ENDPOINT_LABEL&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[Doc Repo]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>ACTIVITY_TYPE_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[READ]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>ENDPOINT_URN&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[urn:adcb:com.emc.xcp.artifact.endpoint:Artifacts/Endpoints/doc_repo.endpoint]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>QUERY_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[select  s_no , worker_name  from adcb_case_workers where any  i_folder_id = ?]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>USERDATATYPES_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value xsi:nil=&quot;true&quot;>&lt;![CDATA[]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;    &lt;/Configuration>&#xA;    &lt;InputMsgCopyRules>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>25&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/case_id&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Parameters/param1&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;    &lt;/InputMsgCopyRules>&#xA;    &lt;OutputMsgCopyRules>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>105&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Collection/Object[ALL]/s_no&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Process Data/Variables/s_no[0]&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>137&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Collection/Object[ALL]/worker_name&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Process Data/Variables/worker_name[0]&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Count&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>121&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Collection/Object[ALL]/s_no&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Process Data/Variables/sno_count&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;    &lt;/OutputMsgCopyRules>&#xA;    &lt;CorrelationMsgCopyRules/>&#xA;    &lt;UserDefinedInputTreeNodes/>&#xA;    &lt;UserDefinedOutputTreeNodes/>&#xA;    &lt;InputSchemaConfigs/>&#xA;    &lt;OutputSchemaConfigs/>&#xA;&lt;/ServiceDefinition>&#xA;">
+      <performer>
+        <dataResolutionConfig xsi:type="nsCommon:PredefinedResolutionConfig" valueArity="Single"/>
+      </performer>
+      <methodFailure/>
+    </performerConfig>
+    <variableCharacteristics key="//@processData/@variables[name='worker_status']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='current_worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='index']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_id']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='sno_count']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='s_no']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <eventConfigs label="Activity Completed">
+      <triggerType type="PROCESS_ACTIVITY_COMPLETED"/>
+    </eventConfigs>
+  </activities>
+  <activities name="Task Worker" priority="Medium" taskName="User Defined Case Worker" taskInstructions="" sourceFlows="//@flows[name='L4']" destFlows="//@flows[name='L5']">
+    <trigger canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <uiinfo imageScale="100" image="urn:xcpcomm:com.emc.xcp.artifact.resource.image:Artifacts/Resources/user_orange_32.png">
+      <topLeftPoint x="397" y="147"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:ManualPerformerConfiguration">
+      <performerList assignmentPolicy="NotApplicable">
+        <performers xsi:type="nsActivity:Group">
+          <dataResolutionConfig xsi:type="nsCommon:ExpressionResolutionConfig">
+            <expression exprStr="process.Variables.current_worker_name"/>
+          </dataResolutionConfig>
+        </performers>
+      </performerList>
+      <performerOperation/>
+    </performerConfig>
+    <variableCharacteristics key="//@processData/@variables[name='worker_status']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='current_worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='index']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_id']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='sno_count']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='s_no']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <eventConfigs label="Activity Started">
+      <triggerType type="PROCESS_ACTIVITY_STARTED"/>
+    </eventConfigs>
+    <eventConfigs label="Task Started">
+      <triggerType type="PROCESS_TASK_STARTED"/>
+    </eventConfigs>
+    <eventConfigs label="Task Acquired">
+      <triggerType type="PROCESS_TASK_ACQUIRED"/>
+    </eventConfigs>
+    <eventConfigs label="Task Delegated">
+      <triggerType type="PROCESS_TASK_DELEGATED"/>
+    </eventConfigs>
+    <eventConfigs label="Task Suspended">
+      <triggerType type="PROCESS_TASK_SUSPENDED"/>
+    </eventConfigs>
+    <eventConfigs label="Task Unsuspended">
+      <triggerType type="PROCESS_TASK_UNSUSPENDED"/>
+    </eventConfigs>
+    <eventConfigs label="Task Completed">
+      <triggerType type="PROCESS_TASK_COMPLETED"/>
+    </eventConfigs>
+    <eventConfigs label="Activity Completed">
+      <triggerType type="PROCESS_ACTIVITY_COMPLETED"/>
+    </eventConfigs>
+    <taskContract categoryId="com.emc.ide.artifact.process.activity.taskcontract" name="userdefined_case_workers_task_worker" label="Task Worker">
+      <dataServiceContracts xsi:type="nsDataserviceContract:DataActionContract" categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_complete_predefined_case_workers_manual_task" label="Complete task Task Worker (Userdefined Case Workers)" implCategoryId="com.emc.ide.artifact.process.activity.taskcontract">
+        <inputs xsi:type="nsDataserviceContract:StructureElement" name="processVariables" label="Variables">
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_id" label="case_id">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="current_worker_name" label="current_worker_name">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="index" label="index">
+            <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="s_no" label="s_no" repeating="true">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="sno_count" label="sno_count">
+            <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="worker_name" label="worker_name" repeating="true">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="worker_status" label="worker_status">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+        </inputs>
+        <inputs xsi:type="nsDataserviceContract:AttributeElement" name="attachments" label="Attachments" repeating="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </inputs>
+        <inputs xsi:type="nsDataserviceContract:AttributeElement" name="id" label="id">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </inputs>
+        <primaryElement name="predefined_case_workers_manual_task" dataModel="//@activities[name='Task%20Worker']/@taskContract"/>
+        <actionType type="CompleteTask"/>
+      </dataServiceContracts>
+      <dataServiceContracts xsi:type="nsDataserviceContract:DataActionContract" categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_repeat_predefined_case_workers_manual_task" label="Repeat task Task Worker (Userdefined Case Workers)" implCategoryId="com.emc.ide.artifact.process.activity.taskcontract">
+        <inputs xsi:type="nsDataserviceContract:StructureElement" name="processVariables" label="Variables">
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_id" label="case_id">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="current_worker_name" label="current_worker_name">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="index" label="index">
+            <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="s_no" label="s_no" repeating="true">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="sno_count" label="sno_count">
+            <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="worker_name" label="worker_name" repeating="true">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="worker_status" label="worker_status">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+        </inputs>
+        <inputs xsi:type="nsDataserviceContract:AttributeElement" name="attachments" label="Attachments" repeating="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </inputs>
+        <inputs xsi:type="nsDataserviceContract:AttributeElement" name="id" label="id">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </inputs>
+        <inputs xsi:type="nsDataserviceContract:AttributeElement" name="userName" label="userName" required="true" repeating="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </inputs>
+        <primaryElement name="predefined_case_workers_manual_task" dataModel="//@activities[name='Task%20Worker']/@taskContract"/>
+        <actionType type="RepeatTask"/>
+      </dataServiceContracts>
+      <dataServiceContracts xsi:type="nsDataserviceContract:DataActionContract" categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_delegate_predefined_case_workers_manual_task" label="Delegate task Task Worker (Userdefined Case Workers) " implCategoryId="com.emc.ide.artifact.process.activity.taskcontract">
+        <inputs xsi:type="nsDataserviceContract:StructureElement" name="processVariables" label="Variables">
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_id" label="case_id">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="current_worker_name" label="current_worker_name">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="index" label="index">
+            <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="s_no" label="s_no" repeating="true">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="sno_count" label="sno_count">
+            <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="worker_name" label="worker_name" repeating="true">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="worker_status" label="worker_status">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+        </inputs>
+        <inputs xsi:type="nsDataserviceContract:AttributeElement" name="attachments" label="Attachments" repeating="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </inputs>
+        <inputs xsi:type="nsDataserviceContract:AttributeElement" name="id" label="id">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </inputs>
+        <inputs xsi:type="nsDataserviceContract:AttributeElement" name="userName" label="userName" required="true" repeating="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </inputs>
+        <primaryElement name="predefined_case_workers_manual_task" dataModel="//@activities[name='Task%20Worker']/@taskContract"/>
+        <actionType type="DelegateTask"/>
+      </dataServiceContracts>
+      <dataServiceContracts xsi:type="nsDataserviceContract:DataActionContract" categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_update_predefined_case_workers_manual_task" label="Update task Task Worker (Userdefined Case Workers)" implCategoryId="com.emc.ide.artifact.process.activity.taskcontract">
+        <inputs xsi:type="nsDataserviceContract:StructureElement" name="processVariables" label="Variables">
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_id" label="case_id">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="current_worker_name" label="current_worker_name">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="index" label="index">
+            <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="s_no" label="s_no" repeating="true">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="sno_count" label="sno_count">
+            <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="worker_name" label="worker_name" repeating="true">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="worker_status" label="worker_status">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+        </inputs>
+        <inputs xsi:type="nsDataserviceContract:AttributeElement" name="attachments" label="Attachments" repeating="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </inputs>
+        <inputs xsi:type="nsDataserviceContract:AttributeElement" name="id" label="id">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </inputs>
+        <primaryElement name="predefined_case_workers_manual_task" dataModel="//@activities[name='Task%20Worker']/@taskContract"/>
+        <actionType type="UpdateTask"/>
+      </dataServiceContracts>
+    </taskContract>
+  </activities>
+  <activities name="Get Current Task Name" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L3']" destFlows="//@flows[name='L4']">
+    <trigger expectedEventName="" canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <uiinfo imageScale="100" image="activity_autoint_48x32_proc.png">
+      <topLeftPoint x="311" y="154"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:SvcDefBasedOutboundPerformerConfiguration" timeout="60" serviceDefinition="&lt;?xml version=&quot;1.0&quot;?>&#xA;&lt;ServiceDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;activity.xsd&quot;>&#xA;    &lt;Name>Process Data Mapping&lt;/Name>&#xA;    &lt;RuntimeModuleName>PackageCopyRuntimeModule&lt;/RuntimeModuleName>&#xA;    &lt;DesignModuleName>PackageCopyDesignModule&lt;/DesignModuleName>&#xA;    &lt;Configuration/>&#xA;    &lt;InputMsgCopyRules>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>GetValue&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>73&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Variables/worker_name[ALL]&lt;/Value>&#xA;                &lt;Value>/Process Data/Variables/index&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Process Data/Variables/current_worker_name&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;    &lt;/InputMsgCopyRules>&#xA;    &lt;OutputMsgCopyRules/>&#xA;    &lt;CorrelationMsgCopyRules/>&#xA;    &lt;UserDefinedInputTreeNodes/>&#xA;    &lt;UserDefinedOutputTreeNodes/>&#xA;    &lt;InputSchemaConfigs/>&#xA;    &lt;OutputSchemaConfigs/>&#xA;&lt;/ServiceDefinition>&#xA;">
+      <performer>
+        <dataResolutionConfig xsi:type="nsCommon:PredefinedResolutionConfig" valueArity="Single"/>
+      </performer>
+      <methodFailure/>
+    </performerConfig>
+    <variableCharacteristics key="//@processData/@variables[name='worker_status']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='current_worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='index']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_id']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='sno_count']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='s_no']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <eventConfigs label="Activity Completed">
+      <triggerType type="PROCESS_ACTIVITY_COMPLETED"/>
+    </eventConfigs>
+  </activities>
+  <activities name="Initiate" activityType="INITIATE" priority="Medium" taskName="" taskInstructions="" destFlows="//@flows[name='L1']">
+    <trigger canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <uiinfo imageScale="100" image="palette/event_start_32_proc.png">
+      <topLeftPoint x="50" y="154"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:DefaultInitiatePerformerConfiguration"/>
+    <variableCharacteristics key="//@processData/@variables[name='worker_status']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='current_worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='index']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_id']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='sno_count']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='s_no']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <taskContract categoryId="com.emc.ide.artifact.process.activity.taskcontract" name="userdefined_case_workers_initiate" label="Initiate">
+      <dataServiceContracts xsi:type="nsDataserviceContract:DataActionContract" categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_create_predefined_case_workers_initiate" label="Initiate Process Userdefined Case Workers" implCategoryId="com.emc.ide.artifact.process.activity.taskcontract">
+        <inputs xsi:type="nsDataserviceContract:StructureElement" name="processVariables" label="Variables">
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="case_id" label="case_id">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="current_worker_name" label="current_worker_name">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="index" label="index">
+            <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="s_no" label="s_no" repeating="true">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="sno_count" label="sno_count">
+            <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="worker_name" label="worker_name" repeating="true">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="worker_status" label="worker_status">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+        </inputs>
+        <inputs xsi:type="nsDataserviceContract:AttributeElement" name="attachments" label="Attachments" repeating="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </inputs>
+        <primaryElement name="predefined_case_workers_initiate" dataModel="//@activities[name='Initiate']/@taskContract"/>
+        <actionType type="Create"/>
+      </dataServiceContracts>
+    </taskContract>
+  </activities>
+  <activities name="Join" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L2'] //@flows[name='L7']" destFlows="//@flows[name='L3']">
+    <trigger numOfInputFlows="1" expectedEventName="" canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <uiinfo imageScale="100" image="decision_join_32_proc.png">
+      <topLeftPoint x="217" y="154"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:NoOpOutboundPerformerConfiguration" timeout="60">
+      <performer>
+        <dataResolutionConfig xsi:type="nsCommon:PredefinedResolutionConfig" valueArity="Single"/>
+      </performer>
+      <methodFailure/>
+    </performerConfig>
+    <variableCharacteristics key="//@processData/@variables[name='worker_status']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='current_worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='index']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_id']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='sno_count']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='s_no']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <eventConfigs label="Activity Completed">
+      <triggerType type="PROCESS_ACTIVITY_COMPLETED"/>
+    </eventConfigs>
+  </activities>
+  <activities name="Decision Split" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L5']" destFlows="//@flows[name='L6'] //@flows[name='L8']">
+    <trigger numOfInputFlows="1" expectedEventName="" canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:ConditionalTransition">
+      <resolver>
+        <conditions name="RouteCase">
+          <conditionExpression exprStr="process.Variables.index+1 > process.Variables.sno_count"/>
+          <returnValues xsi:type="nsCommon:InternalReferenceResolutionConfig">
+            <reference refValue="//@flows[name='L8']"/>
+          </returnValues>
+        </conditions>
+        <conditions name="EXCEPTIONAL">
+          <returnValues xsi:type="nsCommon:InternalReferenceResolutionConfig">
+            <reference refValue="//@flows[name='L6']"/>
+          </returnValues>
+        </conditions>
+      </resolver>
+    </transition>
+    <uiinfo imageScale="100" image="decision_split_32_proc.png">
+      <topLeftPoint x="490" y="154"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:NoOpOutboundPerformerConfiguration" timeout="60">
+      <performer>
+        <dataResolutionConfig xsi:type="nsCommon:PredefinedResolutionConfig" valueArity="Single"/>
+      </performer>
+      <methodFailure/>
+    </performerConfig>
+    <variableCharacteristics key="//@processData/@variables[name='worker_status']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='current_worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='index']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_id']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='sno_count']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='s_no']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <eventConfigs label="Activity Completed">
+      <triggerType type="PROCESS_ACTIVITY_COMPLETED"/>
+    </eventConfigs>
+  </activities>
+  <activities name="Increment" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L6']" destFlows="//@flows[name='L7']">
+    <trigger expectedEventName="" canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <uiinfo imageScale="100" image="activity_autoint_48x32_proc.png">
+      <topLeftPoint x="340" y="47"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:SvcDefBasedOutboundPerformerConfiguration" timeout="60" serviceDefinition="&lt;?xml version=&quot;1.0&quot;?>&#xA;&lt;ServiceDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;activity.xsd&quot;>&#xA;    &lt;Name>Process Data Mapping&lt;/Name>&#xA;    &lt;RuntimeModuleName>PackageCopyRuntimeModule&lt;/RuntimeModuleName>&#xA;    &lt;DesignModuleName>PackageCopyDesignModule&lt;/DesignModuleName>&#xA;    &lt;Configuration/>&#xA;    &lt;InputMsgCopyRules>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Add&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>89&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>&quot;1&quot;&lt;/Value>&#xA;                &lt;Value>/Process Data/Variables/index&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Process Data/Variables/index&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;    &lt;/InputMsgCopyRules>&#xA;    &lt;OutputMsgCopyRules/>&#xA;    &lt;CorrelationMsgCopyRules/>&#xA;    &lt;UserDefinedInputTreeNodes/>&#xA;    &lt;UserDefinedOutputTreeNodes/>&#xA;    &lt;InputSchemaConfigs/>&#xA;    &lt;OutputSchemaConfigs/>&#xA;&lt;/ServiceDefinition>&#xA;">
+      <performer>
+        <dataResolutionConfig xsi:type="nsCommon:PredefinedResolutionConfig" valueArity="Single"/>
+      </performer>
+      <methodFailure/>
+    </performerConfig>
+    <variableCharacteristics key="//@processData/@variables[name='worker_status']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='current_worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='index']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_id']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='sno_count']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='s_no']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <eventConfigs label="Activity Completed">
+      <triggerType type="PROCESS_ACTIVITY_COMPLETED"/>
+    </eventConfigs>
+  </activities>
+  <activities name="Case Completed" activityType="END" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L8']">
+    <trigger expectedEventName="" canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <uiinfo imageScale="100" image="activity_autoint_48x32_proc.png">
+      <topLeftPoint x="586" y="154"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:SvcDefBasedOutboundPerformerConfiguration" timeout="60" serviceDefinition="&lt;?xml version=&quot;1.0&quot;?>&#xA;&lt;ServiceDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;activity.xsd&quot;>&#xA;    &lt;Name>Process Data Mapping&lt;/Name>&#xA;    &lt;RuntimeModuleName>PackageCopyRuntimeModule&lt;/RuntimeModuleName>&#xA;    &lt;DesignModuleName>PackageCopyDesignModule&lt;/DesignModuleName>&#xA;    &lt;Configuration/>&#xA;    &lt;InputMsgCopyRules>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>153&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>&quot;worker completed the status&quot;&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Process Data/Variables/worker_status&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;    &lt;/InputMsgCopyRules>&#xA;    &lt;OutputMsgCopyRules/>&#xA;    &lt;CorrelationMsgCopyRules/>&#xA;    &lt;UserDefinedInputTreeNodes/>&#xA;    &lt;UserDefinedOutputTreeNodes/>&#xA;    &lt;InputSchemaConfigs/>&#xA;    &lt;OutputSchemaConfigs/>&#xA;&lt;/ServiceDefinition>&#xA;">
+      <performer>
+        <dataResolutionConfig xsi:type="nsCommon:PredefinedResolutionConfig" valueArity="Single"/>
+      </performer>
+      <methodFailure/>
+    </performerConfig>
+    <variableCharacteristics key="//@processData/@variables[name='worker_status']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='current_worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='index']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='case_id']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='worker_name']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='sno_count']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='s_no']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <eventConfigs label="Activity Completed">
+      <triggerType type="PROCESS_ACTIVITY_COMPLETED"/>
+    </eventConfigs>
+  </activities>
+  <processData>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="worker_name" label="worker_name" repeating="true">
+        <type xsi:type="nsAttributeDatatypes:StringType"/>
+        <defaultValue/>
+      </attribute>
+    </variables>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="s_no" label="s_no" repeating="true">
+        <type xsi:type="nsAttributeDatatypes:StringType"/>
+        <defaultValue/>
+      </attribute>
+    </variables>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="sno_count" label="sno_count">
+        <type xsi:type="nsAttributeDatatypes:IntegerType"/>
+        <defaultValue exprStr=""/>
+      </attribute>
+    </variables>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="index" label="index">
+        <type xsi:type="nsAttributeDatatypes:IntegerType"/>
+        <defaultValue exprStr="0"/>
+      </attribute>
+    </variables>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="current_worker_name" label="current_worker_name">
+        <type xsi:type="nsAttributeDatatypes:StringType"/>
+        <defaultValue exprStr=""/>
+      </attribute>
+    </variables>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="case_id" label="case_id">
+        <type xsi:type="nsAttributeDatatypes:StringType"/>
+        <defaultValue exprStr=""/>
+      </attribute>
+    </variables>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="worker_status" label="worker_status">
+        <type xsi:type="nsAttributeDatatypes:StringType"/>
+        <defaultValue exprStr=""/>
+      </attribute>
+    </variables>
+  </processData>
+  <flows name="L1" from="//@activities[name='Initiate']" to="//@activities[name='Get%20Case%20Workers%20Info']">
+    <uiinfo destActivityLocIndex="4">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L2" from="//@activities[name='Get%20Case%20Workers%20Info']" to="//@activities[name='Join']">
+    <uiinfo destActivityLocIndex="1">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L3" from="//@activities[name='Join']" to="//@activities[name='Get%20Current%20Task%20Name']">
+    <uiinfo srcActivityLocIndex="4" destActivityLocIndex="1">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L4" from="//@activities[name='Get%20Current%20Task%20Name']" to="//@activities[name='Task%20Worker']">
+    <uiinfo srcActivityLocIndex="4" destActivityLocIndex="1">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L5" from="//@activities[name='Task%20Worker']" to="//@activities[name='Decision%20Split']">
+    <uiinfo srcActivityLocIndex="4" destActivityLocIndex="4">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L6" from="//@activities[name='Decision%20Split']" to="//@activities[name='Increment']">
+    <uiinfo srcActivityLocIndex="2">
+      <line multiSegment="true">
+        <points x="490" y="132"/>
+        <points x="490" y="48"/>
+        <points x="364" y="48"/>
+      </line>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L7" from="//@activities[name='Increment']" to="//@activities[name='Join']">
+    <uiinfo srcActivityLocIndex="1" destActivityLocIndex="4">
+      <line multiSegment="true">
+        <points x="316" y="48"/>
+        <points x="201" y="48"/>
+        <points x="201" y="136"/>
+      </line>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L8" from="//@activities[name='Decision%20Split']" to="//@activities[name='Case%20Completed']">
+    <uiinfo destActivityLocIndex="1">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <defaultSettings/>
+  <processUIInfo>
+    <startActivityUIInfo imageScale="100" image="palette/event_start_32_proc.png">
+      <topLeftPoint x="50" y="154"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </startActivityUIInfo>
+    <endActivityUIInfo imageScale="100" image="palette/event_end_32_proc.png">
+      <topLeftPoint x="679" y="155"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </endActivityUIInfo>
+    <endSequenceFlowUIInfo destActivityLocIndex="1">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </endSequenceFlowUIInfo>
+  </processUIInfo>
+  <eventConfigs label="Workflow Started">
+    <triggerType type="PROCESS_WORKFLOW_STARTED"/>
+  </eventConfigs>
+  <eventConfigs label="Workflow changed state">
+    <triggerType type="PROCESS_WORKFLOW_CHANGESTATE"/>
+  </eventConfigs>
+  <eventConfigs label="Workflow Aborted">
+    <triggerType type="PROCESS_WORKFLOW_ABORTED"/>
+  </eventConfigs>
+  <eventConfigs label="Workflow Completed">
+    <triggerType type="PROCESS_WORKFLOW_COMPLETED"/>
+  </eventConfigs>
+</nsProcess:Process>

@@ -10,25 +10,25 @@
 [INFO] Deleting C:\Sha\ADCB_Bank\target
 [INFO] 
 [INFO] --- xcp-validate:1.0.12:run (xcp-validate) @ ADCB_Bank ---
-[INFO] Finished validating Artifact data models in project 'ADCB_Bank' in....407ms
+[INFO] Finished validating Artifact data models in project 'ADCB_Bank' in....513ms
 [INFO] 
 [INFO] --- build-helper-maven-plugin:1.7:add-source (add-source) @ ADCB_Bank ---
 [INFO] Source directory: C:\Sha\ADCB_Bank\gen\main\java added.
 [INFO] 
 [INFO] --- xcp-generate-sources:1.0.10:run (xcp-generate-sources) @ ADCB_Bank ---
 [INFO] Generating DML artifacts for Application Project, type=IXCPApplicationProject
-[INFO] Finished executing project generators in....18ms
+[INFO] Finished executing project generators in....12ms
 [INFO] Ignoring json for page : appmaster_defpage
-[INFO] Finished generating models.js in time  356 ms
-[INFO] Finished executing artifact generators in....2788ms
-[INFO] Finished generating code for project 'ADCB_Bank' in 2809ms
+[INFO] Finished generating models.js in time  392 ms
+[INFO] Finished executing artifact generators in....3061ms
+[INFO] Finished generating code for project 'ADCB_Bank' in 3074ms
 [INFO] 
 [INFO] --- build-helper-maven-plugin:1.7:add-resource (add-resource) @ ADCB_Bank ---
 [INFO] 
 [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ADCB_Bank ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
 [INFO] Copying 9 resources
-[INFO] Copying 35 resources
+[INFO] Copying 41 resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ ADCB_Bank ---
 [INFO] Nothing to compile - all classes are up to date
@@ -46,10 +46,10 @@
 [INFO] --- xcp-dar:1.0.12:run (xcp-dar) @ ADCB_Bank ---
 [INFO] 
 [INFO] Started packaging local library dependencies for application project '[XCPProject: ADCB_Bank]'
-[INFO] Packaged local library dependencies for project 'ADCB_Bank' in 4ms
+[INFO] Packaged local library dependencies for project 'ADCB_Bank' in 6ms
 [INFO] 
 [INFO] Started packaging artifact bundle jar for application project '[XCPProject: ADCB_Bank]'
-[INFO] Finished packaging artifact bundle jar for application project '[XCPProject: ADCB_Bank]' in 354 ms
+[INFO] Finished packaging artifact bundle jar for application project '[XCPProject: ADCB_Bank]' in 355 ms
 [INFO] 
 [INFO] 
 [INFO] --- maven-war-plugin:2.3:war (default-war) @ ADCB_Bank ---
@@ -60,7 +60,7 @@
 [INFO] Copying webapp webResources [C:\Sha\ADCB_Bank\lib] to [C:\Sha\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0]
 [INFO] Copying webapp webResources [C:\Sha\ADCB_Bank\gen/main/webapp] to [C:\Sha\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0]
 [INFO] Copying webapp resources [C:\Sha\ADCB_Bank\src\main\webapp]
-[INFO] Webapp assembled in [1888 msecs]
+[INFO] Webapp assembled in [1565 msecs]
 [INFO] Building war: C:\Sha\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0.war
 [INFO] 
 [INFO] --- maven-install-plugin:2.4:install (default-install) @ ADCB_Bank ---
@@ -83,7 +83,7 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 01:52 min
-[INFO] Finished at: 2020-04-14T07:11:04+00:00
-[INFO] Final Memory: 25M/322M
+[INFO] Total time: 01:18 min
+[INFO] Finished at: 2020-04-15T07:27:29+00:00
+[INFO] Final Memory: 19M/191M
 [INFO] ------------------------------------------------------------------------

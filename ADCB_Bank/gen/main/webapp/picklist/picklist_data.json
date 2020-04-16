@@ -10,10 +10,6 @@
 "label": "${_UI_PickList__xcpMemberTypes_group}"
 }]
 },
-"xcp_LocaleStore":{
-"model": "xcp.picklist.models.StringModel",
-"data": []
-},
 "xcp_basic_permission":{
 "model": "xcp.picklist.models.IntegerModel",
 "data": [{
@@ -48,6 +44,10 @@
 "value": 7,
 "label": "${_UI_PickList_xcp_basic_permission_7}"
 }]
+},
+"xcp_LocaleStore":{
+"model": "xcp.picklist.models.StringModel",
+"data": []
 },
 "xcp_alert_severity":{
 "model": "xcp.picklist.models.StringModel",

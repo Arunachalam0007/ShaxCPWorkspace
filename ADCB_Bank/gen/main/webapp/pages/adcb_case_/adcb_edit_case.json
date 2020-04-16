@@ -236,7 +236,7 @@
             "iconAlign" : "left",
             "actionInstanceId" : "choose_worker_1",
             "redirectStyle" : "specified",
-            "showSuccessNotification" : false,
+            "showSuccessNotification" : true,
             "showConfirmation" : false,
             "navType" : "page_static",
             "navPageId" : "adcb_case_inbox"

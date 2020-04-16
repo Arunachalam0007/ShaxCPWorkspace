@@ -94,15 +94,6 @@
   } ],
   "data" : {
     "variables" : [ {
-      "name" : "case_id",
-      "label" : "case_id",
-      "type" : "string",
-      "repeating" : false,
-      "default-value" : null,
-      "mandatory" : false,
-      "visible" : true,
-      "use" : "internal"
-    }, {
       "name" : "worker_name",
       "label" : "worker_name",
       "type" : "string",
@@ -121,11 +112,11 @@
       "visible" : true,
       "use" : "internal"
     }, {
-      "name" : "is_approve",
-      "label" : "is_approve",
-      "type" : "boolean",
+      "name" : "case_id",
+      "label" : "case_id",
+      "type" : "string",
       "repeating" : false,
-      "default-value" : "false",
+      "default-value" : null,
       "mandatory" : false,
       "visible" : true,
       "use" : "internal"
@@ -135,6 +126,15 @@
       "type" : "string",
       "repeating" : false,
       "default-value" : "",
+      "mandatory" : false,
+      "visible" : true,
+      "use" : "internal"
+    }, {
+      "name" : "is_approve",
+      "label" : "is_approve",
+      "type" : "boolean",
+      "repeating" : false,
+      "default-value" : "false",
       "mandatory" : false,
       "visible" : true,
       "use" : "internal"

@@ -57,7 +57,7 @@
     <trigger numOfInputFlows="1" expectedEventName="" canRunMultipleTimes="true"/>
     <transition xsi:type="nsActivity:AllFlowsTransition"/>
     <uiinfo imageScale="100" image="urn:xcpcomm:com.emc.xcp.artifact.resource.image:Artifacts/Resources/user_green_32.png">
-      <topLeftPoint x="286" y="214"/>
+      <topLeftPoint x="272" y="223"/>
       <textStyle fontName="Dialog" fontSize="10">
         <bgColor/>
         <fgColor/>
@@ -466,7 +466,7 @@
       </textStyle>
     </startActivityUIInfo>
     <endActivityUIInfo imageScale="100" image="palette/event_end_32_proc.png">
-      <topLeftPoint x="519" y="159"/>
+      <topLeftPoint x="518" y="159"/>
       <textStyle fontName="Dialog" fontSize="10">
         <bgColor/>
         <fgColor/>

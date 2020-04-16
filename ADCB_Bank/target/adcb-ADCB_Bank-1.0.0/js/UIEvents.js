@@ -72,6 +72,18 @@ Ext.define("xcp_on_fragment_form_unload",
     }
 );
 
+Ext.define("xcp_task_assigned",
+    {
+      "extend" : "xcp.event.ApplicationEvent",
+      "applicationEventType" : "xcp_task_assigned",
+      "scope" : "application",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "STRING"
+      } ]
+    }
+);
+
 Ext.define("xcp_file_upload_success",
     {
       "extend" : "xcp.event.ApplicationEvent",
@@ -82,18 +94,6 @@ Ext.define("xcp_file_upload_success",
         "type" : "STRING"
       }, {
         "name" : "filename",
-        "type" : "STRING"
-      } ]
-    }
-);
-
-Ext.define("xcp_task_assigned",
-    {
-      "extend" : "xcp.event.ApplicationEvent",
-      "applicationEventType" : "xcp_task_assigned",
-      "scope" : "application",
-      "fields" : [ {
-        "name" : "id",
         "type" : "STRING"
       } ]
     }
@@ -129,6 +129,18 @@ Ext.define("xcp_on_navigation_compl",
     }
 );
 
+Ext.define("xcp_on_fragment_unload",
+    {
+      "extend" : "xcp.event.ApplicationEvent",
+      "applicationEventType" : "xcp_on_fragment_unload",
+      "scope" : "fragment",
+      "fields" : [ {
+        "name" : "fragmentid",
+        "type" : "STRING"
+      } ]
+    }
+);
+
 Ext.define("xcp_object_unlocked",
     {
       "extend" : "xcp.event.ApplicationEvent",
@@ -140,18 +152,6 @@ Ext.define("xcp_object_unlocked",
         "type" : "STRING"
       }, {
         "name" : "type",
-        "type" : "STRING"
-      } ]
-    }
-);
-
-Ext.define("xcp_on_fragment_unload",
-    {
-      "extend" : "xcp.event.ApplicationEvent",
-      "applicationEventType" : "xcp_on_fragment_unload",
-      "scope" : "fragment",
-      "fields" : [ {
-        "name" : "fragmentid",
         "type" : "STRING"
       } ]
     }
@@ -366,6 +366,15 @@ Ext.define("xcp_object_imported",
     }
 );
 
+Ext.define("xcp_refresh_page",
+    {
+      "extend" : "xcp.event.ApplicationEvent",
+      "applicationEventType" : "xcp_refresh_page",
+      "scope" : "page",
+      "fields" : [ ]
+    }
+);
+
 Ext.define("xcp_file_upload_failure",
     {
       "extend" : "xcp.event.ApplicationEvent",
@@ -381,15 +390,6 @@ Ext.define("xcp_file_upload_failure",
         "name" : "errorid",
         "type" : "STRING"
       } ]
-    }
-);
-
-Ext.define("xcp_refresh_page",
-    {
-      "extend" : "xcp.event.ApplicationEvent",
-      "applicationEventType" : "xcp_refresh_page",
-      "scope" : "page",
-      "fields" : [ ]
     }
 );
 
@@ -513,6 +513,22 @@ Ext.define("xcp_task_rejected",
     }
 );
 
+Ext.define("xcp_object_deleted",
+    {
+      "extend" : "xcp.event.ApplicationEvent",
+      "applicationEventType" : "xcp_object_deleted",
+      "publishAcrossTabs" : true,
+      "scope" : "application",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "STRING"
+      }, {
+        "name" : "type",
+        "type" : "STRING"
+      } ]
+    }
+);
+
 Ext.define("xcp_comment_created",
     {
       "extend" : "xcp.event.ApplicationEvent",
@@ -558,17 +574,16 @@ Ext.define("xcp_navigate_to_page",
     }
 );
 
-Ext.define("xcp_object_deleted",
+Ext.define("xcp_comment_deleted",
     {
       "extend" : "xcp.event.ApplicationEvent",
-      "applicationEventType" : "xcp_object_deleted",
-      "publishAcrossTabs" : true,
+      "applicationEventType" : "xcp_comment_deleted",
       "scope" : "application",
       "fields" : [ {
-        "name" : "id",
+        "name" : "commentId",
         "type" : "STRING"
       }, {
-        "name" : "type",
+        "name" : "objectId",
         "type" : "STRING"
       } ]
     }
@@ -581,21 +596,6 @@ Ext.define("xcp_show_error",
       "scope" : "application",
       "fields" : [ {
         "name" : "error_message",
-        "type" : "STRING"
-      } ]
-    }
-);
-
-Ext.define("xcp_comment_deleted",
-    {
-      "extend" : "xcp.event.ApplicationEvent",
-      "applicationEventType" : "xcp_comment_deleted",
-      "scope" : "application",
-      "fields" : [ {
-        "name" : "commentId",
-        "type" : "STRING"
-      }, {
-        "name" : "objectId",
         "type" : "STRING"
       } ]
     }
@@ -644,6 +644,18 @@ Ext.define("xcp_task_unhold",
     }
 );
 
+Ext.define("xcp_show_notification",
+    {
+      "extend" : "xcp.event.ApplicationEvent",
+      "applicationEventType" : "xcp_show_notification",
+      "scope" : "application",
+      "fields" : [ {
+        "name" : "notification_message",
+        "type" : "STRING"
+      } ]
+    }
+);
+
 Ext.define("xcp_content_removed",
     {
       "extend" : "xcp.event.ApplicationEvent",
@@ -665,18 +677,6 @@ Ext.define("xcp_on_form_unload",
       "applicationEventType" : "xcp_on_form_unload",
       "scope" : "page",
       "fields" : [ ]
-    }
-);
-
-Ext.define("xcp_show_notification",
-    {
-      "extend" : "xcp.event.ApplicationEvent",
-      "applicationEventType" : "xcp_show_notification",
-      "scope" : "application",
-      "fields" : [ {
-        "name" : "notification_message",
-        "type" : "STRING"
-      } ]
     }
 );
 

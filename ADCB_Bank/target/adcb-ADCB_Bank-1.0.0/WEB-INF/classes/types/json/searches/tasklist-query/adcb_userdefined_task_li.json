@@ -1,0 +1,130 @@
+{
+  "name" : "tasklist-query-type",
+  "type" : "adcb_userdefined_task_li",
+  "label" : "Userdefined Task List",
+  "data-type" : "",
+  "description" : "",
+  "processes" : [ {
+    "ref" : "${contextPath}types/processes/adcb_userdefined_case_workers"
+  } ],
+  "properties" : [ {
+    "label" : "Task Name",
+    "name" : "task_name",
+    "output-name" : "task_name",
+    "type" : "STRING",
+    "mapping" : "task.task_name",
+    "sortable" : "false",
+    "repeating" : "false"
+  }, {
+    "label" : "Subject",
+    "name" : "task_subject",
+    "output-name" : "task_subject",
+    "type" : "STRING",
+    "mapping" : "task.subject",
+    "sortable" : "false",
+    "repeating" : "false"
+  }, {
+    "label" : "Status",
+    "name" : "task_status",
+    "output-name" : "task_status",
+    "type" : "STRING",
+    "mapping" : "task.status",
+    "sortable" : "false",
+    "repeating" : "false"
+  }, {
+    "label" : "State",
+    "name" : "task_state",
+    "output-name" : "task_state",
+    "type" : "INTEGER",
+    "mapping" : "task.state",
+    "sortable" : "false",
+    "repeating" : "false"
+  }, {
+    "label" : "Sender",
+    "name" : "task_sent_by",
+    "output-name" : "task_sent_by",
+    "type" : "STRING",
+    "mapping" : "task.sender",
+    "sortable" : "false",
+    "repeating" : "false"
+  }, {
+    "label" : "Process Name",
+    "name" : "process_name",
+    "output-name" : "process_name",
+    "type" : "STRING",
+    "mapping" : "process.process_name",
+    "sortable" : "false",
+    "repeating" : "false"
+  }, {
+    "label" : "Performer Name",
+    "name" : "task_performer_name",
+    "output-name" : "task_performer_name",
+    "type" : "STRING",
+    "mapping" : "task.performer_name",
+    "sortable" : "false",
+    "repeating" : "false"
+  }, {
+    "label" : "Creation Date",
+    "name" : "task_creation_date",
+    "output-name" : "task_creation_date",
+    "type" : "DATETIME",
+    "mapping" : "task.creation_date",
+    "sortable" : "false",
+    "repeating" : "false"
+  }, {
+    "label" : "Object ID",
+    "name" : "id",
+    "output-name" : "id",
+    "type" : "STRING",
+    "mapping" : "task.id",
+    "sortable" : "false",
+    "repeating" : "false",
+    "mandatory" : "true"
+  }, {
+    "label" : "Workflow ID",
+    "name" : "workflow_id",
+    "output-name" : "workflow_id",
+    "type" : "STRING",
+    "mapping" : "task.workflow_id",
+    "sortable" : "false",
+    "repeating" : "false",
+    "mandatory" : "true"
+  }, {
+    "label" : "Process System Name",
+    "name" : "system_name",
+    "output-name" : "process_system_name",
+    "type" : "STRING",
+    "mapping" : "process.system_name",
+    "sortable" : "false",
+    "repeating" : "false",
+    "mandatory" : "true"
+  }, {
+    "label" : "Activity System Name",
+    "name" : "activity_system_name",
+    "output-name" : "activity_system_name",
+    "type" : "STRING",
+    "mapping" : "task.activity_system_name",
+    "sortable" : "false",
+    "repeating" : "false",
+    "mandatory" : "true"
+  }, {
+    "label" : "Applicable Actions",
+    "name" : "applicable_actions",
+    "output-name" : "applicable_actions",
+    "type" : "STRING",
+    "mapping" : "task.applicable_actions",
+    "sortable" : "false",
+    "repeating" : "false",
+    "mandatory" : "true"
+  } ],
+  "options" : [ {
+    "returnCount" : "true"
+  } ],
+  "links" : [ {
+    "rel" : "self",
+    "href" : "${contextPath}types/tasklist-queries/adcb_userdefined_task_li"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/instances",
+    "href" : "${contextPath}tasklist-queries/adcb_userdefined_task_li"
+  } ]
+}
