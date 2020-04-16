@@ -214,6 +214,76 @@ Ext.define("xcp_rootlightweightbo",
     }
 );
 
+Ext.define("adcb_pd_workers",
+    {
+      "extend" : "xcp.data.BusinessObjectModel",
+      "proxy" : {
+        "type" : "xcp_rest",
+        "url" : "application/adcb_pd_workerss"
+      },
+      "idProperty" : "id",
+      "isShareable" : false,
+      "xcpModelType" : "adcb_pd_workers",
+      "fields" : [ {
+        "name" : "pd_name",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "worker_name",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "s_no",
+        "allowNull" : true,
+        "type" : "int"
+      }, {
+        "name" : "id",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "defaultValue" : null,
+        "name" : "i_folder_id",
+        "type" : "array"
+      }, {
+        "name" : "r_creation_date",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "r_creator_name",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "r_modify_date",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "r_modifier",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "r_object_type",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "object_name",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "a_is_hidden",
+        "allowNull" : true,
+        "type" : "boolean"
+      }, {
+        "name" : "acl_name",
+        "allowNull" : true,
+        "type" : "string"
+      }, {
+        "name" : "acl_domain",
+        "allowNull" : true,
+        "type" : "string"
+      } ]
+    }
+);
+
 Ext.define("dm_folder",
     {
       "extend" : "xcp.data.FolderModel",
@@ -1791,6 +1861,67 @@ Ext.define("xcp_process_xcp_user_from_queue",
     }
 );
 
+Ext.define("adcb_add_pd_worker_processVariables",
+    {
+      "extend" : "xcp.data.IdLessModel",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "pd_name",
+        "type" : "string"
+      }, {
+        "name" : "pd_worker_name",
+        "type" : "string"
+      }, {
+        "name" : "s_no_count",
+        "type" : "int"
+      }, {
+        "name" : "s_no",
+        "type" : "int"
+      } ]
+    }
+);
+
+Ext.define("xcp_process_adcb_add_pd_worker",
+    {
+      "extend" : "xcp.data.TaskModel",
+      "proxy" : {
+        "data" : {
+          "processVariables" : {
+          }
+        },
+        "extraParams" : {
+          "type" : "add_pd_worker"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/tasks"
+      },
+      "idProperty" : "id",
+      "xcpModelType" : "adcb_add_pd_worker",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "adcb_add_pd_worker_processVariables"
+      }, {
+        "name" : "executionData",
+        "type" : "xcp_ExecutionData"
+      }, {
+        "name" : "attachments",
+        "type" : "array"
+      }, {
+        "name" : "userName",
+        "type" : "array"
+      }, {
+        "name" : "signOffPassword",
+        "type" : "string"
+      }, {
+        "name" : "path",
+        "type" : "array"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
 Ext.define("xcp_activity_list_processVariables",
     {
       "extend" : "xcp.data.IdLessModel",
@@ -3039,6 +3170,59 @@ Ext.define("xcp_taskhistory_initiate_staless_ds_inputs",
     }
 );
 
+Ext.define("adcb_get_pd_name_outputs",
+    {
+      "extend" : "xcp.data.DqlDataSourceModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "adcb_get_pd_name"
+        },
+        "type" : "xcp_rest",
+        "url" : ""
+      },
+      "xcpModelType" : "adcb_get_pd_name",
+      "fields" : [ {
+        "name" : "pd_name",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("adcb_get_all_pd_workers_outputs",
+    {
+      "extend" : "xcp.data.DqlDataSourceModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "adcb_get_all_pd_workers"
+        },
+        "type" : "xcp_rest",
+        "url" : ""
+      },
+      "xcpModelType" : "adcb_get_all_pd_workers",
+      "fields" : [ {
+        "name" : "s_no",
+        "type" : "int"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      }, {
+        "name" : "worker_name",
+        "type" : "string"
+      } ]
+    }
+);
+
 Ext.define("xcp_fetch_userorgroup_contain_filter_initiate_staless_ds_outputs",
     {
       "extend" : "xcp.data.StatelessProcessCollectionModel",
@@ -4217,6 +4401,66 @@ Ext.define("xcp_content_rt_query_outputs",
     }
 );
 
+Ext.define("adcb_ds_read_pd_workers_outputs",
+    {
+      "extend" : "xcp_ds_read_rootbo_outputs",
+      "proxy" : {
+        "reader" : {
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "adcb_ds_read_pd_workers"
+        },
+        "type" : "xcp_rest",
+        "url" : "pplication/adcb_pd_workerss"
+      },
+      "xcpModelType" : "adcb_pd_workers",
+      "fields" : [ {
+        "name" : "pd_name",
+        "type" : "string"
+      }, {
+        "name" : "s_no",
+        "type" : "int"
+      }, {
+        "name" : "worker_name",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("adcb_ds_read_pd_workers_defaults_outputs",
+    {
+      "extend" : "xcp_ds_read_rootbo_defaults_outputs",
+      "proxy" : {
+        "reader" : {
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "adcb_ds_read_pd_workers_defaults"
+        },
+        "type" : "xcp_rest",
+        "url" : "pplication/adcb_pd_workerss"
+      },
+      "xcpModelType" : "adcb_pd_workers",
+      "fields" : [ {
+        "name" : "pd_name",
+        "type" : "string"
+      }, {
+        "name" : "s_no",
+        "type" : "int"
+      }, {
+        "name" : "worker_name",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
 Ext.define("xcp_queue_list_initiate_staless_ds_outputs",
     {
       "extend" : "xcp.data.StatelessProcessCollectionModel",
@@ -4505,6 +4749,14 @@ Ext.define("xcp_attachment_sel",
         "name" : "folderRoot",
         "type" : "string"
       } ],
+      "xcpModelType" : null
+    }
+);
+
+Ext.define("adcb_create_pd_workers",
+    {
+      "extend" : "xcp.data.Model",
+      "fields" : [ ],
       "xcpModelType" : null
     }
 );

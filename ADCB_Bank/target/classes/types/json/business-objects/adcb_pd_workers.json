@@ -1,0 +1,41 @@
+{
+  "name" : "business-object-type",
+  "type" : "adcb_pd_workers",
+  "label" : "PD Workers",
+  "parent" : "${contextPath}types/business-objects/xcp_RootBO",
+  "properties" : [ {
+    "name" : "pd_name",
+    "label" : "PD Name",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "worker_name",
+    "label" : "Worker Name",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "s_no",
+    "label" : "S.NO",
+    "type" : "integer"
+  } ],
+  "links" : [ {
+    "rel" : "self",
+    "href" : "${contextPath}types/business-objects/adcb_pd_workers"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/instances",
+    "href" : "${contextPath}business-objects/adcb_pd_workers"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/defaults",
+    "href" : "${contextPath}types/business-objects/adcb_pd_workers/defaults"
+  }, {
+    "rel" : "type"
+  }, {
+    "rel" : "edit"
+  }, {
+    "rel" : "canonical"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/delete"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/relations"
+  } ]
+}

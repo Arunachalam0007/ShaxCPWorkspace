@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionflow:ActionFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionflow="http://www.emc.com/xcp2/2010/actionflow" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" urn="urn:adcb:com.emc.xcp.artifact.actionFlow:Artifacts/Action Flows/create_pd_workers.actionflow" categoryId="com.emc.xcp.artifact.actionFlow" name="create_pd_workers" label="Create PD Workers" initialState="//@states[id='viewState_create_pd_workers_s']">
+  <primaryElement>
+    <dataModel href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/pd_workers.businessobj#/"/>
+  </primaryElement>
+  <dataActions categoryId="com.emc.xcp.artifact.dataservice.dataaction" name="da_actionflow_create_pd_workers_da_def_invoke_stateless_processadd_pd_worker_initiate" label="Add PD Worker">
+    <inputMappings name="processVariables.pd_name">
+      <expression exprStr="actionflow.steps.create_pd_workers_s.widgets.pd_name.value"/>
+    </inputMappings>
+    <inputMappings name="processVariables.pd_worker_name">
+      <expression exprStr="actionflow.steps.create_pd_workers_s.widgets.pd_worker_name.value"/>
+    </inputMappings>
+    <contract xsi:type="nsDataserviceContract:DataActionContract" href="urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/add_pd_worker.process#//@activities[name='Initiate']/@taskContract/@dataServiceContracts[name='da_def_invoke_stateless_processadd_pd_worker_initiate']"/>
+  </dataActions>
+  <actionInstanceProperty actionInstance="//@dataActions[name='da_actionflow_create_pd_workers_da_def_invoke_stateless_processadd_pd_worker_initiate']"/>
+  <states xsi:type="actionflow:EndState" id="success"/>
+  <states xsi:type="actionflow:EndState" id="error"/>
+  <states xsi:type="actionflow:EndState" id="cancel"/>
+  <states xsi:type="actionflow:ViewState" id="viewState_create_pd_workers_s">
+    <transitions on="cancel" to="//@states[id='cancel']"/>
+    <transitions on="finish" to="//@states[id='finish']"/>
+    <stepCondition>
+      <expression exprStr="false"/>
+    </stepCondition>
+    <step href="urn:adcb:com.emc.xcp.artifact.uistep:Artifacts/UI Steps/create_pd_workers_s.uistep#/"/>
+  </states>
+  <states xsi:type="actionflow:ActionState" id="finish" dataAction="//@dataActions[name='da_actionflow_create_pd_workers_da_def_invoke_stateless_processadd_pd_worker_initiate']">
+    <transitions on="success" to="//@states[id='success']"/>
+    <transitions on="error" to="//@states[id='error']"/>
+    <hideCondition>
+      <expression exprStr="actionflow.steps.create_pd_workers_s.widgets.pd_name.value ==''"/>
+    </hideCondition>
+  </states>
+  <transitionLabels transition="finish" label="Finish">
+    <labelExpression/>
+  </transitionLabels>
+  <transitionLabels transition="cancel" label="Cancel">
+    <labelExpression/>
+  </transitionLabels>
+</actionflow:ActionFlow>

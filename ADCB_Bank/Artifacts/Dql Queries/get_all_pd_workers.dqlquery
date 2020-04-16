@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dqlquery:DqlQuery xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dqlquery="htttp://xcp.emc.com/dqlquery" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" urn="urn:adcb:com.emc.xcp.artifact.dqlquery:Artifacts/Dql Queries/get_all_pd_workers.dqlquery" categoryId="com.emc.xcp.artifact.dqlquery" name="get_all_pd_workers" label="Get All PD Workers" implCategoryId="com.emc.xcp.artifact.dqlquery" dqlText="SELECT s_no, r_object_id,worker_name  from adcb_pd_workers WHERE pd_name Like $pd_name$" returnCount="true">
+  <inputs xsi:type="nsDataserviceContract:AttributeElement" name="pd_name" label="pd_name">
+    <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+  </inputs>
+  <outputs xsi:type="nsDataserviceContract:AttributeElement" name="s_no" label="s_no">
+    <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+  </outputs>
+  <outputs xsi:type="nsDataserviceContract:IdElement" name="r_object_id" label="r_object_id">
+    <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+  </outputs>
+  <outputs xsi:type="nsDataserviceContract:AttributeElement" name="worker_name" label="worker_name">
+    <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+  </outputs>
+  <defaultSort/>
+  <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="get_all_pd_workers" label="Get All PD Workers" implCategoryId="com.emc.xcp.artifact.dqlquery">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="input_pd_name" label="pd_name">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </outputs>
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="s_no" label="s_no">
+          <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="id" label="r_object_id">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="worker_name" label="worker_name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement/>
+  </datasource>
+</dqlquery:DqlQuery>

@@ -1,0 +1,26 @@
+{
+  "type" : "adcb_get_pd_name",
+  "label" : "Get PD Name",
+  "description" : "",
+  "dql-text" : "Select pd_name from adcb_pd_workers GROUP BY pd_name",
+  "properties" : [ {
+    "name" : "pd_name",
+    "output-name" : "pd_name",
+    "type" : "string",
+    "repeating" : "false",
+    "sortable" : "false"
+  } ],
+  "expression-set" : {
+    "properties" : [ ]
+  },
+  "links" : [ {
+    "rel" : "self",
+    "href" : "${contextPath}types/dql-queries/adcb_get_pd_name"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/instances",
+    "href" : "${contextPath}dql-queries/adcb_get_pd_name"
+  } ],
+  "options" : [ {
+    "resultLimit" : "-1"
+  } ]
+}

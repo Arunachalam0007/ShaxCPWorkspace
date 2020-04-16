@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<business-object-type label="PD Workers" parent="${contextPath}types/business-objects/xcp_RootBO" type="adcb_pd_workers" xmlns="http://identifiers.emc.com/vocab/xcp">
+  <properties>
+    <property label="PD Name" length="64" name="pd_name" type="string"/>
+    <property label="Worker Name" length="64" name="worker_name" type="string"/>
+    <property label="S.NO" name="s_no" type="integer"/>
+  </properties>
+  <links>
+    <link href="${contextPath}types/business-objects/adcb_pd_workers" rel="self"/>
+    <link href="${contextPath}business-objects/adcb_pd_workers" rel="http://identifiers.emc.com/linkrel/instances"/>
+    <link href="${contextPath}types/business-objects/adcb_pd_workers/defaults" rel="http://identifiers.emc.com/linkrel/defaults"/>
+    <link rel="type"/>
+    <link rel="edit"/>
+    <link rel="canonical"/>
+    <link rel="http://identifiers.emc.com/linkrel/delete"/>
+    <link rel="http://identifiers.emc.com/linkrel/relations"/>
+  </links>
+</business-object-type>

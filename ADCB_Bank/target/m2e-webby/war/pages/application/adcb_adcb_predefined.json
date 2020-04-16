@@ -1,0 +1,215 @@
+{
+  "cls" : "adcb_adcb_predefined",
+  "padding" : 0,
+  "border" : false,
+  "namespace" : "adcb",
+  "categoryID" : "com_emc_xcp_artifact_page",
+  "artifactName" : "adcb_predefined",
+  "pageTitle" : "${_UI_Page_adcb_adcb_predefined_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "get_all_pd_workers",
+      "actionModel" : "adcb_get_all_pd_workers_outputs",
+      "inputModelName" : "adcb_get_all_pd_workers_inputs",
+      "actionType" : "datasource",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "input_pd_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "input_pd_name",
+          "events" : [ "pd_name.change" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+          "input_pd_name" : ["pd_name" ]
+        }
+      } ],
+      "autoLoad" : false,
+      "invokerEvents" : [ {
+        "events" : ["pd_name.change" ]
+      } ],
+      "pageSize" : 10
+    }, {
+      "xcpId" : "get_pd_name",
+      "actionModel" : "adcb_get_pd_name_outputs",
+      "inputModelName" : "adcb_get_pd_name_inputs",
+      "actionType" : "datasource",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ],
+      "autoLoad" : true
+    }, {
+      "xcpId" : "create_pd_workers_1",
+      "actionType" : "xcp_action_flow_launcher",
+      "actionFlowId" : "adcb_create_pd_workers",
+      "objectType" : "adcb_pd_workers",
+      "wizardConfig" : {
+        "height" : 450,
+        "width" : 640,
+        "modal" : true,
+        "autoScroll" : false,
+        "title" : "${_UI_Create_PD_Workers_Create_PD_Workers_label}"
+      },
+      "actionModel" : "xcp_process_adcb_add_pd_worker",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ]
+    } ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "pd_operation_column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "pd_name",
+        "xtype" : "xcp_dropdown_list",
+        "fieldLabel" : "${_UI_Page_adcb_adcb_predefined_pd_name_fieldLabel}",
+        "valueField" : "pd_name",
+        "displayField" : "pd_name",
+        "modelStore" : "dataservices.get_pd_name",
+        "valueType" : "STRING",
+        "hideErrorInToolTip" : false,
+        "stopOnValidationFail" : true,
+        "anyMatch" : false
+      } ]
+    }, {
+      "xcpId" : "columnvbox1",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "add_pd_workers_btn",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_adcb_adcb_predefined_add_pd_workers_btn_text}",
+        "scale" : "small",
+        "badgeAlign" : "top-right",
+        "iconAlign" : "left",
+        "actionInstanceId" : "create_pd_workers_1",
+        "redirectStyle" : "none",
+        "showSuccessNotification" : true,
+        "showConfirmation" : false,
+        "navType" : "none"
+      } ]
+    } ]
+  }, {
+    "xcpId" : "column_box1",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox2",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "pd_workersresults_list",
+        "xtype" : "xcp_results_list",
+        "title" : "${_UI_Page_adcb_adcb_predefined_pd_workersresults_list_title}",
+        "pageSize" : 10,
+        "selectionModel" : false,
+        "enableDragDrop" : true,
+        "disableNavigationOnFirstColumn" : false,
+        "allowDeselect" : false,
+        "displayTotalRowCount" : false,
+        "autoTotalCount" : true,
+        "autoSelection" : false,
+        "pageSizeList" : "10,25,50,100",
+        "stateful" : false,
+        "allowInLineEdit" : false,
+        "modelStore" : "dataservices.get_all_pd_workers",
+        "columns" : [ {
+          "xcpId" : "col_s_no",
+          "xtype" : "xcp_results_list_page_link_column",
+          "text" : "${_UI_Page_adcb_adcb_predefined_col_s_no_text}",
+          "width" : 150,
+          "valueType" : "INTEGER",
+          "isRepeating" : false,
+          "format" : {
+            "xtype" : "xcp_integer_formatter",
+            "decimalPrecision" : 0,
+            "useThousandSeparator" : true,
+            "separatorStyle" : "LOCALE",
+            "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+          },
+          "sortable" : false,
+          "menuDisabled" : false,
+          "dataIndex" : "s_no",
+          "hideable" : true,
+          "resizable" : true,
+          "draggable" : true,
+          "parentxcpId" : "pd_workersresults_list",
+          "stateful" : false,
+          "isExprImageSource" : false,
+          "navType" : "none"
+        }, {
+          "xcpId" : "col_worker_name",
+          "xtype" : "xcp_results_list_column",
+          "text" : "${_UI_Page_adcb_adcb_predefined_col_worker_name_text}",
+          "valueType" : "STRING",
+          "isRepeating" : false,
+          "sortable" : false,
+          "menuDisabled" : false,
+          "dataIndex" : "worker_name",
+          "hideable" : true,
+          "resizable" : true,
+          "draggable" : true,
+          "parentxcpId" : "pd_workersresults_list",
+          "stateful" : false,
+          "isExprImageSource" : false,
+          "navType" : "none"
+        } ]
+      } ]
+    }, {
+      "xcpId" : "columnvbox3",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5"
+    } ]
+  } ]
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dqlquery:DqlQuery xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dqlquery="htttp://xcp.emc.com/dqlquery" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" urn="urn:adcb:com.emc.xcp.artifact.dqlquery:Artifacts/Dql Queries/get_pd_name.dqlquery" categoryId="com.emc.xcp.artifact.dqlquery" name="get_pd_name" label="Get PD Name" implCategoryId="com.emc.xcp.artifact.dqlquery" dqlText="Select pd_name from adcb_pd_workers GROUP BY pd_name" returnCount="true">
+  <outputs xsi:type="nsDataserviceContract:AttributeElement" name="pd_name" label="pd_name">
+    <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+  </outputs>
+  <defaultSort/>
+  <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="get_pd_name" label="Get PD Name" implCategoryId="com.emc.xcp.artifact.dqlquery">
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </outputs>
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="pd_name" label="pd_name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement/>
+  </datasource>
+</dqlquery:DqlQuery>

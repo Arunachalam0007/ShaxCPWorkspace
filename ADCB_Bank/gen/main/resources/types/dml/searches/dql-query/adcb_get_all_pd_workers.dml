@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<dql-query-type label="Get All PD Workers" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="adcb_get_all_pd_workers" xmlns="http://identifiers.emc.com/vocab/xcp">
+  <description/>
+  <dql-text>SELECT s_no, r_object_id,worker_name  from adcb_pd_workers WHERE pd_name Like $pd_name$</dql-text>
+  <properties>
+    <property name="s_no" output-name="s_no" repeating="false" sortable="false" type="integer"/>
+    <property name="r_object_id" output-name="id" repeating="false" sortable="false" type="string"/>
+    <property name="worker_name" output-name="worker_name" repeating="false" sortable="false" type="string"/>
+  </properties>
+  <expression-set>
+    <property input-name="input_pd_name" input-type="form-input" name="pd_name" repeating="false" type="string"/>
+  </expression-set>
+  <links>
+    <link href="${contextPath}types/dql-queries/adcb_get_all_pd_workers" rel="self"/>
+    <link href="${contextPath}dql-queries/adcb_get_all_pd_workers" rel="http://identifiers.emc.com/linkrel/instances"/>
+  </links>
+  <options>
+    <option resultLimit="-1"/>
+  </options>
+</dql-query-type>

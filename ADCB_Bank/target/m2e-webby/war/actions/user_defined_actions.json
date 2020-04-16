@@ -175,6 +175,103 @@
         } ]
       }
     }
+  },"adcb_pd_workers" : {
+    "adcb_create_pd_workers" : {
+      "namespace" : "adcb",
+      "categoryID" : "com_emc_xcp_artifact_actionFlow",
+      "artifactName" : "create_pd_workers",
+      "flowDef" : {
+        "action-type" : "Custom",
+        "actionmodel" : {
+          "name" : "xcp_process_adcb_add_pd_worker"
+        },
+        "publish-uievent" : {
+          "xtype" : "xcp_uievent_publisher",
+          "plugins" : [ {
+            "ptype" : "xcp_publish_uievents",
+            "publish" : [ ]
+          } ]
+        },
+        "initial-state" : "viewState_create_pd_workers_s",
+        "view-state" : [ {
+          "id" : "viewState_create_pd_workers_s",
+          "xcpId" : "create_pd_workers_s",
+          "pageUrl" : "adcb_pd_workers/adcb_pd_workers_adcb_create_pd_workers_s",
+          "plugins" : [ {
+            "ptype" : "xcp_expression_properties",
+            "expression" : [ {
+              "propertyId" : "next",
+              "setterFunName" : "setEnablement",
+              "etype" : "next"
+            } ]
+          } ],
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_create_pd_workers_da_def_invoke_stateless_processadd_pd_worker_initiate",
+          "plugins" : [ {
+            "ptype" : "xcp_expression_properties",
+            "expression" : [ {
+              "propertyId" : "finish",
+              "setterFunName" : "setHidden",
+              "etype" : "finish",
+              "events" : [ "create_pd_workers_s.pd_name.change" ],
+              "disableInitialEval" : false
+            } ]
+          } ],
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "transition-label" : [ {
+          "id" : "finish",
+          "label" : "${_UI_Finish_Finish_label}"
+        }, {
+          "id" : "cancel",
+          "label" : "${_UI_Cancel_Cancel_label}"
+        } ],
+        "action-instance" : [ {
+          "xcpId" : "da_actionflow_create_pd_workers_da_def_invoke_stateless_processadd_pd_worker_initiate",
+          "actionType" : "create",
+          "isStatelessInvocation" : true,
+          "actionModel" : "xcp_process_adcb_add_pd_worker",
+          "plugins" : [ {
+            "ptype" : "xcp_expression_properties",
+            "expression" : [ {
+              "propertyId" : "processVariables.pd_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "processVariables_pd_name",
+              "events" : [ "create_pd_workers_s.pd_name.change" ],
+              "disableInitialEval" : false
+            }, {
+              "propertyId" : "processVariables.pd_worker_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "processVariables_pd_worker_name",
+              "events" : [ "create_pd_workers_s.pd_worker_name.change" ],
+              "disableInitialEval" : false
+            } ]
+          } ]
+        } ]
+      }
+    }
   },"xcp_currenttask" : {
     "xcp_assign_task" : {
       "namespace" : "xcp",

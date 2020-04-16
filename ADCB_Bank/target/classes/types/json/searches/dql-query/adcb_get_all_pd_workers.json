@@ -1,0 +1,44 @@
+{
+  "type" : "adcb_get_all_pd_workers",
+  "label" : "Get All PD Workers",
+  "description" : "",
+  "dql-text" : "SELECT s_no, r_object_id,worker_name  from adcb_pd_workers WHERE pd_name Like $pd_name$",
+  "properties" : [ {
+    "name" : "s_no",
+    "output-name" : "s_no",
+    "type" : "integer",
+    "repeating" : "false",
+    "sortable" : "false"
+  }, {
+    "name" : "r_object_id",
+    "output-name" : "id",
+    "type" : "string",
+    "repeating" : "false",
+    "sortable" : "false"
+  }, {
+    "name" : "worker_name",
+    "output-name" : "worker_name",
+    "type" : "string",
+    "repeating" : "false",
+    "sortable" : "false"
+  } ],
+  "expression-set" : {
+    "properties" : [ {
+      "input-name" : "input_pd_name",
+      "input-type" : "form-input",
+      "name" : "pd_name",
+      "type" : "string",
+      "repeating" : "false"
+    } ]
+  },
+  "links" : [ {
+    "rel" : "self",
+    "href" : "${contextPath}types/dql-queries/adcb_get_all_pd_workers"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/instances",
+    "href" : "${contextPath}dql-queries/adcb_get_all_pd_workers"
+  } ],
+  "options" : [ {
+    "resultLimit" : "-1"
+  } ]
+}

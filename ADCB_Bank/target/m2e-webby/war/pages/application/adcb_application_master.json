@@ -56,6 +56,12 @@
           "navType" : "page_static",
           "navPageId" : "adcb_case_inbox"
         }, {
+          "xcpId" : "nav_button2",
+          "xtype" : "xcp_nav_button",
+          "text" : "${_UI_Page_adcb_application_master_nav_button2_text}",
+          "navType" : "page_static",
+          "navPageId" : "adcb_adcb_predefined"
+        }, {
           "xcpId" : "uci_nav",
           "xtype" : "xcp_nav_button",
           "text" : "${_UI_Page_adcb_application_master_uci_nav_text}",

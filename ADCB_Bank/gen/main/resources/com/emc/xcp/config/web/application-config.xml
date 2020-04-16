@@ -29,6 +29,18 @@
                     </property>
                 </bean>
                 <bean class="com.emc.xcp.ui.services.config.Model">
+                    <property name="name" value="adcb_pd_workers"/>
+                    <property name="supportMasterPage" value="false"/>
+                    <property name="steps">
+                        <set>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="adcb_pd_workers_adcb_create_pd_workers_s"/>
+                                <property name="defaultFileName" value="adcb_pd_workers_adcb_create_pd_workers_s"/>
+                            </bean>
+                        </set>
+                    </property>
+                </bean>
+                <bean class="com.emc.xcp.ui.services.config.Model">
                     <property name="name" value="role"/>
                     <property name="homePageUrlName" value="adcb_role_member"/>
                     <property name="supportMasterPage" value="false"/>
@@ -62,6 +74,10 @@
                             <bean class="com.emc.xcp.ui.services.config.Page">
                                 <property name="urlName" value="adcb_userdefined_case_in"/>
                                 <property name="defaultFileName" value="adcb_userdefined_case_in"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="adcb_adcb_predefined"/>
+                                <property name="defaultFileName" value="adcb_adcb_predefined"/>
                             </bean>
                             <bean class="com.emc.xcp.ui.services.config.Page">
                                 <property name="urlName" value="adcb_case_inbox"/>

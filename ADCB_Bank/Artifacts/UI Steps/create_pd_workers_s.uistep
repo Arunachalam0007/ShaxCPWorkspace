@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionflow:UIStep xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionflow="http://www.emc.com/xcp2/2010/actionflow" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:uitemplate="http://www.emc.com/xcp2/2010/uitemplate" urn="urn:adcb:com.emc.xcp.artifact.uistep:Artifacts/UI Steps/create_pd_workers_s.uistep" categoryId="com.emc.xcp.artifact.uistep" name="create_pd_workers_s" label="Step 1" templateType="uistep">
+  <dataSources categoryId="com.emc.xcp.artifact.dataservice.datasource" name="get_pd_name" label="Get PD Name">
+    <contract xsi:type="nsDataserviceContract:DataSourceContract" href="urn:adcb:com.emc.xcp.artifact.dqlquery:Artifacts/Dql Queries/get_pd_name.dqlquery#//@datasource"/>
+  </dataSources>
+  <dataSources categoryId="com.emc.xcp.artifact.dataservice.datasource" name="userorgroup_selecti_staless_ds" label="User Or Group Selection">
+    <inputMappings name="processVariables.starts_with_filter">
+      <expression/>
+    </inputMappings>
+    <contract xsi:type="nsDataserviceContract:DataSourceContract" href="urn:xcp:com.emc.ide.artifact.process:Artifacts/Processes/userorgroup_selecti.process#//@activities[name='Initiate']/@taskContract/@dataServiceContracts[name='userorgroup_selecti_staless_ds']"/>
+  </dataSources>
+  <actionInstanceProperty actionInstance="//@dataSources[name='get_pd_name']"/>
+  <actionInstanceProperty actionInstance="//@dataSources[name='userorgroup_selecti_staless_ds']"/>
+  <rootContainer>
+    <properties name="xcpId" value="root"/>
+    <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_column_box">
+      <properties name="title"/>
+      <properties name="collapsible" value="false" type="BOOLEAN"/>
+      <properties name="collapsed" value=""/>
+      <properties name="collapseFirst" value="true" type="BOOLEAN"/>
+      <properties name="border" value="false" type="BOOLEAN"/>
+      <properties name="defaultMargins" value="5"/>
+      <properties name="margins" value=""/>
+      <properties name="layout" value="xcp_columnbox"/>
+      <properties name="hidden" value=""/>
+      <properties name="cls" value=""/>
+      <properties name="xcpId" value="column_box"/>
+      <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_columnvbox">
+        <properties name="orientation" value="Vertical"/>
+        <properties name="width" value=""/>
+        <properties name="minWidth" value="" type="INTEGER"/>
+        <properties name="split" value="" type="BOOLEAN"/>
+        <properties name="overflow_x" value="hidden"/>
+        <properties name="labelWidth" value="150" type="INTEGER"/>
+        <properties name="labelAlign" value="left"/>
+        <properties name="halign" value="left"/>
+        <properties name="valign" value="top"/>
+        <properties name="defaultMargins" value="5"/>
+        <properties name="margins" value=""/>
+        <properties name="tooltip" value=""/>
+        <properties name="cls" value=""/>
+        <properties name="xcpId" value="columnvbox"/>
+        <children componentDefinitionId="xcp_dropdown_list" dataService="//@dataSources[name='get_pd_name']">
+          <properties name="fieldLabel" value="PD Name"/>
+          <properties name="emptyText" value=""/>
+          <properties name="disabled" value=""/>
+          <properties name="hidden" value=""/>
+          <properties name="valueField" value="pd_name"/>
+          <properties name="displayField" value="pd_name"/>
+          <properties name="modelStore" value="dataservices.get_pd_name"/>
+          <properties name="valueType" value="STRING"/>
+          <properties name="name" value=""/>
+          <properties name="fieldWidth" value="" type="INTEGER"/>
+          <properties name="cls"/>
+          <properties name="tooltip" value=""/>
+          <properties name="mandatory" value=""/>
+          <properties name="hideErrorInToolTip" value="false" type="BOOLEAN"/>
+          <properties name="stopOnValidationFail" value="true" type="BOOLEAN"/>
+          <properties name="anyMatch" value="false" type="BOOLEAN"/>
+          <properties xsi:type="uitemplate:DataboundProperty" name="value" value="''"/>
+          <properties name="valid" value=""/>
+          <properties name="xcpId" value="pd_name"/>
+        </children>
+        <children componentDefinitionId="xcp_dropdown_list" dataService="//@dataSources[name='userorgroup_selecti_staless_ds']">
+          <properties name="fieldLabel" value="Worker Name"/>
+          <properties name="emptyText" value=""/>
+          <properties name="disabled" value=""/>
+          <properties name="hidden" value=""/>
+          <properties name="valueField" value="user_group_name"/>
+          <properties name="displayField" value="user_group_name"/>
+          <properties name="modelStore" value="dataservices.userorgroup_selecti_staless_ds"/>
+          <properties name="valueType" value="STRING"/>
+          <properties name="name" value=""/>
+          <properties name="fieldWidth" value="" type="INTEGER"/>
+          <properties name="cls" value=""/>
+          <properties name="tooltip" value=""/>
+          <properties name="mandatory" value=""/>
+          <properties name="hideErrorInToolTip" value="false" type="BOOLEAN"/>
+          <properties name="stopOnValidationFail" value="true" type="BOOLEAN"/>
+          <properties name="anyMatch" value="false" type="BOOLEAN"/>
+          <properties xsi:type="uitemplate:DataboundProperty" name="value" value=""/>
+          <properties name="valid" value=""/>
+          <properties name="xcpId" value="pd_worker_name"/>
+        </children>
+      </children>
+      <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_columnvbox">
+        <properties name="orientation" value="Vertical"/>
+        <properties name="width" value=""/>
+        <properties name="minWidth" value="" type="INTEGER"/>
+        <properties name="split" value="" type="BOOLEAN"/>
+        <properties name="overflow_x" value="hidden"/>
+        <properties name="labelWidth" value="150" type="INTEGER"/>
+        <properties name="labelAlign" value="left"/>
+        <properties name="halign" value="left"/>
+        <properties name="valign" value="top"/>
+        <properties name="defaultMargins" value="5"/>
+        <properties name="margins" value=""/>
+        <properties name="tooltip" value=""/>
+        <properties name="cls" value=""/>
+        <properties name="xcpId" value="columnvbox1"/>
+      </children>
+    </children>
+  </rootContainer>
+  <primaryModel href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/pd_workers.businessobj#/"/>
+</actionflow:UIStep>

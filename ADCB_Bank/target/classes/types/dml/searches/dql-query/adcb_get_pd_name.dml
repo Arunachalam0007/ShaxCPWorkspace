@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<dql-query-type label="Get PD Name" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="adcb_get_pd_name" xmlns="http://identifiers.emc.com/vocab/xcp">
+  <description/>
+  <dql-text>Select pd_name from adcb_pd_workers GROUP BY pd_name</dql-text>
+  <properties>
+    <property name="pd_name" output-name="pd_name" repeating="false" sortable="false" type="string"/>
+  </properties>
+  <expression-set/>
+  <links>
+    <link href="${contextPath}types/dql-queries/adcb_get_pd_name" rel="self"/>
+    <link href="${contextPath}dql-queries/adcb_get_pd_name" rel="http://identifiers.emc.com/linkrel/instances"/>
+  </links>
+  <options>
+    <option resultLimit="-1"/>
+  </options>
+</dql-query-type>

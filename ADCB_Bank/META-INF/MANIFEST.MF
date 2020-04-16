@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: adcb.ADCB_Bank
 Bundle-Name: ADCB_Bank
-Bundle-Version: 1.0.0.202004150727
+Bundle-Version: 1.0.0.202004161658
 Bundle-ClassPath: .
 Require-Bundle: xcpcomm.xcpcommons;bundle-version="16.4.0", xcpui.xcpu
  i;bundle-version="16.4.0", xcp.xcpcore;bundle-version="16.4.0"
