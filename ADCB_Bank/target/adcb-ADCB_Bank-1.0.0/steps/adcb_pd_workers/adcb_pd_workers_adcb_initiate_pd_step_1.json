@@ -1,0 +1,50 @@
+{
+  "padding" : "10 10 5 10",
+  "border" : false,
+  "xtype" : "xcp_form",
+  "namespace" : "adcb",
+  "categoryID" : "com_emc_xcp_artifact_uistep",
+  "artifactName" : "initiate_pd_step_1",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "get_pd_name",
+      "actionModel" : "adcb_get_pd_name_outputs",
+      "inputModelName" : "adcb_get_pd_name_inputs",
+      "actionType" : "datasource",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ],
+      "autoLoad" : true
+    } ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "pd_dd",
+    "xtype" : "xcp_dropdown_list",
+    "fieldLabel" : "${_UI_UIStep_adcb_initiate_pd_step_1_pd_dd_fieldLabel}",
+    "valueField" : "pd_name",
+    "displayField" : "pd_name",
+    "modelStore" : "dataservices.get_pd_name",
+    "valueType" : "STRING",
+    "hideErrorInToolTip" : false,
+    "stopOnValidationFail" : true,
+    "anyMatch" : false,
+    "plugins" : [ {
+      "ptype" : "xcp_expression_properties",
+      "expression" : [ {
+        "propertyId" : "value",
+        "setterFunName" : "setValue",
+        "etype" : "pd_dd_value",
+        "disableProcessingOnRender" : false
+      } ]
+    } ]
+  } ]
+}

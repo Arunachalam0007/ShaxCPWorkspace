@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionflow:ActionFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionflow="http://www.emc.com/xcp2/2010/actionflow" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" urn="urn:adcb:com.emc.xcp.artifact.actionFlow:Artifacts/Action Flows/pd_workers_manual_1.actionflow" categoryId="com.emc.xcp.artifact.actionFlow" name="pd_workers_manual_1" label="Complete task Task Worker (PD Workers)" initialState="//@states[id='finish']">
+  <inputs xsi:type="nsDataserviceContract:StructureElement" name="processVariables" label="Variables">
+    <elements xsi:type="nsDataserviceContract:AttributeElement" name="current_task_worker" label="current_task_worker">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </elements>
+    <elements xsi:type="nsDataserviceContract:AttributeElement" name="index" label="index">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </elements>
+    <elements xsi:type="nsDataserviceContract:AttributeElement" name="pd_name" label="pd_name">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </elements>
+    <elements xsi:type="nsDataserviceContract:AttributeElement" name="s_no" label="s_no" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </elements>
+    <elements xsi:type="nsDataserviceContract:AttributeElement" name="s_no_count" label="s_no_count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </elements>
+    <elements xsi:type="nsDataserviceContract:AttributeElement" name="task_status" label="task_status">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </elements>
+    <elements xsi:type="nsDataserviceContract:AttributeElement" name="workers_name" label="workers_name" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </elements>
+  </inputs>
+  <inputs xsi:type="nsDataserviceContract:AttributeElement" name="attachments" label="Attachments" repeating="true">
+    <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+  </inputs>
+  <inputs xsi:type="nsDataserviceContract:AttributeElement" name="id" label="id">
+    <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+  </inputs>
+  <primaryElement>
+    <dataModel href="urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/pd_workers.process#//@activities[name='Task%20Worker']/@taskContract"/>
+  </primaryElement>
+  <dataActions categoryId="com.emc.xcp.artifact.dataservice.dataaction" name="da_actionflow_pd_workers_manual_1" label="da_actionflow_pd_workers_manual_1">
+    <inputMappings name="processVariables">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="processVariables.current_task_worker">
+      <expression exprStr="actionflow.Inputs.processVariables.current_task_worker"/>
+    </inputMappings>
+    <inputMappings name="processVariables.index">
+      <expression exprStr="actionflow.Inputs.processVariables.index"/>
+    </inputMappings>
+    <inputMappings name="processVariables.pd_name">
+      <expression exprStr="actionflow.Inputs.processVariables.pd_name"/>
+    </inputMappings>
+    <inputMappings name="processVariables.s_no">
+      <expression exprStr="actionflow.Inputs.processVariables.s_no"/>
+    </inputMappings>
+    <inputMappings name="processVariables.s_no_count">
+      <expression exprStr="actionflow.Inputs.processVariables.s_no_count"/>
+    </inputMappings>
+    <inputMappings name="processVariables.task_status">
+      <expression exprStr="actionflow.Inputs.processVariables.task_status"/>
+    </inputMappings>
+    <inputMappings name="processVariables.workers_name">
+      <expression exprStr="actionflow.Inputs.processVariables.workers_name"/>
+    </inputMappings>
+    <inputMappings name="attachments">
+      <expression exprStr="actionflow.Inputs.attachments"/>
+    </inputMappings>
+    <inputMappings name="id">
+      <expression exprStr="actionflow.Inputs.id"/>
+    </inputMappings>
+    <contract xsi:type="nsDataserviceContract:DataActionContract" href="urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/pd_workers.process#//@activities[name='Task%20Worker']/@taskContract/@dataServiceContracts[name='da_def_complete_pd_workers_manual_task']"/>
+  </dataActions>
+  <actionInstanceProperty actionInstance="//@dataActions[name='da_actionflow_pd_workers_manual_1']"/>
+  <states xsi:type="actionflow:EndState" id="success"/>
+  <states xsi:type="actionflow:EndState" id="error"/>
+  <states xsi:type="actionflow:ActionState" id="finish" dataAction="//@dataActions[name='da_actionflow_pd_workers_manual_1']">
+    <transitions on="success" to="//@states[id='success']"/>
+    <transitions on="error" to="//@states[id='error']"/>
+  </states>
+  <states xsi:type="actionflow:EndState" id="cancel"/>
+</actionflow:ActionFlow>

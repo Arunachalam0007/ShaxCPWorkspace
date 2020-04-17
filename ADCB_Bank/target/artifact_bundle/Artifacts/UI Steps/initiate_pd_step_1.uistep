@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionflow:UIStep xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionflow="http://www.emc.com/xcp2/2010/actionflow" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:uitemplate="http://www.emc.com/xcp2/2010/uitemplate" urn="urn:adcb:com.emc.xcp.artifact.uistep:Artifacts/UI Steps/initiate_pd_step_1.uistep" categoryId="com.emc.xcp.artifact.uistep" name="initiate_pd_step_1" label="Step 1" templateType="uistep">
+  <dataSources categoryId="com.emc.xcp.artifact.dataservice.datasource" name="get_pd_name" label="Get PD Name">
+    <contract xsi:type="nsDataserviceContract:DataSourceContract" href="urn:adcb:com.emc.xcp.artifact.dqlquery:Artifacts/Dql Queries/get_pd_name.dqlquery#//@datasource"/>
+  </dataSources>
+  <actionInstanceProperty actionInstance="//@dataSources[name='get_pd_name']"/>
+  <rootContainer>
+    <properties name="xcpId" value="root"/>
+    <children componentDefinitionId="xcp_dropdown_list" dataService="//@dataSources[name='get_pd_name']">
+      <properties name="fieldLabel" value="Select Predefined"/>
+      <properties name="emptyText" value=""/>
+      <properties name="disabled" value=""/>
+      <properties name="hidden" value=""/>
+      <properties name="valueField" value="pd_name"/>
+      <properties name="displayField" value="pd_name"/>
+      <properties name="modelStore" value="dataservices.get_pd_name"/>
+      <properties name="valueType" value="STRING"/>
+      <properties name="name" value=""/>
+      <properties name="fieldWidth" value="" type="INTEGER"/>
+      <properties name="cls" value=""/>
+      <properties name="tooltip" value=""/>
+      <properties name="mandatory" value=""/>
+      <properties name="hideErrorInToolTip" value="false" type="BOOLEAN"/>
+      <properties name="stopOnValidationFail" value="true" type="BOOLEAN"/>
+      <properties name="anyMatch" value="false" type="BOOLEAN"/>
+      <properties xsi:type="uitemplate:DataboundProperty" name="value" value="''"/>
+      <properties name="valid" value=""/>
+      <properties name="xcpId" value="pd_dd"/>
+    </children>
+  </rootContainer>
+  <primaryModel href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/pd_workers.businessobj#/"/>
+</actionflow:UIStep>

@@ -1238,6 +1238,77 @@ Ext.define("xcp_ExecutionData",
     }
 );
 
+Ext.define("adcb_pd_workers_processVariables",
+    {
+      "extend" : "xcp.data.IdLessModel",
+      "xcpModelType" : null,
+      "fields" : [ {
+        "name" : "workers_name",
+        "type" : "array"
+      }, {
+        "name" : "index",
+        "type" : "int"
+      }, {
+        "name" : "pd_name",
+        "type" : "string"
+      }, {
+        "name" : "s_no",
+        "type" : "array"
+      }, {
+        "name" : "s_no_count",
+        "type" : "int"
+      }, {
+        "name" : "current_task_worker",
+        "type" : "string"
+      }, {
+        "name" : "task_status",
+        "type" : "string"
+      } ]
+    }
+);
+
+Ext.define("xcp_process_adcb_pd_workers",
+    {
+      "extend" : "xcp.data.TaskModel",
+      "proxy" : {
+        "data" : {
+          "processVariables" : {
+            "index" : "0"
+          }
+        },
+        "extraParams" : {
+          "type" : "pd_workers"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/tasks"
+      },
+      "idProperty" : "id",
+      "xcpModelType" : "adcb_pd_workers",
+      "fields" : [ {
+        "name" : "processVariables",
+        "type" : "adcb_pd_workers_processVariables"
+      }, {
+        "name" : "executionData",
+        "type" : "xcp_ExecutionData"
+      }, {
+        "name" : "attachments",
+        "type" : "array"
+      }, {
+        "name" : "userName",
+        "type" : "array"
+      }, {
+        "name" : "signOffPassword",
+        "type" : "string"
+      }, {
+        "name" : "path",
+        "type" : "array"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
 Ext.define("xcp_fetchcontentformats_processVariables",
     {
       "extend" : "xcp.data.IdLessModel",
@@ -3104,6 +3175,76 @@ Ext.define("adcb_get_workers_from_ca_outputs",
     }
 );
 
+Ext.define("adcb_predefined_task_lis_outputs",
+    {
+      "extend" : "xcp.data.TaskListDataSourceModel",
+      "proxy" : {
+        "reader" : {
+          "rootProperty" : "items",
+          "type" : "xcpjson"
+        },
+        "extraParams" : {
+          "type" : "adcb_predefined_task_lis"
+        },
+        "type" : "xcp_rest",
+        "url" : "application/xcp_tasks"
+      },
+      "xcpModelType" : "adcb_predefined_task_lis",
+      "fields" : [ {
+        "name" : "task_name",
+        "alias" : "task_sent_by",
+        "type" : "string"
+      }, {
+        "name" : "task_subject",
+        "alias" : "process_name",
+        "type" : "string"
+      }, {
+        "name" : "task_sent_by",
+        "alias" : "task_performer_name",
+        "type" : "string"
+      }, {
+        "name" : "task_performer_name",
+        "alias" : "task_creation_date",
+        "type" : "string"
+      }, {
+        "name" : "task_status",
+        "type" : "string"
+      }, {
+        "name" : "task_creation_date",
+        "alias" : "task_name",
+        "type" : "string"
+      }, {
+        "name" : "process_name",
+        "alias" : "task_subject",
+        "type" : "string"
+      }, {
+        "name" : "task_state",
+        "type" : "int"
+      }, {
+        "name" : "workqueue_name",
+        "type" : "string"
+      }, {
+        "name" : "process_system_name",
+        "type" : "string"
+      }, {
+        "name" : "activity_system_name",
+        "type" : "string"
+      }, {
+        "name" : "is_rejectable",
+        "type" : "boolean"
+      }, {
+        "name" : "is_repeatable",
+        "type" : "boolean"
+      }, {
+        "name" : "is_delegable",
+        "type" : "boolean"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+);
+
 Ext.define("xcp_taskhistory_initiate_staless_ds_outputs",
     {
       "extend" : "xcp.data.StatelessProcessCollectionModel",
@@ -4656,6 +4797,14 @@ Ext.define("xcp_def_lw_imp_af",
 );
 
 Ext.define("adcb_choose_worker",
+    {
+      "extend" : "xcp.data.Model",
+      "fields" : [ ],
+      "xcpModelType" : null
+    }
+);
+
+Ext.define("adcb_initiate_pd",
     {
       "extend" : "xcp.data.Model",
       "fields" : [ ],

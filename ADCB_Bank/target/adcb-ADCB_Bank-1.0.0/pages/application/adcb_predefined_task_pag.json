@@ -1,0 +1,183 @@
+{
+  "cls" : "adcb_predefined_task_pag",
+  "padding" : 0,
+  "border" : false,
+  "namespace" : "adcb",
+  "categoryID" : "com_emc_xcp_artifact_page",
+  "artifactName" : "predefined_task_pag",
+  "pageTitle" : "${_UI_Page_adcb_predefined_task_pag_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "predefined_task_lis",
+      "actionModel" : "adcb_predefined_task_lis_outputs",
+      "inputModelName" : "adcb_predefined_task_lis_inputs",
+      "actionType" : "datasource",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ],
+      "autoLoad" : true,
+      "invokerEvents" : [ {
+        "events" : ["refresh_btn.click" ]
+      } ],
+      "pageSize" : 10
+    } ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "refresh_btn",
+    "xtype" : "xcp_button",
+    "text" : "${_UI_Page_adcb_predefined_task_pag_refresh_btn_text}",
+    "scale" : "small",
+    "badgeAlign" : "top-right",
+    "iconAlign" : "left"
+  }, {
+    "xcpId" : "results_list",
+    "xtype" : "xcp_results_list",
+    "pageSize" : 10,
+    "selectionModel" : false,
+    "enableDragDrop" : true,
+    "disableNavigationOnFirstColumn" : false,
+    "allowDeselect" : false,
+    "displayTotalRowCount" : false,
+    "autoTotalCount" : true,
+    "autoSelection" : false,
+    "pageSizeList" : "10,25,50,100",
+    "stateful" : false,
+    "allowInLineEdit" : false,
+    "modelStore" : "dataservices.predefined_task_lis",
+    "columns" : [ {
+      "xcpId" : "col_task_name",
+      "xtype" : "xcp_results_list_page_link_column",
+      "text" : "${_UI_Page_adcb_predefined_task_pag_col_task_name_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "task_name",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "results_list",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "col_task_subject",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_adcb_predefined_task_pag_col_task_subject_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "task_subject",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "results_list",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "col_task_sent_by",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_adcb_predefined_task_pag_col_task_sent_by_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "task_sent_by",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "results_list",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "col_task_performer_name",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_adcb_predefined_task_pag_col_task_performer_name_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "task_performer_name",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "results_list",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "col_task_status",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_adcb_predefined_task_pag_col_task_status_text}",
+      "width" : 150,
+      "valueType" : "xcp.picklist.xcp_taskstatuspiclkist",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "task_status",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "results_list",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "col_task_creation_date",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_adcb_predefined_task_pag_col_task_creation_date_text}",
+      "width" : 150,
+      "valueType" : "DATETIME",
+      "isRepeating" : false,
+      "format" : {
+        "xtype" : "xcp_datetime_formatter",
+        "dateFormat" : "short",
+        "timeFormat" : "short",
+        "dateStyle" : "datetime"
+      },
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "task_creation_date",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "results_list",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "col_process_name",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_adcb_predefined_task_pag_col_process_name_text}",
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : false,
+      "dataIndex" : "process_name",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "parentxcpId" : "results_list",
+      "stateful" : false,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    } ]
+  } ]
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionflow:ActionFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionflow="http://www.emc.com/xcp2/2010/actionflow" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" urn="urn:adcb:com.emc.xcp.artifact.actionFlow:Artifacts/Action Flows/initiate_pd.actionflow" categoryId="com.emc.xcp.artifact.actionFlow" name="initiate_pd" label="Initiate PD" initialState="//@states[id='viewState_initiate_pd_step_1']">
+  <primaryElement>
+    <dataModel href="urn:adcb:com.emc.xcp.artifact.bo:Artifacts/Business Objects/pd_workers.businessobj#/"/>
+  </primaryElement>
+  <dataActions categoryId="com.emc.xcp.artifact.dataservice.dataaction" name="da_actionflow_initiate_pd_da_def_create_pd_workers_initiate" label="Initiate Process PD Workers">
+    <inputMappings name="attachments">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="processVariables.pd_name">
+      <expression exprStr="actionflow.steps.initiate_pd_step_1.widgets.pd_dd.value"/>
+    </inputMappings>
+    <contract xsi:type="nsDataserviceContract:DataActionContract" href="urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/pd_workers.process#//@activities[name='Initiate']/@taskContract/@dataServiceContracts[name='da_def_create_pd_workers_initiate']"/>
+  </dataActions>
+  <actionInstanceProperty actionInstance="//@dataActions[name='da_actionflow_initiate_pd_da_def_create_pd_workers_initiate']"/>
+  <states xsi:type="actionflow:EndState" id="success"/>
+  <states xsi:type="actionflow:EndState" id="error"/>
+  <states xsi:type="actionflow:EndState" id="cancel"/>
+  <states xsi:type="actionflow:ViewState" id="viewState_initiate_pd_step_1">
+    <transitions on="cancel" to="//@states[id='cancel']"/>
+    <transitions on="finish" to="//@states[id='finish']"/>
+    <stepCondition>
+      <expression exprStr="false"/>
+    </stepCondition>
+    <step href="urn:adcb:com.emc.xcp.artifact.uistep:Artifacts/UI Steps/initiate_pd_step_1.uistep#/"/>
+  </states>
+  <states xsi:type="actionflow:ActionState" id="finish" dataAction="//@dataActions[name='da_actionflow_initiate_pd_da_def_create_pd_workers_initiate']">
+    <transitions on="success" to="//@states[id='success']"/>
+    <transitions on="error" to="//@states[id='error']"/>
+    <hideCondition>
+      <expression exprStr="actionflow.steps.initiate_pd_step_1.widgets.pd_dd.value == ''"/>
+    </hideCondition>
+  </states>
+  <transitionLabels transition="finish" label="Finish">
+    <labelExpression/>
+  </transitionLabels>
+  <transitionLabels transition="cancel" label="Cancel">
+    <labelExpression/>
+  </transitionLabels>
+</actionflow:ActionFlow>

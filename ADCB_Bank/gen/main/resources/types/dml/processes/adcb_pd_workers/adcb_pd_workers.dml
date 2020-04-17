@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process-type label="PD Workers" runnable-stateless="false" type="adcb_pd_workers" xmlns="http://identifiers.emc.com/vocab/xcp">
+  <urn>urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/pd_workers.process</urn>
+  <properties>
+    <property label="process_id" length="64" name="process_id" type="string"/>
+    <property label="status" length="64" name="status" type="string"/>
+    <property label="id" length="64" name="id" type="string"/>
+    <property label="r_runtime_state" name="r_runtime_state" type="integer"/>
+    <property label="correlation_identifier" length="64" name="correlation_identifier" type="string"/>
+    <property label="object_name" length="64" name="object_name" type="string"/>
+    <property label="r_creator_name" length="64" name="r_creator_name" type="string"/>
+    <property label="r_start_date" name="r_start_date" type="datetime"/>
+    <property label="supervisor_name" length="64" name="supervisor_name" type="string"/>
+    <property label="supervisor_address" length="64" name="supervisor_address" type="string"/>
+  </properties>
+  <tasks>
+    <task href="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_get_worker_info_bas" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_join" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_get_worker_name" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_task_worker" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_decision_split" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_completed" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_initiate" rel="http://identifiers.emc.com/linkrel/task"/>
+    <task href="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_increment" rel="http://identifiers.emc.com/linkrel/task"/>
+  </tasks>
+  <flows>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_initiate" target="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_get_worker_info_bas"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_get_worker_info_bas" target="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_join"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_join" target="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_get_worker_name"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_get_worker_name" target="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_task_worker"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_task_worker" target="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_decision_split"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_decision_split" target="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_completed"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_decision_split" target="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_increment"/>
+    <flow flow-type="regular" source="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_increment" target="${contextPath}types/processes/adcb_pd_workers/tasks/adcb_join"/>
+  </flows>
+  <data>
+    <variables>
+      <variable default-value="" label="workers_name" mandatory="false" name="workers_name" repeating="true" type="string"/>
+      <variable default-value="0" label="index" mandatory="false" name="index" repeating="false" type="integer"/>
+      <variable default-value="" label="pd_name" mandatory="false" name="pd_name" repeating="false" type="string"/>
+      <variable default-value="" label="s_no" mandatory="false" name="s_no" repeating="true" type="integer"/>
+      <variable default-value="" label="s_no_count" mandatory="false" name="s_no_count" repeating="false" type="integer"/>
+      <variable default-value="" label="current_task_worker" mandatory="false" name="current_task_worker" repeating="false" type="string"/>
+      <variable default-value="" label="task_status" mandatory="false" name="task_status" repeating="false" type="string"/>
+    </variables>
+  </data>
+  <links>
+    <link href="${contextPath}types/processes/adcb_pd_workers" rel="self"/>
+    <link href="${contextPath}processes/adcb_pd_workers" rel="http://identifiers.emc.com/linkrel/instances"/>
+    <link rel="http://identifiers.emc.com/linkrel/halt"/>
+    <link rel="http://identifiers.emc.com/linkrel/resume"/>
+    <link rel="http://identifiers.emc.com/linkrel/terminate"/>
+    <link rel="http://identifiers.emc.com/linkrel/tasks"/>
+    <link rel="http://identifiers.emc.com/linkrel/attachments"/>
+  </links>
+</process-type>

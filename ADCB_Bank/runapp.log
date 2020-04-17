@@ -10,25 +10,31 @@
 [INFO] Deleting C:\Sha\ADCB_Bank\target
 [INFO] 
 [INFO] --- xcp-validate:1.0.12:run (xcp-validate) @ ADCB_Bank ---
-[INFO] Finished validating Artifact data models in project 'ADCB_Bank' in....674ms
+[INFO] Finished validating Artifact data models in project 'ADCB_Bank' in....609ms
 [INFO] 
 [INFO] --- build-helper-maven-plugin:1.7:add-source (add-source) @ ADCB_Bank ---
 [INFO] Source directory: C:\Sha\ADCB_Bank\gen\main\java added.
 [INFO] 
 [INFO] --- xcp-generate-sources:1.0.10:run (xcp-generate-sources) @ ADCB_Bank ---
 [INFO] Generating DML artifacts for Application Project, type=IXCPApplicationProject
-[INFO] Finished executing project generators in....9ms
+[INFO] Finished executing project generators in....12ms
 [INFO] Ignoring json for page : appmaster_defpage
-[INFO] Finished generating models.js in time  323 ms
-[INFO] Finished executing artifact generators in....2676ms
-[INFO] Finished generating code for project 'ADCB_Bank' in 2685ms
+[WARNING] Unmatched column for search predefined_task_lis-Task Name::Sender
+[WARNING] Unmatched column for search predefined_task_lis-Subject::Process Name
+[WARNING] Unmatched column for search predefined_task_lis-Sender::Performer Name
+[WARNING] Unmatched column for search predefined_task_lis-Performer Name::Creation Date
+[WARNING] Unmatched column for search predefined_task_lis-Creation Date::Task Name
+[WARNING] Unmatched column for search predefined_task_lis-Process Name::Subject
+[INFO] Finished generating models.js in time  322 ms
+[INFO] Finished executing artifact generators in....2783ms
+[INFO] Finished generating code for project 'ADCB_Bank' in 2796ms
 [INFO] 
 [INFO] --- build-helper-maven-plugin:1.7:add-resource (add-resource) @ ADCB_Bank ---
 [INFO] 
 [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ADCB_Bank ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
 [INFO] Copying 9 resources
-[INFO] Copying 49 resources
+[INFO] Copying 55 resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ ADCB_Bank ---
 [INFO] Nothing to compile - all classes are up to date
@@ -49,7 +55,7 @@
 [INFO] Packaged local library dependencies for project 'ADCB_Bank' in 4ms
 [INFO] 
 [INFO] Started packaging artifact bundle jar for application project '[XCPProject: ADCB_Bank]'
-[INFO] Finished packaging artifact bundle jar for application project '[XCPProject: ADCB_Bank]' in 363 ms
+[INFO] Finished packaging artifact bundle jar for application project '[XCPProject: ADCB_Bank]' in 417 ms
 [INFO] 
 [INFO] 
 [INFO] --- maven-war-plugin:2.3:war (default-war) @ ADCB_Bank ---
@@ -60,7 +66,7 @@
 [INFO] Copying webapp webResources [C:\Sha\ADCB_Bank\lib] to [C:\Sha\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0]
 [INFO] Copying webapp webResources [C:\Sha\ADCB_Bank\gen/main/webapp] to [C:\Sha\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0]
 [INFO] Copying webapp resources [C:\Sha\ADCB_Bank\src\main\webapp]
-[INFO] Webapp assembled in [1784 msecs]
+[INFO] Webapp assembled in [2161 msecs]
 [INFO] Building war: C:\Sha\ADCB_Bank\target\adcb-ADCB_Bank-1.0.0.war
 [INFO] 
 [INFO] --- maven-install-plugin:2.4:install (default-install) @ ADCB_Bank ---
@@ -83,7 +89,7 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 01:17 min
-[INFO] Finished at: 2020-04-16T16:58:10+00:00
-[INFO] Final Memory: 26M/378M
+[INFO] Total time: 01:45 min
+[INFO] Finished at: 2020-04-17T09:20:03+00:00
+[INFO] Final Memory: 25M/328M
 [INFO] ------------------------------------------------------------------------

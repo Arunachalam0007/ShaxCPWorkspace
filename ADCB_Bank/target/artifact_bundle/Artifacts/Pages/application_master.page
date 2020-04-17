@@ -107,6 +107,27 @@
             <properties name="xcpId" value="nav_button2"/>
           </children>
           <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_nav_button">
+            <properties name="text" value="Predefined Inbox"/>
+            <properties name="iconCls" value=""/>
+            <properties name="hidden" value=""/>
+            <properties name="disabled" value=""/>
+            <properties name="cls" value=""/>
+            <properties name="tooltip" value=""/>
+            <properties name="navType" value="page_static"/>
+            <properties xsi:type="uitemplate:DataboundProperty" name="navPageId" value="adcb_predefined_task_pag">
+              <data selectionName="pd_workers_task_wor" selectionLabel="PD Task Worker">
+                <dataRef href="urn:adcb:com.emc.xcp.artifact.page:Artifacts/Pages/predefined_task_pag.page#/"/>
+              </data>
+            </properties>
+            <properties name="navPageIdExpr" value=""/>
+            <properties name="navUrlExpr" value=""/>
+            <properties name="navObjectId" value="''"/>
+            <properties name="navToNewTab" value="" type="BOOLEAN"/>
+            <properties name="navNewTabTarget" value=""/>
+            <properties name="navUrlParams" value=""/>
+            <properties name="xcpId" value="pd_inbox"/>
+          </children>
+          <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_nav_button">
             <properties name="text" value="Userdefined Case Inbox"/>
             <properties name="iconCls" value=""/>
             <properties name="hidden" value=""/>

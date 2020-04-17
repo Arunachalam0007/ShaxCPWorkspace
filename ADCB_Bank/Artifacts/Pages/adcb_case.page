@@ -12,6 +12,9 @@
     </inputMappings>
     <contract xsi:type="actionflow:ActionFlow" href="urn:adcb:com.emc.xcp.artifact.actionFlow:Artifacts/Action Flows/add_initiate_worker.actionflow#/"/>
   </actions>
+  <actions categoryId="com.emc.xcp.artifact.dataservice.actioninstance" name="initiate_pd_1" label="Initiate PD-1">
+    <contract xsi:type="actionflow:ActionFlow" href="urn:adcb:com.emc.xcp.artifact.actionFlow:Artifacts/Action Flows/initiate_pd.actionflow#/"/>
+  </actions>
   <actionInstanceProperty actionInstance="//@actions[name='create_case_1_1']"/>
   <actionInstanceProperty actionInstance="//@dataSources[name='get_all_cases']">
     <eventBasedInvocations>
@@ -20,6 +23,7 @@
     </eventBasedInvocations>
   </actionInstanceProperty>
   <actionInstanceProperty actionInstance="//@actions[name='add_initiate_worker_1']"/>
+  <actionInstanceProperty actionInstance="//@actions[name='initiate_pd_1']"/>
   <title exprStr="ADCB Case"/>
   <rootContainer>
     <properties name="xcpId" value="root"/>
@@ -250,6 +254,32 @@
                 <properties name="tooltip" value=""/>
                 <properties name="cls" value=""/>
                 <properties name="xcpId" value="columnvbox7"/>
+                <children componentDefinitionId="xcp_button" action="//@actions[name='initiate_pd_1']">
+                  <properties name="text" value="Initiate PD"/>
+                  <properties name="scale" value="small"/>
+                  <properties name="badgeText" value=""/>
+                  <properties name="badgeAlign" value="top-right"/>
+                  <properties name="imageSource" value=""/>
+                  <properties name="glyph" value=""/>
+                  <properties name="iconAlign" value="left"/>
+                  <properties name="tooltip" value=""/>
+                  <properties xsi:type="uitemplate:ObjectProperty" name="action">
+                    <action>
+                      <properties name="redirectStyle" value="none"/>
+                      <properties name="showSuccessNotification" value="true" type="BOOLEAN"/>
+                      <properties name="showConfirmation" value="false" type="BOOLEAN"/>
+                      <properties name="navType" value="none"/>
+                      <properties name="actionType" value="datasource"/>
+                      <properties xsi:type="uitemplate:DataboundProperty" name="navPageId"/>
+                    </action>
+                  </properties>
+                  <properties name="width" value="" type="INTEGER"/>
+                  <properties name="height" value="" type="INTEGER"/>
+                  <properties name="cls" value=""/>
+                  <properties name="disabled" value=""/>
+                  <properties name="hidden" value=""/>
+                  <properties name="xcpId" value="ini_pd_btn"/>
+                </children>
               </children>
             </children>
           </children>
@@ -273,7 +303,7 @@
       </children>
     </children>
     <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_results_list" dataService="//@dataSources[name='get_all_cases']">
-      <properties name="title" value="Cases"/>
+      <properties name="title" value="Case List"/>
       <properties name="typeName" value=""/>
       <properties name="modelName" value=""/>
       <properties name="storeId" value=""/>

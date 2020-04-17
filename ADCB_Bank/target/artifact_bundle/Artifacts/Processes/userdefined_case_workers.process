@@ -45,7 +45,7 @@
     <trigger canRunMultipleTimes="true"/>
     <transition xsi:type="nsActivity:AllFlowsTransition"/>
     <uiinfo imageScale="100" image="urn:xcpcomm:com.emc.xcp.artifact.resource.image:Artifacts/Resources/user_orange_32.png">
-      <topLeftPoint x="397" y="147"/>
+      <topLeftPoint x="397" y="148"/>
       <textStyle fontName="Dialog" fontSize="10">
         <bgColor/>
         <fgColor/>
@@ -292,7 +292,7 @@
     <trigger canRunMultipleTimes="true"/>
     <transition xsi:type="nsActivity:AllFlowsTransition"/>
     <uiinfo imageScale="100" image="palette/event_start_32_proc.png">
-      <topLeftPoint x="50" y="154"/>
+      <topLeftPoint x="48" y="147"/>
       <textStyle fontName="Dialog" fontSize="10">
         <bgColor/>
         <fgColor/>
@@ -357,7 +357,7 @@
     <trigger numOfInputFlows="1" expectedEventName="" canRunMultipleTimes="true"/>
     <transition xsi:type="nsActivity:AllFlowsTransition"/>
     <uiinfo imageScale="100" image="decision_join_32_proc.png">
-      <topLeftPoint x="217" y="154"/>
+      <topLeftPoint x="217" y="149"/>
       <textStyle fontName="Dialog" fontSize="10">
         <bgColor/>
         <fgColor/>
@@ -412,7 +412,7 @@
       </resolver>
     </transition>
     <uiinfo imageScale="100" image="decision_split_32_proc.png">
-      <topLeftPoint x="490" y="154"/>
+      <topLeftPoint x="491" y="149"/>
       <textStyle fontName="Dialog" fontSize="10">
         <bgColor/>
         <fgColor/>
@@ -494,7 +494,7 @@
     <trigger expectedEventName="" canRunMultipleTimes="true"/>
     <transition xsi:type="nsActivity:AllFlowsTransition"/>
     <uiinfo imageScale="100" image="activity_autoint_48x32_proc.png">
-      <topLeftPoint x="586" y="154"/>
+      <topLeftPoint x="586" y="150"/>
       <textStyle fontName="Dialog" fontSize="10">
         <bgColor/>
         <fgColor/>
@@ -608,9 +608,9 @@
   <flows name="L6" from="//@activities[name='Decision%20Split']" to="//@activities[name='Increment']">
     <uiinfo srcActivityLocIndex="2">
       <line multiSegment="true">
-        <points x="490" y="132"/>
-        <points x="490" y="48"/>
-        <points x="364" y="48"/>
+        <points x="491" y="127"/>
+        <points x="491" y="41"/>
+        <points x="364" y="41"/>
       </line>
       <labelStyle fontName="Helvetica" fontSize="10"/>
     </uiinfo>
@@ -618,9 +618,9 @@
   <flows name="L7" from="//@activities[name='Increment']" to="//@activities[name='Join']">
     <uiinfo srcActivityLocIndex="1" destActivityLocIndex="4">
       <line multiSegment="true">
-        <points x="316" y="48"/>
-        <points x="201" y="48"/>
-        <points x="201" y="136"/>
+        <points x="316" y="41"/>
+        <points x="201" y="41"/>
+        <points x="201" y="132"/>
       </line>
       <labelStyle fontName="Helvetica" fontSize="10"/>
     </uiinfo>
@@ -634,14 +634,14 @@
   <defaultSettings/>
   <processUIInfo>
     <startActivityUIInfo imageScale="100" image="palette/event_start_32_proc.png">
-      <topLeftPoint x="50" y="154"/>
+      <topLeftPoint x="48" y="147"/>
       <textStyle fontName="Dialog" fontSize="10">
         <bgColor/>
         <fgColor/>
       </textStyle>
     </startActivityUIInfo>
     <endActivityUIInfo imageScale="100" image="palette/event_end_32_proc.png">
-      <topLeftPoint x="679" y="155"/>
+      <topLeftPoint x="674" y="151"/>
       <textStyle fontName="Dialog" fontSize="10">
         <bgColor/>
         <fgColor/>

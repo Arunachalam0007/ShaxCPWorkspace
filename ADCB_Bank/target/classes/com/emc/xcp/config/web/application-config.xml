@@ -30,12 +30,25 @@
                 </bean>
                 <bean class="com.emc.xcp.ui.services.config.Model">
                     <property name="name" value="adcb_pd_workers"/>
+                    <property name="homePageUrlName" value="adcb_pd_workers_task_worker"/>
                     <property name="supportMasterPage" value="false"/>
+                    <property name="pages">
+                        <set>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="adcb_pd_workers_task_worker"/>
+                                <property name="defaultFileName" value="adcb_pd_workers_task_wor"/>
+                            </bean>
+                        </set>
+                    </property>
                     <property name="steps">
                         <set>
                             <bean class="com.emc.xcp.ui.services.config.Step">
                                 <property name="urlName" value="adcb_pd_workers_adcb_create_pd_workers_s"/>
                                 <property name="defaultFileName" value="adcb_pd_workers_adcb_create_pd_workers_s"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="adcb_pd_workers_adcb_initiate_pd_step_1"/>
+                                <property name="defaultFileName" value="adcb_pd_workers_adcb_initiate_pd_step_1"/>
                             </bean>
                         </set>
                     </property>
@@ -64,16 +77,8 @@
                                 <property name="defaultFileName" value="xcp_landing_page"/>
                             </bean>
                             <bean class="com.emc.xcp.ui.services.config.Page">
-                                <property name="urlName" value="signin"/>
-                                <property name="defaultFileName" value="application_signin"/>
-                            </bean>
-                            <bean class="com.emc.xcp.ui.services.config.Page">
                                 <property name="urlName" value="adcb_application_parameter"/>
                                 <property name="defaultFileName" value="adcb_application_parameter"/>
-                            </bean>
-                            <bean class="com.emc.xcp.ui.services.config.Page">
-                                <property name="urlName" value="adcb_userdefined_case_in"/>
-                                <property name="defaultFileName" value="adcb_userdefined_case_in"/>
                             </bean>
                             <bean class="com.emc.xcp.ui.services.config.Page">
                                 <property name="urlName" value="adcb_adcb_predefined"/>
@@ -82,10 +87,6 @@
                             <bean class="com.emc.xcp.ui.services.config.Page">
                                 <property name="urlName" value="adcb_case_inbox"/>
                                 <property name="defaultFileName" value="adcb_case_inbox"/>
-                            </bean>
-                            <bean class="com.emc.xcp.ui.services.config.Page">
-                                <property name="urlName" value="xcp_user_preferences"/>
-                                <property name="defaultFileName" value="xcp_user_preferences"/>
                             </bean>
                             <bean class="com.emc.xcp.ui.services.config.Page">
                                 <property name="urlName" value="adcb_manage_app_role"/>
@@ -100,12 +101,28 @@
                                 <property name="defaultFileName" value="adcb_adcb_view_page"/>
                             </bean>
                             <bean class="com.emc.xcp.ui.services.config.Page">
-                                <property name="urlName" value="adcb_page_not_found"/>
-                                <property name="defaultFileName" value="adcb_page_not_found"/>
-                            </bean>
-                            <bean class="com.emc.xcp.ui.services.config.Page">
                                 <property name="urlName" value="adcb_adcb_case"/>
                                 <property name="defaultFileName" value="adcb_adcb_case"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="signin"/>
+                                <property name="defaultFileName" value="application_signin"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="adcb_predefined_task_pag"/>
+                                <property name="defaultFileName" value="adcb_predefined_task_pag"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="adcb_userdefined_case_in"/>
+                                <property name="defaultFileName" value="adcb_userdefined_case_in"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="xcp_user_preferences"/>
+                                <property name="defaultFileName" value="xcp_user_preferences"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="adcb_page_not_found"/>
+                                <property name="defaultFileName" value="adcb_page_not_found"/>
                             </bean>
                         </set>
                     </property>

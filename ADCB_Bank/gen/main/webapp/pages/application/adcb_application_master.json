@@ -62,6 +62,21 @@
           "navType" : "page_static",
           "navPageId" : "adcb_adcb_predefined"
         }, {
+          "xcpId" : "pd_inbox",
+          "xtype" : "xcp_nav_button",
+          "text" : "${_UI_Page_adcb_application_master_pd_inbox_text}",
+          "navType" : "page_static",
+          "navPageId" : "adcb_predefined_task_pag",
+          "plugins" : [ {
+            "ptype" : "xcp_expression_properties",
+            "expression" : [ {
+              "propertyId" : "navObjectId",
+              "setterFunName" : "setNavObjectId",
+              "etype" : "pd_inbox_navObjectId",
+              "disableProcessingOnRender" : false
+            } ]
+          } ]
+        }, {
           "xcpId" : "uci_nav",
           "xtype" : "xcp_nav_button",
           "text" : "${_UI_Page_adcb_application_master_uci_nav_text}",

@@ -69,6 +69,25 @@
         "mapping" : {
         }
       } ]
+    }, {
+      "xcpId" : "initiate_pd_1",
+      "actionType" : "xcp_action_flow_launcher",
+      "actionFlowId" : "adcb_initiate_pd",
+      "objectType" : "adcb_pd_workers",
+      "wizardConfig" : {
+        "height" : 450,
+        "width" : 640,
+        "modal" : true,
+        "autoScroll" : false,
+        "title" : "${_UI_Initiate_PD_Initiate_PD_label}"
+      },
+      "actionModel" : "xcp_process_adcb_pd_workers",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ]
     } ]
   }, {
     "xtype" : "xcp_uievent_publisher",
@@ -213,7 +232,21 @@
               "labelAlign" : "left",
               "halign" : "left",
               "valign" : "top",
-              "defaultMargins" : "5"
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "ini_pd_btn",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_adcb_adcb_case_ini_pd_btn_text}",
+                "scale" : "small",
+                "badgeAlign" : "top-right",
+                "iconAlign" : "left",
+                "actionInstanceId" : "initiate_pd_1",
+                "redirectStyle" : "none",
+                "showSuccessNotification" : true,
+                "showConfirmation" : false,
+                "navType" : "none",
+                "navPageId" : null
+              } ]
             } ]
           } ]
         } ]

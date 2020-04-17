@@ -1,0 +1,183 @@
+{
+  "name" : "process-type",
+  "type" : "adcb_pd_workers",
+  "label" : "PD Workers",
+  "runnable-stateless" : false,
+  "urn" : "urn:adcb:com.emc.ide.artifact.process:Artifacts/Processes/pd_workers.process",
+  "properties" : [ {
+    "name" : "process_id",
+    "label" : "process_id",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "status",
+    "label" : "status",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "id",
+    "label" : "id",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "r_runtime_state",
+    "label" : "r_runtime_state",
+    "type" : "integer"
+  }, {
+    "name" : "correlation_identifier",
+    "label" : "correlation_identifier",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "object_name",
+    "label" : "object_name",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "r_creator_name",
+    "label" : "r_creator_name",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "r_start_date",
+    "label" : "r_start_date",
+    "type" : "datetime"
+  }, {
+    "name" : "supervisor_name",
+    "label" : "supervisor_name",
+    "type" : "string",
+    "length" : 64
+  }, {
+    "name" : "supervisor_address",
+    "label" : "supervisor_address",
+    "type" : "string",
+    "length" : 64
+  } ],
+  "tasks" : [ {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_get_worker_info_bas"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_join"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_get_worker_name"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_task_worker"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_decision_split"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_completed"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_initiate"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/task",
+    "href" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_increment"
+  } ],
+  "flows" : [ {
+    "source" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_initiate",
+    "target" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_get_worker_info_bas",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_get_worker_info_bas",
+    "target" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_join",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_join",
+    "target" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_get_worker_name",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_get_worker_name",
+    "target" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_task_worker",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_task_worker",
+    "target" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_decision_split",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_decision_split",
+    "target" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_completed",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_decision_split",
+    "target" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_increment",
+    "flow-type" : "regular"
+  }, {
+    "source" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_increment",
+    "target" : "${contextPath}types/processes/adcb_pd_workers/tasks/adcb_join",
+    "flow-type" : "regular"
+  } ],
+  "data" : {
+    "variables" : [ {
+      "name" : "workers_name",
+      "label" : "workers_name",
+      "type" : "string",
+      "repeating" : true,
+      "default-value" : null,
+      "mandatory" : false
+    }, {
+      "name" : "index",
+      "label" : "index",
+      "type" : "integer",
+      "repeating" : false,
+      "default-value" : "0",
+      "mandatory" : false
+    }, {
+      "name" : "pd_name",
+      "label" : "pd_name",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : null,
+      "mandatory" : false
+    }, {
+      "name" : "s_no",
+      "label" : "s_no",
+      "type" : "integer",
+      "repeating" : true,
+      "default-value" : null,
+      "mandatory" : false
+    }, {
+      "name" : "s_no_count",
+      "label" : "s_no_count",
+      "type" : "integer",
+      "repeating" : false,
+      "default-value" : "",
+      "mandatory" : false
+    }, {
+      "name" : "current_task_worker",
+      "label" : "current_task_worker",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : null,
+      "mandatory" : false
+    }, {
+      "name" : "task_status",
+      "label" : "task_status",
+      "type" : "string",
+      "repeating" : false,
+      "default-value" : null,
+      "mandatory" : false
+    } ]
+  },
+  "links" : [ {
+    "rel" : "self",
+    "href" : "${contextPath}types/processes/adcb_pd_workers"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/instances",
+    "href" : "${contextPath}processes/adcb_pd_workers"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/halt"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/resume"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/terminate"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/tasks"
+  }, {
+    "rel" : "http://identifiers.emc.com/linkrel/attachments"
+  } ]
+}
