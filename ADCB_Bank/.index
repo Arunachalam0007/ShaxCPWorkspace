@@ -61,4 +61,5 @@
   <indexes urn="urn:adcb:com.emc.xcp.artifact.actionFlow:Artifacts/Action Flows/initiate_pd.actionflow" categoryId="com.emc.xcp.artifact.actionFlow" path="Artifacts/Action Flows/initiate_pd.actionflow" label="Initiate PD" name="initiate_pd"/>
   <indexes urn="urn:adcb:com.emc.xcp.artifact.uistep:Artifacts/UI Steps/initiate_pd_step_1.uistep" categoryId="com.emc.xcp.artifact.uistep" path="Artifacts/UI Steps/initiate_pd_step_1.uistep" label="Step 1" name="initiate_pd_step_1"/>
   <indexes urn="urn:adcb:com.emc.xcp.artifact.page:Artifacts/Pages/pd_workers_task_wor.page" categoryId="com.emc.xcp.artifact.page" path="Artifacts/Pages/pd_workers_task_wor.page" label="PD Task Worker" name="pd_workers_task_wor"/>
+  <indexes urn="urn:adcb:com.emc.xcp.artifact.javamodule.category:Artifacts/Java Modules/linear.javamodule" categoryId="com.emc.xcp.artifact.javamodule.category" path="Artifacts/Java Modules/linear.javamodule" label="Linear" name="linear"/>
 </Artifact:ArtifactIndexes>

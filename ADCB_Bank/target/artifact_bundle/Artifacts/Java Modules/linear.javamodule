@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsJavaModule:JavaModule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:nsJavaModule="http://xcp.emc.com/javamodule" urn="urn:adcb:com.emc.xcp.artifact.javamodule.category:Artifacts/Java Modules/linear.javamodule" categoryId="com.emc.xcp.artifact.javamodule.category" name="linear" label="Linear" implementationClass="com.sedin.javaService.NoteSheet">
+  <interfaceClassNames>com.documentum.fc.client.IDfModule</interfaceClassNames>
+  <implementationJars contentPath="LinearProcess.jar"/>
+</nsJavaModule:JavaModule>
